@@ -5,7 +5,7 @@ interface Props {
   date: Date;
 }
 
-function Clocks(props: Props) {
+function Clocks(props: Props): JSX.Element {
   return (
     <div>
       <h1>Hello!</h1>
@@ -14,7 +14,7 @@ function Clocks(props: Props) {
   );
 }
 
-function ticks() {
+function ticks(): void {
   ReactDOM.render(<Clocks date={new Date()} />, document.getElementById('root-1'));
 }
 
@@ -28,20 +28,21 @@ class Clock extends React.Component<{}, { date: Date }> {
     this.state = { date: new Date() };
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     this.timerID = window.setInterval(() => this.tick(), 1000);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount(): void {
     clearInterval(this.timerID);
   }
 
-  tick() {
+  tick(): void {
     this.setState({
       date: new Date(),
     });
   }
-  render() {
+
+  render(): JSX.Element {
     return (
       <div>
         <h1>Hi!</h1>
@@ -51,7 +52,7 @@ class Clock extends React.Component<{}, { date: Date }> {
   }
 }
 
-function tick() {
+function tick(): void {
   ReactDOM.render(<Clock />, document.getElementById('root-2'));
 }
 

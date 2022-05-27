@@ -7,11 +7,11 @@ interface Props {
   date: Date;
 }
 
-function formatDate(date: Date) {
+function formatDate(date: Date): string {
   return date.toLocaleDateString();
 }
 
-function Comment(props: Props) {
+function Comment(props: Props): JSX.Element {
   return (
     <div className="Comment">
       <div className="UserInfo">
