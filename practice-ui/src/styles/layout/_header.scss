@@ -1,0 +1,12 @@
+.bg-nav-color {
+  background-color: $cl-bg;
+}
+
+.hero-header {
+  font-size: 36px;
+  line-height: 60px;
+
+  @include desktop {
+    font-size: 40px;
+  }
+}

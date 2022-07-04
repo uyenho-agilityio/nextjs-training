@@ -1,0 +1,50 @@
+.rounded-4 {
+  @include border-radius(8px);
+}
+
+.secondary-font {
+  font-family: 'Inter', sans-serif;
+  font-weight: $font-weight-light;
+  font-size: $fs-primary;
+  line-height: $h5-font-size;
+  letter-spacing: 0.2px;
+}
+
+.third-font {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: $font-weight-normal;
+  font-size: $h6-font-size;
+  line-height: $h5-font-size;
+}
+
+.pricing {
+  & .card {
+    & .highlight {
+      color: $cl-btn;
+
+      &-number {
+        font-size: 72px;
+        line-height: 100px;
+        letter-spacing: 0.2px;
+      }
+    }
+  }
+}
+
+.pricing {
+  & .card:nth-child(even) {
+    background-color: $cl-btn;
+
+    & .card-body {
+      color: $cl-light;
+
+      & .highlight {
+        color: $cl-light;
+      }
+    }
+
+    & button {
+      @include button-variant($cl-light, $cl-btn, $cl-btn);
+    }
+  }
+}
