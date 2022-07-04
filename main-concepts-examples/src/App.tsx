@@ -1,6 +1,6 @@
-import './App.css';
 import Welcome from './components/welcome';
 import Comment from './components/comment';
+import './App.css';
 
 function App() {
   const comment = {

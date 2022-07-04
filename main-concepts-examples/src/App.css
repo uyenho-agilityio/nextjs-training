@@ -58,3 +58,9 @@ html {
 button {
   margin-top: 20px;
 }
+
+.warning {
+  color: orange;
+  font-weight: 700;
+  margin-top: 20px;
+}

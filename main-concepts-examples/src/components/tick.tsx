@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
 interface Props {
   date: Date;
@@ -15,7 +15,11 @@ function Clocks(props: Props): JSX.Element {
 }
 
 function ticks(): void {
-  ReactDOM.render(<Clocks date={new Date()} />, document.getElementById('root-1'));
+  ReactDOM.createRoot(document.getElementById('root-1')!).render(
+    <React.StrictMode>
+      <Clocks date={new Date()} />
+    </React.StrictMode>,
+  );
 }
 
 setInterval(ticks, 1000);
@@ -53,7 +57,11 @@ class Clock extends React.Component<{}, { date: Date }> {
 }
 
 function tick(): void {
-  ReactDOM.render(<Clock />, document.getElementById('root-2'));
+  ReactDOM.createRoot(document.getElementById('root-2')!).render(
+    <React.StrictMode>
+      <Clock />
+    </React.StrictMode>,
+  );
 }
 
 setInterval(tick, 1000);

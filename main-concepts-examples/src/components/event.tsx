@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
 class Toggle extends React.Component<{}, { isToggleOn: boolean }> {
   constructor(props: {}) {
@@ -21,4 +21,8 @@ class Toggle extends React.Component<{}, { isToggleOn: boolean }> {
   }
 }
 
-ReactDOM.render(<Toggle />, document.getElementById('root-3'));
+ReactDOM.createRoot(document.getElementById('root-3')!).render(
+  <React.StrictMode>
+    <Toggle />
+  </React.StrictMode>,
+);
