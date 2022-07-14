@@ -3,6 +3,7 @@
 *::after {
   box-sizing: border-box;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -11,8 +12,7 @@
 html,
 body {
   height: 100%;
-}
-body {
+  margin: 20px;
   line-height: 1.5;
 }
 
@@ -31,6 +31,7 @@ select {
   font: inherit;
   outline: none;
 }
+
 p,
 h1,
 h2,
@@ -41,8 +42,9 @@ h6 {
   overflow-wrap: break-word;
 }
 
-html {
-  margin-left: 10px;
+ul,
+ol {
+  list-style: none;
 }
 
 .Name {
@@ -63,4 +65,28 @@ button {
   color: orange;
   font-weight: 700;
   margin-top: 20px;
+}
+
+fieldset {
+  margin-top: 20px;
+}
+
+.boil {
+  color: green;
+}
+
+.not-boil {
+  color: red;
+}
+
+.FancyBorder {
+  margin-top: 10px;
+  color: blue;
+}
+
+.SplitPane {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-weight: bold;
 }
