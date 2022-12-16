@@ -5,6 +5,7 @@ import { LayoutProps } from 'src/models';
 
 // Component
 import Header from './Header';
+import Footer from './Footer';
 
 const DefaultLayout = ({ children }: LayoutProps): JSX.Element => {
   return (
@@ -13,6 +14,7 @@ const DefaultLayout = ({ children }: LayoutProps): JSX.Element => {
       <Box as="main" flexGrow={1}>
         {children}
       </Box>
+      <Footer />
     </Container>
   );
 };
