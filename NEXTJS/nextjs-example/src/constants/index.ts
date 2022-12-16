@@ -32,6 +32,25 @@ export const PAGE_ROUTES = {
   EVENTS: '/events',
 };
 
+export const ROUTE_LIST = [
+  {
+    label: 'Home',
+    path: '/',
+  },
+  {
+    label: 'Events',
+    path: '/events',
+  },
+  {
+    label: 'About',
+    path: '/about',
+  },
+  {
+    label: 'NextJS',
+    path: '/nextjs',
+  },
+];
+
 export const MESSAGES = {
   NETWORK_ERROR: 'Network error. Please try again later.',
   ERROR: 'Something went wrong!',
