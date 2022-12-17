@@ -1,7 +1,7 @@
 import { extendTheme } from '@chakra-ui/react';
 
-import { breakpoints, colors, styles, textStyles } from 'src/themes';
-import { Button, Container, Heading } from 'src/themes/components';
+import { breakpoints, colors, styles, textStyles, space, sizes } from 'src/themes';
+import { Button, Card, Container, Heading } from 'src/themes/components';
 
 export const CHAKRA_THEME = extendTheme({
   config: {
@@ -17,6 +17,7 @@ export const CHAKRA_THEME = extendTheme({
 
   components: {
     Button,
+    Card,
     Container,
     Heading,
   },
@@ -25,4 +26,6 @@ export const CHAKRA_THEME = extendTheme({
   colors,
   styles,
   textStyles,
+  space,
+  sizes,
 });
