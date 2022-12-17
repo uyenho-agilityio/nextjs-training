@@ -11,7 +11,7 @@ const DefaultLayout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <Container>
       <Header />
-      <Box as="main" flexGrow={1}>
+      <Box as="main" my={10}>
         {children}
       </Box>
       <Footer />
