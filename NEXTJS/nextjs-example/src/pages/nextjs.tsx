@@ -1,13 +1,13 @@
 import { Box, Flex, Code } from '@chakra-ui/react';
 import Link from 'next/link';
 
-import { SEO_DATA, VERCEL_LOGO } from 'src/constants';
-import { NextPageWithLayout } from 'src/models';
+import { PAGE_ROUTES, SEO_DATA, VERCEL_LOGO } from 'src/constants';
 import { Image, SEO, Text, Title } from 'src/components';
+import { EmptyLayout } from 'src/layouts';
 
 import styles from 'src/styles/Home.module.css';
 
-const NextJS: NextPageWithLayout = (): JSX.Element => {
+const NextJS = (): JSX.Element => {
   return (
     <>
       {/* <Head>
@@ -60,19 +60,25 @@ const NextJS: NextPageWithLayout = (): JSX.Element => {
             <Text>Instantly deploy your Next.js site to a public URL with Vercel.</Text>
           </Link>
         </Box>
-      </Box>
 
-      <Flex as="footer" justify="center" align="center">
-        <Link
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <Image {...VERCEL_LOGO} display="inline-block" />
+        <Flex as="footer" justify="center" align="center" flexGrow={1}>
+          <Link
+            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Powered by <Image {...VERCEL_LOGO} display="inline-block" />
+          </Link>
+        </Flex>
+
+        <Link href={PAGE_ROUTES.HOME}>
+          <Title color="secondary-cl">GO HOME</Title>
         </Link>
-      </Flex>
+      </Box>
     </>
   );
 };
+
+NextJS.Layout = EmptyLayout;
 
 export default NextJS;
