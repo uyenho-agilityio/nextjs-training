@@ -8,6 +8,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  images: {
+    domains: ['images.unsplash.com', 'wembleypark.com'],
+  },
 };
 
 module.exports = nextConfig;
