@@ -73,3 +73,5 @@ export const SEO_DATA = {
   thumbnailUrl:
     'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/1200px-Nextjs-logo.svg.png',
 };
+
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
