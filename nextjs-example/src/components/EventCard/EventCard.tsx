@@ -13,7 +13,7 @@ const EventCard = ({ event }: { event: Event }): JSX.Element => {
   return (
     <Suspense fallback={<Loading />}>
       <ChakraLink as={Link} key={event.id} href={`/events/${event.id}`}>
-        <Card {...event} width={400} height={350} />
+        <Card {...event} width={400} height={350} display="none" />
       </ChakraLink>
     </Suspense>
   );
