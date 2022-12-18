@@ -1,17 +1,17 @@
 import { Wrap } from '@chakra-ui/react';
 
 // Model
-import { Event } from 'src/models';
+import { CateEvent } from 'src/models';
 
 // Components
 import { Title } from 'src/components';
-import CateEventCard from './EventCard';
+import CateEventCard from './CateEventCard';
 
 const CateEventList = ({
   data,
   pageName,
 }: {
-  data: Event[];
+  data: CateEvent[];
   pageName: string | string[];
 }): JSX.Element => {
   return (
@@ -19,8 +19,8 @@ const CateEventList = ({
       <Title mb={5}>Events in {pageName}</Title>
 
       <Wrap className="cat_events">
-        {(data || []).map((event: Event) => (
-          <CateEventCard key={event.id} event={event} />
+        {(data || []).map((cateEvent: CateEvent) => (
+          <CateEventCard key={cateEvent.id} cateEvent={cateEvent} />
         ))}
       </Wrap>
     </>

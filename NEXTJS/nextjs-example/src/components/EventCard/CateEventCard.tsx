@@ -9,13 +9,13 @@ import { CateEvent } from 'src/models';
 import { Loading } from 'src/components';
 const Card = lazy(() => import('src/components').then(module => ({ default: module.Card })));
 
-const CateEventCard = ({ event }: { event: CateEvent }): JSX.Element => {
-  const { id, city } = event;
+const CateEventCard = ({ cateEvent }: { cateEvent: CateEvent }): JSX.Element => {
+  const { id, city } = cateEvent;
 
   return (
     <Suspense fallback={<Loading />}>
       <ChakraLink as={Link} key={id} href={`/events/${city}/${id}`}>
-        <Card {...event} width={300} height={300} />
+        <Card {...cateEvent} width={300} height={300} />
       </ChakraLink>
     </Suspense>
   );
