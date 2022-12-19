@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps, GetStaticProps } from 'next';
 
 // Model
 import { ApiPath, Event, NextPageWithLayout } from 'src/models';
@@ -28,7 +28,18 @@ const Home = ({ data }: EventsPageProps): JSX.Element => {
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<EventsPageProps> = async () => {
+// export const getStaticProps: GetStaticProps<EventsPageProps> = async () => {
+//   const response = await eventService.get<AxiosResponse<Event[]>>(ApiPath.Events);
+//   const result = response.data;
+
+//   return {
+//     props: {
+//       data: result,
+//     },
+//   };
+// };
+
+export const getServerSideProps: GetServerSideProps<EventsPageProps> = async () => {
   const response = await eventService.get<AxiosResponse<Event[]>>(ApiPath.Events);
   const result = response.data;
 
