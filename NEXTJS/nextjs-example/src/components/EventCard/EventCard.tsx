@@ -1,5 +1,6 @@
 import { Link as ChakraLink } from '@chakra-ui/react';
-import React, { lazy, Suspense } from 'react';
+import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 
 // Model
@@ -7,7 +8,7 @@ import { Event } from 'src/models';
 
 // Components
 import { Loading } from 'src/components';
-const Card = lazy(() => import('src/components').then(module => ({ default: module.Card })));
+const Card = dynamic(() => import('src/components').then(module => module.Card));
 
 const EventCard = ({ event }: { event: Event }): JSX.Element => {
   return (

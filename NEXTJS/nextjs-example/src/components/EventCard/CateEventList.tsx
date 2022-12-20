@@ -16,9 +16,11 @@ const CateEventList = ({
 }): JSX.Element => {
   return (
     <>
-      <Title mb={5}>Events in {pageName}</Title>
+      <Title mb={5} ml={{ base: '45px', md: '0' }}>
+        Events in {pageName}
+      </Title>
 
-      <Wrap className="cat_events">
+      <Wrap className="cat_events" justify={{ base: 'center', md: 'flex-start' }} spacing="32px">
         {(data || []).map((cateEvent: CateEvent) => (
           <CateEventCard key={cateEvent.id} cateEvent={cateEvent} />
         ))}
