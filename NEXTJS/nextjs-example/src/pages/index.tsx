@@ -17,7 +17,7 @@ type EventsPageProps = {
   data: Event[];
 };
 
-const Home = ({ data }: EventsPageProps): JSX.Element => {
+const Home: NextPageWithLayout<EventsPageProps> = ({ data }): JSX.Element => {
   return (
     <>
       <SEO data={SEO_DATA} />
