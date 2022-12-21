@@ -20,8 +20,6 @@
     "@chakra-ui/react": "^2.4.3",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@fontsource/nunito": "^4.5.11",
-    "@fontsource/ubuntu": "^4.5.11",
     "@next/font": "^13.0.6",
     "@types/node": "18.11.12",
     "@types/react": "18.0.26",

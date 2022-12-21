@@ -3,3 +3,4 @@ export { colors } from './colors';
 export { styles } from './styles';
 export { textStyles } from './typography';
 export { sizes, space } from './metrics';
+export { default as Fonts } from './Fonts';
