@@ -35,7 +35,7 @@ Continue.args = {
 export const BackToCourses = Template.bind({});
 BackToCourses.args = {
   leftIcon: <ArrowBackIcon />,
-  text: TEXT.BACK_TO_COURSE,
+  text: TEXT.BACK_HOME,
   variant: 'ghost',
   bg: 'inherit',
 };
