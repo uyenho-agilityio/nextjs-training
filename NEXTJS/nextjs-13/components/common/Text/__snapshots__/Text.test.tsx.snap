@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text render should render text component with default props 1`] = `
+<div>
+  <p
+    class="chakra-text css-0"
+  >
+    Sign in
+  </p>
+</div>
+`;

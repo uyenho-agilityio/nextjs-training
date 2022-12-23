@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image render should render image component with default props 1`] = `
+<div>
+  <div
+    class="group css-dfpqc0"
+  >
+    <img
+      alt="Vercel Logo"
+      data-nimg="1"
+      decoding="async"
+      height="16"
+      loading="lazy"
+      src="/images/vercel.svg"
+      srcset="/images/vercel.svg 1x, /images/vercel.svg 2x"
+      style="color: transparent;"
+      width="72"
+    />
+  </div>
+</div>
+`;

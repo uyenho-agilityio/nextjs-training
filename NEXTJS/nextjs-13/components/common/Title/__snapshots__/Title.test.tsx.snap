@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title render should render title component with default props 1`] = `
+<div>
+  <h2
+    class="chakra-heading css-0"
+  >
+    Academy
+  </h2>
+</div>
+`;

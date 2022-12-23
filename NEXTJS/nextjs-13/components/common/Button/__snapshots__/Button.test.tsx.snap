@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button render should render button component with default props 1`] = `
+<div>
+  <button
+    class="chakra-button css-4xx2wk"
+    type="button"
+  >
+    Continue
+  </button>
+</div>
+`;
