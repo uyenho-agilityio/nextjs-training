@@ -6,7 +6,7 @@ import Head from './head';
 
 import { CHAKRA_THEME } from 'themes/chakra';
 import { SEO_DATA } from 'constants/index';
-import { ErrorBoundary } from 'components';
+import { ErrorBoundary, Footer, Header } from 'components';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -25,10 +25,10 @@ const RootLayout = ({ children }: LayoutProps): JSX.Element => {
         <ChakraProvider theme={CHAKRA_THEME}>
           {/* <ColorModeScript initialColorMode={CHAKRA_THEME.config.initialColorMode} /> */}
           <ErrorBoundary>
-            <Container>
-              {/* <Header /> */}
+            <Container my={5}>
+              <Header />
               <Box as="main">{children}</Box>
-              {/* <Footer /> */}
+              <Footer />
             </Container>
           </ErrorBoundary>
         </ChakraProvider>

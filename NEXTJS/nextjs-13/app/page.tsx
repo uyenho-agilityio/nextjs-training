@@ -1,7 +1,7 @@
 import HomePage from './HomePage';
 
-const Home = (): JSX.Element => {
+const Page = (): JSX.Element => {
   return <HomePage />;
 };
 
-export default Home;
+export default Page;

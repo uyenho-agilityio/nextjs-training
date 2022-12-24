@@ -5,9 +5,13 @@ import { NextPage } from 'next';
 import NextLink from 'next/link';
 import Image from 'next/image';
 
+import styles from './page.module.css';
 import { Title, Text } from 'components';
 
-import styles from './page.module.css';
+// dynamic import
+// const Text = dynamic(() => import('components').then(mod => mod.Text), {
+//   loading: () => <Loading />,
+// });
 
 const HomePage: NextPage = (): JSX.Element => {
   return (
