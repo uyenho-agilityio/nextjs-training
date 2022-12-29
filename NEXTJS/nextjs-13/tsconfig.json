@@ -30,10 +30,9 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
-    "next.config.js",
+    "next.config.cjs",
     "jest.config.cjs",
-    ".next/types/**/*.ts",
-    "components/Footer"
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules", ".next", ".vercel", "out"]
 }
