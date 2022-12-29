@@ -6,19 +6,13 @@ const nextConfig = {
   },
 
   images: {
-    domains: ['/public/images'],
-    // unoptimized: true,
+    domains: [
+      '/public/images',
+      'images.unsplash.com',
+      'wembleypark.com',
+      'hydeparkwinterwonderland.com',
+    ],
   },
-
-  // async exportPathMap(defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
-  //   const routes = {
-  //     '/': { page: '/' },
-  //     // '/about': { page: '/about' },
-  //     // '/events/index': { page: '/events' },
-  //   };
-
-  //   return routes;
-  // },
 };
 
 module.exports = nextConfig;
