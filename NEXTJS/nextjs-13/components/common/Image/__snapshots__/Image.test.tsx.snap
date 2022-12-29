@@ -6,15 +6,14 @@ exports[`Image render should render image component with default props 1`] = `
     class="group css-dfpqc0"
   >
     <img
-      alt="Vercel Logo"
+      alt="Logo"
       data-nimg="1"
       decoding="async"
-      height="16"
-      loading="lazy"
-      src="/images/vercel.svg"
-      srcset="/images/vercel.svg 1x, /images/vercel.svg 2x"
+      height="32"
+      src="/images/logo.svg"
+      srcset="/images/logo.svg 1x, /images/logo.svg 2x"
       style="color: transparent;"
-      width="72"
+      width="32"
     />
   </div>
 </div>

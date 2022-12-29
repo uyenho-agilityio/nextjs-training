@@ -5,17 +5,17 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { Image } from './Image';
 
 // Constant
-import { VERCEL_LOGO } from 'constants/index';
+import { LOGO } from 'constants/index';
 
 describe('Image render', () => {
   test('should render image component with default props', () => {
-    const { container } = render(<Image {...VERCEL_LOGO} />);
+    const { container } = render(<Image {...LOGO} />);
     expect(container).toMatchSnapshot();
   });
 
   test('should simulate click event and expect mock function to be called', () => {
     const mockOnClick = jest.fn();
-    render(<Image onClick={mockOnClick} {...VERCEL_LOGO} />);
+    render(<Image onClick={mockOnClick} {...LOGO} />);
 
     const button = screen.getByAltText(/logo/i);
     fireEvent.click(button);
