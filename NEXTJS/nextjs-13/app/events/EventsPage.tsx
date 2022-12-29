@@ -1,12 +1,21 @@
 'use client';
+// Lib
+import dynamic from 'next/dynamic';
 
-import { Box } from '@chakra-ui/react';
+// Model
+import { Event } from 'models';
 
-const EventsPage = (): JSX.Element => {
+// Components
+import { Text } from 'components';
+const EventList = dynamic(() => import('components').then(mod => mod.EventList));
+
+type EventsProps = {
+  data: Event[];
+};
+
+const EventsPage = ({ data }: EventsProps): JSX.Element => {
   return (
-    <Box textStyle="title" my={50}>
-      Events Page
-    </Box>
+    <>{data.length > 0 ? <EventList data={data} /> : <Text textAlign="center">No Events</Text>}</>
   );
 };
 
