@@ -1,5 +1,5 @@
-import { Container, Box } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Container, Box, Link } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import React, { ReactNode } from 'react';
 
 // Constant
@@ -36,7 +36,9 @@ class ErrorBoundary extends React.Component<Props, State> {
           </Title>
 
           <Box textTransform="uppercase" color="red">
-            <Link href={PAGE_ROUTES.HOME}>{TEXT.BACK_HOME}</Link>
+            <Link as={NextLink} href={PAGE_ROUTES.HOME}>
+              {TEXT.BACK_HOME}
+            </Link>
           </Box>
         </Container>
       );

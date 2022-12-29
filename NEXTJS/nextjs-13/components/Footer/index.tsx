@@ -1,9 +1,11 @@
 import { Box } from '@chakra-ui/react';
 
+import { Text } from 'components/common';
+
 const Footer = (): JSX.Element => {
   return (
     <Box as="footer" textAlign="center">
-      <Box as="p"> © 2022 - An Example Built with Next.js </Box>
+      <Text> © 2022 - An Example Built with Next.js </Text>
     </Box>
   );
 };

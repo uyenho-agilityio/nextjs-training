@@ -5,7 +5,7 @@ import { ReactNode } from 'react';
 // Type
 import { Event } from 'models';
 
-// Component
+// Components
 import { Image, Text, Title } from 'components';
 
 interface CardProps extends Event {
