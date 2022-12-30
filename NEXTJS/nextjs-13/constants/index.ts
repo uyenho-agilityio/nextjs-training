@@ -56,3 +56,4 @@ export const SEO_DATA = {
 };
 
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+export const LOCAL_BASE_URL = process.env.NEXT_PUBLIC_LOCAL_BASE_URL;
