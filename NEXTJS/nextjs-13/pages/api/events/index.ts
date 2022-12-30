@@ -1,8 +1,8 @@
 import { AxiosResponse } from 'axios';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { ApiPath, Event } from 'models';
-import eventService from 'services';
+import { ApiPath, Event } from '@webapp/models';
+import eventService from '@webapp/services';
 
 type Data = { message: string; data: Event[] } | { error: string };
 

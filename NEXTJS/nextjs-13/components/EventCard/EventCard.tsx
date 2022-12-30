@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Event } from 'models';
 
 // Component
-import { Card } from 'components/common';
+import { Card } from '@webapp/components/common';
 
 const EventCard = ({ event }: { event: Event }): JSX.Element => {
   return (

@@ -1,7 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import React from 'react';
 
-import { CHAKRA_THEME } from 'themes/chakra.ts';
+import { CHAKRA_THEME } from '@webapp/themes/chakra';
 
 import * as NextImage from 'next/image';
 const OriginalNextImage = NextImage.default;

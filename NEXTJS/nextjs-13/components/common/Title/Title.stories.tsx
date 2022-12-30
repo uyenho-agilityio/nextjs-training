@@ -5,7 +5,7 @@ import Storybook from '@storybook/react';
 import { Title } from './Title';
 
 // Constants
-import { TEXT } from 'constants/index';
+import { TEXT } from '@webapp/constants';
 
 export default {
   title: 'Components/Title',

@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react';
 
-import { Text } from 'components/common';
+import { Text } from '@webapp/components/common';
 
 const Footer = (): JSX.Element => {
   return (

@@ -2,8 +2,8 @@ import { extendTheme } from '@chakra-ui/react';
 import { NextFont } from '@next/font/dist/types';
 import { Nunito, Poppins } from '@next/font/google';
 
-import * as components from 'themes/components';
-import * as customTheme from 'themes';
+import * as components from '@webapp/themes/components';
+import * as customTheme from '@webapp/themes';
 
 // FIXME: error when running storybook with @next/font
 const nunito: NextFont = Nunito({ weight: ['400', '500', '700'] });

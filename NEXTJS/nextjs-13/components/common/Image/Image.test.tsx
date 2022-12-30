@@ -5,7 +5,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { Image } from './Image';
 
 // Constant
-import { LOGO } from 'constants/index';
+import { LOGO } from '@webapp/constants';
 
 describe('Image render', () => {
   test('should render image component with default props', () => {

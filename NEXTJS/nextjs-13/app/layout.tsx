@@ -4,10 +4,10 @@
 import { ChakraProvider, Container, Box } from '@chakra-ui/react';
 
 // themes
-import { CHAKRA_THEME } from 'themes/chakra';
+import { CHAKRA_THEME } from '@webapp/themes/chakra';
 
 // Components
-import { ErrorBoundary, Footer, Header } from 'components';
+import { ErrorBoundary, Footer, Header } from '@webapp/components';
 
 type LayoutProps = {
   children: React.ReactNode;

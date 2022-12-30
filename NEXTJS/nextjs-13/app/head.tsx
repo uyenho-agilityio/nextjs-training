@@ -1,5 +1,5 @@
 // Constant
-import { SEO_DATA as data } from 'constants/index';
+import { SEO_DATA as data } from '@webapp/constants';
 
 const Head = (): JSX.Element => {
   const { title, description, icon, url, thumbnailUrl } = data;

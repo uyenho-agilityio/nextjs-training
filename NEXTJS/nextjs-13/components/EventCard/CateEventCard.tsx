@@ -2,10 +2,10 @@ import { Link as ChakraLink } from '@chakra-ui/react';
 import Link from 'next/link';
 
 // Model
-import { CateEvent } from 'models';
+import { CateEvent } from '@webapp/models';
 
 // Component
-import { Card } from 'components/common';
+import { Card } from '@webapp/components';
 
 const CateEventCard = ({ cateEvent }: { cateEvent: CateEvent }): JSX.Element => {
   const { id, city } = cateEvent;

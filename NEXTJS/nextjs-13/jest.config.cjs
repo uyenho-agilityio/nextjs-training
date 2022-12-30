@@ -2,7 +2,7 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   testEnvironment: 'jsdom',
-  preset: 'ts-jest',
+  // preset: 'ts-jest',
   collectCoverage: true,
   coverageProvider: 'v8',
   // collectCoverageFrom: [
@@ -26,6 +26,7 @@ module.exports = {
     '^.+\\.module\\.(css)$': 'identity-obj-proxy',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       'test-file-stub',
-    '/^(.*)$/': '<rootDir>/$1',
+    // '/^(.*)$/': '<rootDir>/$1',
+    '^@webapp/(.*)$': '<rootDir>/$1',
   },
 };

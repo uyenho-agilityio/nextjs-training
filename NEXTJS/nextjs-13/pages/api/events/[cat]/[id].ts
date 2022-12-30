@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { Event } from 'models';
+import { Event } from '@webapp/models';
 
 type Data = { message: string; data: Event } | { error: string };
 

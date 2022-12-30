@@ -12,7 +12,28 @@ const nextConfig = {
       'wembleypark.com',
       'hydeparkwinterwonderland.com',
     ],
+    allowFutureImage: true,
+    // unoptimized: true,
   },
+
+  // rewrites() {
+  //   return [
+  //     {
+  //       source: '/about',
+  //       destination: '/about-us',
+  //     },
+  //   ];
+  // },
+
+  // async exportPathMap(defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
+  //   const routes = {
+  //     '/': { page: '/' },
+  //     // '/about': { page: '/about' },
+  //     // '/events/page': { page: '/events' },
+  //   };
+
+  //   return routes;
+  // },
 };
 
 module.exports = nextConfig;

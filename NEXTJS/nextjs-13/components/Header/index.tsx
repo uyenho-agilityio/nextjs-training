@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // Constants
-import { LOGO, ROUTE_LIST } from 'constants/index';
+import { LOGO, ROUTE_LIST } from '@webapp/constants';
 
 const Header = (): JSX.Element => {
   const pathname = usePathname();

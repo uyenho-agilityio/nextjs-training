@@ -3,7 +3,7 @@ import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons';
 import Storybook from '@storybook/react';
 
 // Constant
-import { TEXT } from 'constants/index';
+import { TEXT } from '@webapp/constants';
 
 // Component
 import { Button } from './Button';

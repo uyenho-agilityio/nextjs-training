@@ -5,7 +5,7 @@ import Storybook from '@storybook/react';
 import { Image } from './Image';
 
 // Constant
-import { PAGE_404 } from 'constants/index';
+import { PAGE_404 } from '@webapp/constants';
 
 export default {
   title: 'Components/Image',

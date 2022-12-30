@@ -4,7 +4,7 @@ import NextImage, { ImageProps } from 'next/image';
 import React from 'react';
 
 // Utils
-import { generateBlurDataUrl } from 'utils';
+import { generateBlurDataUrl } from '@webapp/utils';
 
 // const loaderImage = (resolverProps: ImageLoaderProps): string => {
 //   return `${resolverProps.src}?w=${resolverProps.width}&q=${resolverProps.quality ?? 80}`;

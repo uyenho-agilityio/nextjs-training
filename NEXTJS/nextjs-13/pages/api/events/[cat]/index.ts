@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { CateEvent } from 'models';
+import { CateEvent } from '@webapp/models';
 
 type Data = { message: string; data: CateEvent[] } | { error: string };
 

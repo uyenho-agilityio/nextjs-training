@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { BASE_URL } from 'constants/index';
+import { BASE_URL } from '@webapp/constants';
 
 class EventService {
   private axiosClient = axios.create({

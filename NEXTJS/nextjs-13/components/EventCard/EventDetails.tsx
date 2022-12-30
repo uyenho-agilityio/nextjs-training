@@ -1,10 +1,10 @@
 import { Box } from '@chakra-ui/react';
 
 // Model
-import { CateEvent } from 'models';
+import { CateEvent } from '@webapp/models';
 
 // Components
-import { Image, Text, Title } from 'components';
+import { Image, Text, Title } from '@webapp/components';
 
 const EventDetails = ({ data }: { data: CateEvent }): JSX.Element => {
   return (

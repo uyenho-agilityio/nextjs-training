@@ -3,10 +3,10 @@ import { Box, useStyleConfig, ChakraProps } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 // Type
-import { Event } from 'models';
+import { Event } from '@webapp/models';
 
 // Components
-import { Image, Text, Title } from 'components';
+import { Image, Text, Title } from '@webapp/components';
 
 interface CardProps extends Event {
   size?: string;

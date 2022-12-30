@@ -3,7 +3,7 @@
 import { Flex } from '@chakra-ui/react';
 
 // Model
-import { Event } from 'models';
+import { Event } from '@webapp/models';
 
 // Component
 import EventCard from './EventCard';

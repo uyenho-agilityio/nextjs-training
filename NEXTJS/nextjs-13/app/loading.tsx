@@ -1,6 +1,6 @@
 'use client';
 
-import { Loading as Spinner } from 'components';
+import { Loading as Spinner } from '@webapp/components';
 
 const Loading = (): JSX.Element => {
   return <Spinner />;

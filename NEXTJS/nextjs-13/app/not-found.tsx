@@ -6,10 +6,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // Constants
-import { TEXT, PAGE_404, PAGE_ROUTES } from 'constants/index';
+import { TEXT, PAGE_404, PAGE_ROUTES } from '@webapp/constants';
 
 // Component
-import { Title } from 'components';
+import { Title } from '@webapp/components';
 
 const NotFound = (): JSX.Element => {
   return (

@@ -3,10 +3,10 @@ import NextLink from 'next/link';
 import React, { ReactNode } from 'react';
 
 // Constant
-import { TEXT, PAGE_ROUTES } from 'constants/index';
+import { TEXT, PAGE_ROUTES } from '@webapp/constants';
 
 // Component
-import { Title } from 'components';
+import { Title } from '@webapp/components';
 
 type Props = {
   children: ReactNode;

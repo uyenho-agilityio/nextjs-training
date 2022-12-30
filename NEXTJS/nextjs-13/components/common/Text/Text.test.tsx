@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 import { Text } from './Text';
 
 // Constant
-import { TEXT } from 'constants/index';
+import { TEXT } from '@webapp/constants';
 
 describe('Text render', () => {
   test('should render text component with default props', () => {

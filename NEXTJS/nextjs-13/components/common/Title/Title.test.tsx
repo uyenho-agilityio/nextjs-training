@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 import { Title } from './Title';
 
 // Constant
-import { TEXT } from 'constants/index';
+import { TEXT } from '@webapp/constants';
 
 describe('Title render', () => {
   test('should render title component with default props', () => {

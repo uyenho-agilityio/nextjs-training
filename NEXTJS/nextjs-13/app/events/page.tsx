@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { ApiPath, Event } from 'models';
 
 // Constants
-import { BASE_URL } from 'constants/index';
+import { BASE_URL } from '@webapp/constants';
 
 // Component
 import EventsPage from './EventsPage';

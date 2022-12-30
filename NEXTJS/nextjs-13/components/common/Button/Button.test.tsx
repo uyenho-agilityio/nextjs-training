@@ -5,7 +5,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { Button } from './Button';
 
 // Constant
-import { TEXT } from 'constants/index';
+import { TEXT } from '@webapp/constants';
 
 describe('Button render', () => {
   test('should render button component with default props', () => {

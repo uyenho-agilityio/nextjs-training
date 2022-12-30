@@ -6,8 +6,8 @@ import dynamic from 'next/dynamic';
 import { Event } from 'models';
 
 // Components
-import { Text } from 'components';
-const EventList = dynamic(() => import('components').then(mod => mod.EventList));
+import { Text } from '@webapp/components';
+const EventList = dynamic(() => import('@webapp/components').then(mod => mod.EventList));
 
 type EventsProps = {
   data: Event[];

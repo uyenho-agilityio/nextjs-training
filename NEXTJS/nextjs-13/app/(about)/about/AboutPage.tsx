@@ -1,9 +1,11 @@
 'use client';
 
+// Libs
 import { Box, Link } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
-import { PAGE_ROUTES, TEXT } from 'constants/index';
+// Component
+import { PAGE_ROUTES, TEXT } from '@webapp/constants';
 
 const AboutPage = (): JSX.Element => {
   return (

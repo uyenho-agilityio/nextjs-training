@@ -2,7 +2,7 @@
 
 import { ChakraProvider, Container, Box } from '@chakra-ui/react';
 
-import { CHAKRA_THEME } from 'themes/chakra';
+import { CHAKRA_THEME } from '@webapp/themes/chakra';
 
 type LayoutProps = {
   children: React.ReactNode;

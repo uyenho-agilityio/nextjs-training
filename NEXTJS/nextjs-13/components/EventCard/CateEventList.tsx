@@ -4,10 +4,10 @@
 import { Wrap } from '@chakra-ui/react';
 
 // Model
-import { CateEvent } from 'models';
+import { CateEvent } from '@webapp/models';
 
 // Components
-import { Title } from 'components';
+import { Title } from '@webapp/components';
 import CateEventCard from './CateEventCard';
 
 const CateEventList = ({

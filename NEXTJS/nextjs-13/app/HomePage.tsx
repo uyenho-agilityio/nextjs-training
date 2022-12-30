@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 import Image from 'next/image';
 
 import styles from './page.module.css';
-import { Title, Text } from 'components';
+import { Title, Text } from '@webapp/components';
 
 // dynamic import
 // const Text = dynamic(() => import('components').then(mod => mod.Text), {
