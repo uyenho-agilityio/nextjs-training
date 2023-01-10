@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner renders should render loading component 1`] = `
+<div>
+  <div
+    class="chakra-container css-0"
+  >
+    <div
+      class="chakra-spinner css-17pvw76"
+    >
+      <span
+        class="css-8b45rq"
+      >
+        Loading...
+      </span>
+    </div>
+  </div>
+</div>
+`;
