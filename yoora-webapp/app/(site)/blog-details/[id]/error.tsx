@@ -1,7 +1,8 @@
 'use client';
 
-// Lib
+// Libs
 import { Container } from '@chakra-ui/react';
+import { useCallback } from 'react';
 
 // Components
 import { Button, Title } from '@webapp/components';
@@ -12,13 +13,16 @@ type ErrorProps = {
 };
 
 const Error = ({ error, reset }: ErrorProps): JSX.Element => {
+  const { name, message } = error || {};
+  const handleReset = useCallback(() => reset(), [message]);
+
   return (
     <Container size="sm" variant="default">
       <Title>
-        `${error.name} : ${error.message}
+        `${name} : ${message}
       </Title>
 
-      <Button onClick={() => reset()}>Reset</Button>
+      <Button onClick={handleReset}>Reset</Button>
     </Container>
   );
 };
