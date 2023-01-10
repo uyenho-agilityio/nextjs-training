@@ -1,15 +1,15 @@
 import * as NextImage from 'next/image';
-// import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 
-// import { CHAKRA_THEME } from '@webapp/themes/chakra';
+import { CHAKRA_THEME } from '@webapp/themes/chakra';
 
-// export const decorators = [
-//   Story => (
-//     <ChakraProvider theme={CHAKRA_THEME}>
-//       <Story />
-//     </ChakraProvider>
-//   ),
-// ];
+export const decorators = [
+  Story => (
+    <ChakraProvider theme={CHAKRA_THEME}>
+      <Story />
+    </ChakraProvider>
+  ),
+];
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
