@@ -14,13 +14,7 @@ import { Title } from '@webapp/components';
 const NotFound = (): JSX.Element => {
   return (
     <Flex align="center" direction="column">
-      <Image
-        {...PAGE_404}
-        priority
-        // sizes="(min-width: 60em) 24vw,
-        //             (min-width: 28em) 45vw,
-        //             100vw"
-      />
+      <Image {...PAGE_404} priority />
 
       <Link href={PAGE_ROUTES.HOME}>
         <Title textAlign="center" size="lg" mt={10}>
