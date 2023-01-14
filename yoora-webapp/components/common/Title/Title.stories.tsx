@@ -5,7 +5,7 @@ import Storybook from '@storybook/react';
 import { TEXT } from '@webapp/constants';
 
 // Component
-import { Title } from './Title';
+import { Title } from '.';
 
 export default {
   title: 'Components/Title',
@@ -13,9 +13,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Storybook.ComponentMeta<typeof Title>;
+} as Storybook.Meta<typeof Title>;
 
-const Template: Storybook.ComponentStory<typeof Title> = args => <Title {...args} />;
+const Template: Storybook.StoryFn<typeof Title> = args => <Title {...args} />;
 
 export const HeadBack = Template.bind({});
 HeadBack.args = {

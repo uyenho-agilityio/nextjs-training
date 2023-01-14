@@ -2,7 +2,7 @@
 import Storybook from '@storybook/react';
 
 // Component
-import { Select } from './Select';
+import { Select } from '.';
 
 // Constant
 import { LANGUAGE_OPTIONS } from '@webapp/constants';
@@ -14,9 +14,9 @@ export default {
     backgroundColor: { control: 'color' },
     color: { control: 'color' },
   },
-} as Storybook.ComponentMeta<typeof Select>;
+} as Storybook.Meta<typeof Select>;
 
-const Template: Storybook.ComponentStory<typeof Select> = args => <Select {...args} />;
+const Template: Storybook.StoryFn<typeof Select> = args => <Select {...args} />;
 
 export const LanguageSelected = Template.bind({});
 LanguageSelected.args = {

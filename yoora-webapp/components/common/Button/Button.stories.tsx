@@ -6,7 +6,7 @@ import Storybook from '@storybook/react';
 import { TEXT } from '@webapp/constants';
 
 // Component
-import { Button } from './Button';
+import { Button } from '.';
 
 export default {
   title: 'Components/Button',
@@ -22,18 +22,20 @@ export default {
       control: { type: 'radio' },
     },
   },
-} as Storybook.ComponentMeta<typeof Button>;
+} as Storybook.Meta<typeof Button>;
 
-const Template: Storybook.ComponentStory<typeof Button> = args => <Button {...args} />;
+const Template: Storybook.StoryFn<typeof Button> = args => <Button {...args} />;
 
 export const TryForFree = Template.bind({});
 TryForFree.args = {
   children: TEXT.TRY_FOR_FREE,
-  rightIcon: <ArrowForwardIcon />,
+  size: 'sm',
+  variant: 'info',
 };
 
 export const SendMessage = Template.bind({});
 SendMessage.args = {
   children: TEXT.SEND,
   rightIcon: <ArrowForwardIcon />,
+  variant: 'success',
 };

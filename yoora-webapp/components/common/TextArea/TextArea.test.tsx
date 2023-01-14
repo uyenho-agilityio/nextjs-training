@@ -2,7 +2,7 @@
 import { render } from '@testing-library/react';
 
 // Component
-import { TextArea } from './TextArea';
+import { TextArea } from '.';
 
 // Constant
 import { MESSAGE } from '@webapp/constants';

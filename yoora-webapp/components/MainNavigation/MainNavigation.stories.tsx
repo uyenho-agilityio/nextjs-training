@@ -2,7 +2,7 @@
 import Storybook from '@storybook/react';
 
 // Component
-import MainNavigation from './MainNavigation';
+import MainNavigation from '.';
 
 export default {
   title: 'Components/MainNavigation',
@@ -11,13 +11,12 @@ export default {
     backgroundColor: { control: 'color' },
     color: { control: 'color' },
   },
-} as Storybook.ComponentMeta<typeof MainNavigation>;
+} as Storybook.Meta<typeof MainNavigation>;
 
-const Template: Storybook.ComponentStory<typeof MainNavigation> = args => (
-  <MainNavigation {...args} />
-);
+const Template: Storybook.StoryFn<typeof MainNavigation> = args => <MainNavigation {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
   size: 'xl',
+  cursor: 'pointer',
 };

@@ -1,3 +1,5 @@
+'use client';
+
 // Lib
 import {
   Textarea as ChakraTextarea,
@@ -13,10 +15,10 @@ type TextareaProps = {
 export const TextArea: React.FC<TextareaProps> = ({ error, ...props }: TextareaProps) => {
   return error ? (
     <FormControl isInvalid={!!error}>
-      <ChakraTextarea {...props} />
+      <ChakraTextarea {...props} resize="none" />
       {error && <FormErrorMessage>{error}</FormErrorMessage>}
     </FormControl>
   ) : (
-    <ChakraTextarea {...props} />
+    <ChakraTextarea {...props} resize="none" />
   );
 };

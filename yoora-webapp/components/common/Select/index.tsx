@@ -43,7 +43,7 @@ const SelectBase: React.FC<SelectProps> = ({
 
 export const Select = memo(SelectBase, (prevProps, nextProps) => {
   return (
-    prevProps.defaultValue === nextProps.defaultValue ||
+    prevProps.defaultValue === nextProps.defaultValue &&
     prevProps.options.length === nextProps.options.length
   );
 });

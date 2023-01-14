@@ -2,7 +2,7 @@
 import Storybook from '@storybook/react';
 
 // Component
-import { Input } from './Input';
+import { Input } from '.';
 
 export default {
   title: 'Components/Input',
@@ -10,9 +10,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Storybook.ComponentMeta<typeof Input>;
+} as Storybook.Meta<typeof Input>;
 
-const Template: Storybook.ComponentStory<typeof Input> = args => <Input {...args} />;
+const Template: Storybook.StoryFn<typeof Input> = args => <Input {...args} />;
 
 export const Name = Template.bind({});
 Name.args = {

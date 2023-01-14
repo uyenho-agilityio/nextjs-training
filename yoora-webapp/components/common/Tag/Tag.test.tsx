@@ -5,7 +5,7 @@ import { render } from '@testing-library/react';
 import { REVENUE_CONTENT } from '@webapp/constants';
 
 // Component
-import { Tag } from './Tag';
+import { Tag } from '.';
 
 describe('Tag renders', () => {
   test('should render tag component with default props', () => {

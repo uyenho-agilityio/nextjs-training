@@ -4,7 +4,7 @@
 import { Button as ChakraButton, ButtonProps as ChakraButtonProps } from '@chakra-ui/react';
 
 type ButtonProps = {
-  size?: 'lg' | 'md' | 'sm' | 'xs';
+  size?: 'lg' | 'md' | 'sm' | 'xs' | string;
   variant?: 'ghost' | 'outline' | 'solid' | 'link' | 'info' | 'success';
   onClick?: () => void;
 } & ChakraButtonProps;

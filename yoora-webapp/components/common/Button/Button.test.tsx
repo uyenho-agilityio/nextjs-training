@@ -2,7 +2,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 
 // Component
-import { Button } from './Button';
+import { Button } from '.';
 
 // Constant
 import { TEXT } from '@webapp/constants';

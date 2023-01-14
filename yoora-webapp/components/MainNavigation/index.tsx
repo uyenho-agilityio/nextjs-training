@@ -59,8 +59,12 @@ const MainNavigationBase: React.FC<MainNavigationProps> = ({
               ))}
 
               <Divider />
-              <Button text={TEXT.LOGIN} size="sm" variant="solid" />
-              <Button text={TEXT.TRY_FOR_FREE} size="sm" variant="info" />
+              <Button size="sm" variant="solid">
+                {TEXT.LOGIN}
+              </Button>
+              <Button size="sm" variant="info">
+                {TEXT.TRY_FOR_FREE}
+              </Button>
             </Box>
           </DrawerBody>
         </DrawerContent>

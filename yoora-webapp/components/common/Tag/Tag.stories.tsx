@@ -1,9 +1,11 @@
 // Libs
 import Storybook from '@storybook/react';
+
+// Constants
 import { FEATURES_CONTENT, REVENUE_CONTENT } from '@webapp/constants';
 
 // Component
-import { Tag } from './Tag';
+import { Tag } from '.';
 
 export default {
   title: 'Components/Tag',
@@ -12,13 +14,20 @@ export default {
     backgroundColor: { control: 'color' },
     color: { control: 'color' },
   },
-} as Storybook.ComponentMeta<typeof Tag>;
+} as Storybook.Meta<typeof Tag>;
 
-const Template: Storybook.ComponentStory<typeof Tag> = args => <Tag {...args} />;
+const Template: Storybook.StoryFn<typeof Tag> = args => <Tag {...args} />;
 
 export const Sales = Template.bind({});
 Sales.args = {
-  text: FEATURES_CONTENT.CARDS[0].tag,
+  text: FEATURES_CONTENT[0].tag,
+  chakraTagProps: { bg: 'third-bg', px: 2, py: 1, borderRadius: '4px' },
+};
+
+export const Information = Template.bind({});
+Information.args = {
+  text: '07 Sep 2022,',
+  extraText: 'by Joshua Nash',
 };
 
 export const WithAvatar = Template.bind({});

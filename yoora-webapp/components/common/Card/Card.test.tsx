@@ -5,7 +5,7 @@ import { render } from '@testing-library/react';
 import { BENEFIT_CONTENT } from '@webapp/constants';
 
 // Component
-import { Card } from './Card';
+import { Card } from '.';
 
 describe('Card renders', () => {
   test('should render card component with default props', () => {

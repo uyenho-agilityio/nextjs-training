@@ -2,7 +2,7 @@
 import { render, screen } from '@testing-library/react';
 
 // Component
-import { Input } from './Input';
+import { Input } from '.';
 
 describe('Input renders', () => {
   test('should render input component with default props', () => {

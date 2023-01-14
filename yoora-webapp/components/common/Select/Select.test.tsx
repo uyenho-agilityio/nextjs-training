@@ -1,12 +1,12 @@
 // Libs
-import { render, screen, act, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 // Constant
 import { LANGUAGE_OPTIONS } from '@webapp/constants';
 
 // Component
-import { Select } from './Select';
+import { Select } from '.';
 
 describe('Select renders', () => {
   test('should render select component with default props', () => {
@@ -20,9 +20,7 @@ describe('Select renders', () => {
     const select = screen.getByRole('combobox');
     expect(await screen.findByRole('option', { name: 'English' })).toBeInTheDocument();
 
-    act(() => {
-      userEvent.selectOptions(select, 'vietnamese');
-    });
+    void userEvent.selectOptions(select, 'vietnamese');
 
     await waitFor(() => {
       expect(select).toHaveValue('vietnamese');

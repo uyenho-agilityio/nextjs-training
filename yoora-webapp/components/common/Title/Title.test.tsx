@@ -2,7 +2,7 @@
 import { render, screen } from '@testing-library/react';
 
 // Component
-import { Title } from './Title';
+import { Title } from '.';
 
 // Constant
 import { TEXT } from '@webapp/constants';

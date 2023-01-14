@@ -10,40 +10,41 @@ import {
   InputGroup as ChakraInputGroup,
   InputGroupProps as ChakraInputGroupProps,
   InputRightElement,
+  Flex,
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { ChangeEvent, FocusEvent, useState } from 'react';
+import { ChangeEvent, FocusEvent, ReactNode, useState } from 'react';
 
 // Component
 import { Button } from '@webapp/components';
 
-type InputType = 'text' | 'email' | 'password';
-
 type InputProps = {
-  type: InputType;
+  type: 'text' | 'email' | 'password';
+  placeholder?: string;
   value?: string;
   error?: string;
-  text?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void;
   chakraInputGroupProps?: ChakraInputGroupProps;
   formControlProps?: FormControlProps;
   chakraInputProps?: ChakraInputProps;
+  rightElement?: ReactNode;
 };
 
 export const InputGroup: React.FC<InputProps> = ({
-  type = 'text',
+  type,
+  placeholder,
   value,
   error,
   onChange,
   onBlur,
-  text,
   chakraInputGroupProps,
   formControlProps,
   chakraInputProps,
+  rightElement,
 }): JSX.Element => {
   const [show, setShow] = useState<boolean>(false);
-  const handleShowPassword = (): void => setShow(!show);
+  const handleToggle = (): void => setShow(!show);
 
   return (
     <ChakraInputGroup {...chakraInputGroupProps}>
@@ -52,6 +53,7 @@ export const InputGroup: React.FC<InputProps> = ({
           <FormControl isInvalid={!!error} {...formControlProps}>
             <ChakraInput
               type={show ? 'text' : 'password'}
+              placeholder={placeholder}
               value={value}
               onChange={onChange}
               onBlur={onBlur}
@@ -61,24 +63,24 @@ export const InputGroup: React.FC<InputProps> = ({
           </FormControl>
           <InputRightElement mr={2}>
             <Button
-              onClick={handleShowPassword}
+              variant="ghost"
+              onClick={handleToggle}
               rightIcon={show ? <ViewOffIcon /> : <ViewIcon />}
             />
           </InputRightElement>
         </>
       ) : (
-        <>
+        <Flex direction={{ base: 'column', lg: 'row' }} align="center" pos="relative">
           <ChakraInput
             type={type}
+            placeholder={placeholder}
             value={value}
             onChange={onChange}
             onBlur={onBlur}
             {...chakraInputProps}
           />
-          <InputRightElement mr={2}>
-            <Button>{text}</Button>
-          </InputRightElement>
-        </>
+          {rightElement}
+        </Flex>
       )}
     </ChakraInputGroup>
   );
