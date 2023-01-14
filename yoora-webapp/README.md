@@ -82,7 +82,7 @@ Build Yoora web app with pages:
 - Before running below commands, please add .env file with this value:
 
 ```
- NEXT_PUBLIC_BASE_URL=...
+ NEXT_BASE_URL=...
 ```
 
 - All commands are run from the root folder, from a terminal:
@@ -95,7 +95,7 @@ Build Yoora web app with pages:
 | `pnpm install`                                           | Install dependencies                              |
 | `pnpm dev`                                               | Start local dev server at `localhost:3000`        |
 | `pnpm build`                                             | Create an optimized production build              |
-| `pnpm start`                                             | Start local production server at `localhost:3001` |
+| `pnpm start`                                             | Start local production server at `localhost:3000` |
 | `pnpm storybook`                                         | Start storybook dev at `localhost:6006`           |
 | `pnpm build-storybook`                                   | Build storybook                                   |
 | `pnpm lint:fix`                                          | Run eslint check code before commit               |
