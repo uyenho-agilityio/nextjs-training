@@ -15,16 +15,12 @@ import { Title, Text, BenefitCard } from '@webapp/components';
 const BenefitSection = (): JSX.Element => {
   return (
     <Container as="section" className="benefit-section" py="72px" color="secondary-cl">
-      <Flex className="abc" direction={{ base: 'column', lg: 'row' }}>
-        <Box>
-          <Title mb="16px">{BENEFIT_CONTENT.TITLE}</Title>
-        </Box>
-        <Box>
-          <Text mb={{ base: '48px', lg: '64px' }}>{BENEFIT_CONTENT.DESCRIPTION}</Text>
-        </Box>
+      <Flex direction={{ base: 'column', lg: 'row' }} align="flex-end">
+        <Title mb={{ base: '16px', lg: 0 }}>{BENEFIT_CONTENT.TITLE}</Title>
+        <Text mb={{ base: '48px', lg: '10px' }}>{BENEFIT_CONTENT.DESCRIPTION}</Text>
       </Flex>
 
-      <Flex direction={{ base: 'column', lg: 'row' }} mt="30px">
+      <Flex direction={{ base: 'column', lg: 'row' }} mt={{ base: '18px', lg: '58px' }}>
         {BENEFIT_CONTENT.CARDS.map(
           (item: {
             id: number;
