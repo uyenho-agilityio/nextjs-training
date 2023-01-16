@@ -20,21 +20,23 @@ export type CardProps = {
 };
 
 export const FeedbackCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
+  const { id, icon, message, image, name, position } = detailsCard;
+
   return (
     <Card
-      key={detailsCard.id}
+      key={id}
       leftChildren={
         <>
-          <Image {...detailsCard.icon} priority />
+          <Image {...icon} priority />
           <Divider my={{ base: '16px', lg: '24px' }} borderColor="border-cl" />
         </>
       }
-      subTitle={detailsCard.message}
+      subTitle={message}
       rightChildren={
         <Tag
-          {...detailsCard.image}
-          text={detailsCard.name}
-          subText={detailsCard.position}
+          {...image}
+          text={name}
+          subText={position}
           boxProps={{ ml: '12px' }}
           chakraTagProps={{ mt: { base: '24px', lg: '48px' } }}
         />

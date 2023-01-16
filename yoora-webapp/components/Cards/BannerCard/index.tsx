@@ -14,15 +14,17 @@ type CardProps = {
 };
 
 export const BannerCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
+  const { tag, date, author } = detailsCard;
+
   return (
     <Card
       {...detailsCard}
-      text={detailsCard.tag}
+      text={tag}
       leftChildren={<Divider my="14px" borderColor="border-cl" />}
       rightChildren={
         <Tag
-          text={detailsCard.date}
-          extraText={detailsCard.author}
+          text={date}
+          extraText={author}
           boxProps={{ mt: '24px', mb: { base: '38px', lg: '46px' } }}
         />
       }

@@ -20,15 +20,17 @@ export type CardProps = {
 };
 
 export const MoreTopicsCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
+  const { tag, image, date, author } = detailsCard;
+
   return (
     <Card
-      text={detailsCard.tag}
+      text={tag}
       leftChildren={
         <>
           <Divider my={{ base: '16px', lg: '24px' }} borderColor="border-cl" />
           <Box maxH="241px">
             <Image
-              {...detailsCard.image}
+              {...image}
               sizes="(min-width: 320px) 100vw, 181px, (min-width: 768px) 100vw, 90px, (min-width: 1440px) 100vw, 241px"
             />
           </Box>
@@ -38,8 +40,8 @@ export const MoreTopicsCard: React.FC<CardProps> = (detailsCard): JSX.Element =>
       boxProps={{ mt: { base: '15px', lg: '20px' } }}
       rightChildren={
         <Tag
-          text={detailsCard.date}
-          extraText={detailsCard.author}
+          text={date}
+          extraText={author}
           chakraTagProps={{ p: 0 }}
           boxProps={{ mt: { base: '16px', lg: '24px' } }}
         />

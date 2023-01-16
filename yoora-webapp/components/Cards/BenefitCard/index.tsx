@@ -18,29 +18,31 @@ type CardProps = {
 };
 
 export const BenefitCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
+  const { id, image } = detailsCard;
+
   return (
     <Card
       {...detailsCard}
       leftChildren={
         <>
           <Image
-            {...detailsCard.image}
+            {...image}
             placeholder="blur"
-            blurDataURL={detailsCard.image.src}
+            blurDataURL={image.src}
             sizes="(min-width: 320px) 100vw, 48px, (min-width: 768px) 100vw, 72px, (min-width: 1440px) 100vw, 72px"
           />
           <Divider
-            mt={{ base: '46px', lg: detailsCard.id == 2 ? '70px' : '56px' }}
-            borderColor={detailsCard.id == 1 ? 'primary-cl' : 'inherit'}
+            mt={{ base: '46px', lg: id == 2 ? '70px' : '56px' }}
+            borderColor={id == 1 ? 'primary-cl' : 'inherit'}
             mb="16px"
           />
         </>
       }
       chakraCardProps={{
         mr: '9px',
-        mt: detailsCard.id == 1 ? '-10px' : '0',
-        bg: detailsCard.id == 1 ? 'third-bg' : 'inherit',
-        color: detailsCard.id == 1 ? 'primary-cl' : 'secondary-cl',
+        mt: id == 1 ? '-10px' : '0',
+        bg: id == 1 ? 'third-bg' : 'inherit',
+        color: id == 1 ? 'primary-cl' : 'secondary-cl',
         variant: 'elevated',
       }}
       cardBodyProps={{ gap: '10px' }}

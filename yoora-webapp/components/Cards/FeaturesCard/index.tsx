@@ -26,18 +26,17 @@ export type CardProps = {
 };
 
 export const FeaturesCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
+  const { tag, list } = detailsCard;
+
   return (
     <Card
       {...detailsCard}
       leftChildren={
-        <Tag
-          text={detailsCard.tag}
-          chakraTagProps={{ bg: 'third-bg', px: 2, py: 1, borderRadius: '4px' }}
-        />
+        <Tag text={tag} chakraTagProps={{ bg: 'third-bg', px: 2, py: 1, borderRadius: '4px' }} />
       }
       rightChildren={
         <List spacing="16px">
-          {detailsCard.list.map(
+          {list.map(
             (list: ListProps): JSX.Element => (
               <ListItem key={list.id} display="flex">
                 <Image {...list.icon} priority />
