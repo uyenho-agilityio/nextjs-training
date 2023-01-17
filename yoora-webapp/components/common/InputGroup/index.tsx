@@ -10,13 +10,12 @@ import {
   InputGroup as ChakraInputGroup,
   InputGroupProps as ChakraInputGroupProps,
   InputRightElement,
-  Flex,
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { ChangeEvent, FocusEvent, ReactNode, useState } from 'react';
 
-// Component
-import { Button } from '@webapp/components';
+// Components
+import { Button, Flex } from '@webapp/components';
 
 type InputProps = {
   type: 'text' | 'email' | 'password';
@@ -70,7 +69,7 @@ export const InputGroup: React.FC<InputProps> = ({
           </InputRightElement>
         </>
       ) : (
-        <Flex direction={{ base: 'column', lg: 'row' }} align="center" pos="relative">
+        <Flex variant="responsive" pos="relative">
           <ChakraInput
             type={type}
             placeholder={placeholder}
