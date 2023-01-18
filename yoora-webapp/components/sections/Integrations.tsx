@@ -1,7 +1,7 @@
 'use client';
 
 // Libs
-import { Container, Box, Flex, Wrap, WrapItem } from '@chakra-ui/react';
+import { Container, Box, Wrap, WrapItem } from '@chakra-ui/react';
 import Image from 'next/image';
 
 // Constant
@@ -11,13 +11,15 @@ import { INTEGRATIONS_CONTENT } from '@webapp/constants';
 import { ImageProps } from '@webapp/types';
 
 // Components
-import { Text, Title } from '@webapp/components';
+import { Flex, Text, Title } from '@webapp/components';
 
 const IntegrationsSection = (): JSX.Element => {
   return (
     <Container as="section" className="integrations-section">
       <Box textAlign="center" pt={{ base: '42px', lg: '72px' }}>
-        <Title mb="24px">{INTEGRATIONS_CONTENT.TITLE}</Title>
+        <Title size="h2" mb="24px">
+          {INTEGRATIONS_CONTENT.TITLE}
+        </Title>
         <Text mb={{ base: '32px', lg: '64px' }}>{INTEGRATIONS_CONTENT.DESCRIPTION}</Text>
       </Box>
 
@@ -52,8 +54,10 @@ const IntegrationsSection = (): JSX.Element => {
           ),
         )}
       </Wrap>
-      <Flex align="center" justify="center" py={{ base: '42px', lg: '72px' }} cursor="pointer">
-        <Text mr="10px">{INTEGRATIONS_CONTENT.TEXT}</Text>
+      <Flex variant="pointer" py={{ base: '42px', lg: '72px' }}>
+        <Text size="sm" fontWeight="medium">
+          {INTEGRATIONS_CONTENT.TEXT}
+        </Text>
         <Image {...INTEGRATIONS_CONTENT.ICON} priority />
       </Flex>
     </Container>

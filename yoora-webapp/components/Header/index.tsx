@@ -21,7 +21,7 @@ const Header = (): JSX.Element => {
 
   return (
     <Container as="header" className="header">
-      <Flex alignItems="center" minWidth="max-content">
+      <Flex minWidth="max-content">
         <Box cursor="pointer" mr={{ base: 'auto', lg: '90px' }}>
           <ChakraLink as={Link} href="/">
             <Image {...LOGO} priority />
@@ -45,7 +45,7 @@ const Header = (): JSX.Element => {
           ))}
         </Box>
 
-        <ButtonGroup display={{ base: 'none', lg: 'block' }} gap={4}>
+        <ButtonGroup display={{ base: 'none', lg: 'block' }}>
           <Button>{TEXT.LOGIN}</Button>
           <Button size="sm" variant="info">
             {TEXT.TRY_FOR_FREE}

@@ -38,7 +38,7 @@ export const Tag: React.FC<TagProps> = ({
         <Image width={width} height={height} alt={alt} src={src} {...imageProps} priority />
       )}
       <Box {...boxProps}>
-        <Text variant="title">
+        <Text size="xs" variant="subTitle">
           {text}{' '}
           {extraText && (
             <Text as="span" variant="subText">
@@ -48,7 +48,7 @@ export const Tag: React.FC<TagProps> = ({
         </Text>
 
         {subText && (
-          <Text variant="subText" mt={1}>
+          <Text size="xs" variant="subText" mt={1}>
             {subText}
           </Text>
         )}

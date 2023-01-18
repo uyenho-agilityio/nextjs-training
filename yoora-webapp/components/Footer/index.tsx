@@ -47,7 +47,7 @@ const Footer = (): JSX.Element => {
         {MENU_LIST.map((menu: MenuList) => (
           <GridItem key={menu.id} colSpan={{ base: 6, lg: 1 }}>
             <ChakraLink as={Link} href="#">
-              <Text size="sm" fontWeight="bold" mb={3}>
+              <Text fontWeight="bold" mb={3}>
                 {menu.title}
               </Text>
             </ChakraLink>

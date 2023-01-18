@@ -10,10 +10,14 @@ import {
 } from '@chakra-ui/react';
 import { ChangeEvent, FocusEvent } from 'react';
 
+// Component
+import { Text } from '@webapp/components';
+
 type InputType = 'text' | 'email' | 'password';
 
 type InputProps = {
   type: InputType;
+  text?: string;
   defaultValue?: string;
   placeholder?: string;
   value?: string;
@@ -26,6 +30,7 @@ type InputProps = {
 
 export const Input: React.FC<InputProps> = ({
   type = 'text',
+  text,
   defaultValue,
   placeholder,
   value,
@@ -35,8 +40,13 @@ export const Input: React.FC<InputProps> = ({
   formControlProps,
   chakraInputProps,
 }): JSX.Element => {
-  return error ? (
+  return (
     <FormControl isInvalid={!!error} {...formControlProps}>
+      {text && (
+        <Text size="xs" variant="highlight">
+          {text}
+        </Text>
+      )}
       <ChakraInput
         type={type}
         defaultValue={defaultValue}
@@ -46,17 +56,11 @@ export const Input: React.FC<InputProps> = ({
         onBlur={onBlur}
         {...chakraInputProps}
       />
-      {error && <FormErrorMessage>{error}</FormErrorMessage>}
+      {error && (
+        <FormErrorMessage mt={-4} mb={10}>
+          {error}
+        </FormErrorMessage>
+      )}
     </FormControl>
-  ) : (
-    <ChakraInput
-      type={type}
-      defaultValue={defaultValue}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      onBlur={onBlur}
-      {...chakraInputProps}
-    />
   );
 };

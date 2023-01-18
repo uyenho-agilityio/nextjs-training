@@ -57,7 +57,7 @@ export const Card = ({
               {title}
             </Title>
           )}
-          {subTitle && <Text variant="title">{subTitle}</Text>}
+          {subTitle && <Text variant="subTitle">{subTitle}</Text>}
           {description && <Text variant="description">{description}</Text>}
         </Box>
 

@@ -2,7 +2,7 @@
 
 // Libs
 import { ChevronRightIcon } from '@chakra-ui/icons';
-import { Container, Box } from '@chakra-ui/react';
+import { Container, Box, GridItem, Grid } from '@chakra-ui/react';
 import Image from 'next/image';
 
 // Constant
@@ -53,21 +53,33 @@ const CTASection = (): JSX.Element => {
         <Container
           display="flex"
           flexDirection={{ base: 'column', lg: 'row' }}
-          py={{ base: '90px', lg: '140px' }}
+          py={{ base: '72px', lg: '120px' }}
         >
-          <Box zIndex={1}>
-            <Title w={{ lg: '60%' }} mb="20px">
-              {CTA_CONTENT.TITLE}
-            </Title>
-            <Text w={{ lg: '50%' }}>{CTA_CONTENT.DESCRIPTION}</Text>
-          </Box>
+          <Grid templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(5, 1fr)' }}>
+            <GridItem colSpan={{ base: 1, lg: 3 }} zIndex={1}>
+              <Title size="h1" mb={{ base: '16px', lg: '24px' }}>
+                {CTA_CONTENT.TITLE}
+              </Title>
+              <Text size="md" maxW="600px" fontWeight="medium">
+                {CTA_CONTENT.DESCRIPTION}
+              </Text>
+            </GridItem>
 
-          <Box zIndex={1} mt={{ base: '300px', lg: '50px' }} textAlign="center">
-            <Button size="lg" rightIcon={<ChevronRightIcon />} mb="20px">
-              {CTA_CONTENT.BUTTON}
-            </Button>
-            <Text>{CTA_CONTENT.TEXT}</Text>
-          </Box>
+            <GridItem
+              colSpan={{ base: 1, lg: 2 }}
+              zIndex={1}
+              mt={{ base: '220px', lg: '60px' }}
+              pl={{ base: 0, lg: '40%' }}
+              textAlign="center"
+            >
+              <Button size="md" rightIcon={<ChevronRightIcon ml="32px" />} mb="24px">
+                {CTA_CONTENT.BUTTON}
+              </Button>
+              <Text size="xs" fontWeight="medium">
+                {CTA_CONTENT.TEXT}
+              </Text>
+            </GridItem>
+          </Grid>
         </Container>
       </Box>
     </>

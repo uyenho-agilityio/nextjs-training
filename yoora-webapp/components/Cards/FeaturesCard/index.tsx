@@ -30,6 +30,8 @@ export const FeaturesCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
 
   return (
     <Card
+      size="h4"
+      variant="card"
       {...detailsCard}
       leftChildren={
         <Tag text={tag} chakraTagProps={{ bg: 'third-bg', px: 2, py: 1, borderRadius: '4px' }} />
@@ -38,9 +40,11 @@ export const FeaturesCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
         <List spacing="16px">
           {list.map(
             (list: ListProps): JSX.Element => (
-              <ListItem key={list.id} display="flex">
+              <ListItem key={list.id} display="flex" alignItems="flex-start">
                 <Image {...list.icon} priority />
-                <Text ml={{ base: '19px', lg: '27px' }}>{list.text}</Text>
+                <Text mt="-5px" ml={{ base: '19px', lg: '27px' }}>
+                  {list.text}
+                </Text>
               </ListItem>
             ),
           )}

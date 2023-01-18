@@ -2,21 +2,24 @@
 
 // Lib
 import { ChevronRightIcon } from '@chakra-ui/icons';
-import { Flex } from '@chakra-ui/react';
 
 // Constant
 import { TEXT } from '@webapp/constants';
 
 // Components
-import { Input, TextArea, Button } from '@webapp/components';
+import { Flex, Input, Textarea, Button } from '@webapp/components';
 
 const ContactForm = (): JSX.Element => {
   return (
-    <Flex direction="column" maxW="555px">
-      <Input type="text" placeholder="Your Name" />
-      <Input type="email" placeholder="Your Email" />
-      <TextArea placeholder="Message" />
-      <Button variant="success" rightIcon={<ChevronRightIcon />} mt={{ base: 4, lg: 6 }}>
+    <Flex variant="column" alignItems="flex-start">
+      <Input chakraInputProps={{ variant: 'contact-form' }} type="text" placeholder="Your Name" />
+      <Input chakraInputProps={{ variant: 'contact-form' }} type="email" placeholder="Your Email" />
+      <Textarea variant="contact-form" placeholder="Message" />
+      <Button
+        variant="success"
+        size="lg"
+        rightIcon={<ChevronRightIcon ml={{ base: '45px', lg: '31px' }} />}
+      >
         {TEXT.SEND}
       </Button>
     </Flex>

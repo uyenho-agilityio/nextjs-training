@@ -9,16 +9,18 @@ import {
   InputProps as ChakraInputProps,
   InputGroup as ChakraInputGroup,
   InputGroupProps as ChakraInputGroupProps,
+  InputElementProps as ChakraInputElementProps,
   InputRightElement,
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { ChangeEvent, FocusEvent, ReactNode, useState } from 'react';
 
 // Components
-import { Button, Flex } from '@webapp/components';
+import { Button, Flex, Text } from '@webapp/components';
 
 type InputProps = {
   type: 'text' | 'email' | 'password';
+  text?: string;
   placeholder?: string;
   value?: string;
   error?: string;
@@ -27,11 +29,13 @@ type InputProps = {
   chakraInputGroupProps?: ChakraInputGroupProps;
   formControlProps?: FormControlProps;
   chakraInputProps?: ChakraInputProps;
+  chakraInputElementProps?: ChakraInputElementProps;
   rightElement?: ReactNode;
 };
 
 export const InputGroup: React.FC<InputProps> = ({
   type,
+  text,
   placeholder,
   value,
   error,
@@ -40,6 +44,7 @@ export const InputGroup: React.FC<InputProps> = ({
   chakraInputGroupProps,
   formControlProps,
   chakraInputProps,
+  chakraInputElementProps,
   rightElement,
 }): JSX.Element => {
   const [show, setShow] = useState<boolean>(false);
@@ -50,6 +55,11 @@ export const InputGroup: React.FC<InputProps> = ({
       {type === 'password' ? (
         <>
           <FormControl isInvalid={!!error} {...formControlProps}>
+            {text && (
+              <Text size="xs" variant="highlight">
+                {text}
+              </Text>
+            )}
             <ChakraInput
               type={show ? 'text' : 'password'}
               placeholder={placeholder}
@@ -58,9 +68,13 @@ export const InputGroup: React.FC<InputProps> = ({
               onBlur={onBlur}
               {...chakraInputProps}
             />
-            {error && <FormErrorMessage>{error}</FormErrorMessage>}
+            {error && (
+              <FormErrorMessage mt={-4} mb={10}>
+                {error}
+              </FormErrorMessage>
+            )}
           </FormControl>
-          <InputRightElement mr={2}>
+          <InputRightElement {...chakraInputElementProps}>
             <Button
               variant="ghost"
               onClick={handleToggle}

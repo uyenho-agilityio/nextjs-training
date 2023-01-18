@@ -5,7 +5,7 @@ import { Button as ChakraButton, ButtonProps as ChakraButtonProps } from '@chakr
 
 type ButtonProps = {
   size?: 'lg' | 'md' | 'sm' | 'xs' | string;
-  variant?: 'ghost' | 'outline' | 'solid' | 'link' | 'info' | 'success';
+  variant?: 'ghost' | 'outline' | 'solid' | 'link' | 'info' | 'success' | string;
   onClick?: () => void;
 } & ChakraButtonProps;
 

@@ -1,14 +1,14 @@
 'use client';
 
 // Libs
-import { Container, Box, Flex } from '@chakra-ui/react';
+import { Container, Box } from '@chakra-ui/react';
 import Image from 'next/image';
 
 // Constant
 import { HERO_CONTENT } from '@webapp/constants';
 
 // Components
-import { Title, Text, InputGroup, TextArea, Button } from '@webapp/components';
+import { Flex, Title, Text, InputGroup, Textarea, Button } from '@webapp/components';
 
 const HeroSection = (): JSX.Element => {
   return (
@@ -21,7 +21,7 @@ const HeroSection = (): JSX.Element => {
       gap={{ base: '10px', lg: '50px' }}
     >
       <Box>
-        <Title maxW="639px" mb="24px">
+        <Title size="h1" variant="primary-title">
           {HERO_CONTENT.TITLE}
         </Title>
         <Text maxW="478px" mb={{ base: '32px', lg: '64px' }}>
@@ -29,15 +29,9 @@ const HeroSection = (): JSX.Element => {
         </Text>
 
         {/* Mobile */}
-        <Flex
-          display={{ lg: 'none' }}
-          maxW="272px"
-          direction="column"
-          align="center"
-          pos="relative"
-        >
-          <TextArea h="112px" placeholder={HERO_CONTENT.INPUT} />
-          <Button variant="success" w="256px" left="3%" bottom="6%" display="flex" pos="absolute">
+        <Flex display={{ lg: 'none' }} maxW="272px" pos="relative">
+          <Textarea h="112px" placeholder={HERO_CONTENT.INPUT} />
+          <Button variant="success" size="lg" left="3%" bottom="6%" display="flex" pos="absolute">
             {HERO_CONTENT.BUTTON}
           </Button>
         </Flex>
@@ -48,6 +42,7 @@ const HeroSection = (): JSX.Element => {
           placeholder={HERO_CONTENT.INPUT}
           rightElement={
             <Button
+              size="md"
               variant="success"
               pos="absolute"
               right={{ lg: '3%' }}
@@ -56,9 +51,11 @@ const HeroSection = (): JSX.Element => {
               {HERO_CONTENT.BUTTON}
             </Button>
           }
-          chakraInputProps={{ maxW: '457px', m: 0, display: { base: 'none', lg: 'block' } }}
+          chakraInputProps={{ display: { base: 'none', lg: 'block' } }}
         />
-        <Text mt="12px">{HERO_CONTENT.TEXT}</Text>
+        <Text size="xs" mt="12px">
+          {HERO_CONTENT.TEXT}
+        </Text>
       </Box>
 
       <Box mt="46px">

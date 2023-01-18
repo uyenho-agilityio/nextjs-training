@@ -18,18 +18,13 @@ export const BannerCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
 
   return (
     <Card
+      size="h3"
+      variant="card"
       {...detailsCard}
       text={tag}
       leftChildren={<Divider my="14px" borderColor="border-cl" />}
-      rightChildren={
-        <Tag
-          text={date}
-          extraText={author}
-          boxProps={{ mt: '24px', mb: { base: '38px', lg: '46px' } }}
-        />
-      }
+      rightChildren={<Tag text={date} extraText={author} />}
       chakraCardProps={{ pt: { base: '30px', lg: '60px' }, bg: 'primary-bg' }}
-      cardBodyProps={{ maxW: '750px' }}
     />
   );
 };

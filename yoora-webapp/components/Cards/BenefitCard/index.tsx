@@ -22,6 +22,7 @@ export const BenefitCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
 
   return (
     <Card
+      size="h6"
       {...detailsCard}
       leftChildren={
         <>
@@ -44,8 +45,8 @@ export const BenefitCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
         bg: id == 1 ? 'third-bg' : 'inherit',
         color: id == 1 ? 'primary-cl' : 'secondary-cl',
         variant: 'elevated',
+        h: { base: '383px', lg: '439px' },
       }}
-      cardBodyProps={{ gap: '10px' }}
     />
   );
 };

@@ -24,10 +24,12 @@ export const WhatsNewCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
 
   return (
     <Card
+      size="h7"
+      variant="card"
       text={tag}
       leftChildren={
         <>
-          <Divider my={{ base: '16px', lg: '24px' }} />
+          <Divider mt="14px" mb={{ base: '16px', lg: '24px' }} />
           <Image
             {...image}
             placeholder="blur"
@@ -37,9 +39,7 @@ export const WhatsNewCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
         </>
       }
       {...detailsCard}
-      rightChildren={
-        <Tag text={date} extraText={author} boxProps={{ mt: { base: '16px', lg: '24px' } }} />
-      }
+      rightChildren={<Tag text={date} extraText={author} boxProps={{ ml: '-10px' }} />}
       chakraCardProps={{ maxW: '555px' }}
     />
   );

@@ -23,7 +23,9 @@ const BrandsSection = (): JSX.Element => {
       justifyContent="space-between"
       pb="40px"
     >
-      <Text mb="40px">{BRANDS_CONTENT.TEXT}</Text>
+      <Text size="xs" mb="48px">
+        {BRANDS_CONTENT.TEXT}
+      </Text>
       <Wrap align="center" spacing={{ base: '30px', lg: '60px' }}>
         {BRANDS_CONTENT.IMAGES.map(
           (item: ImageProps): JSX.Element => (

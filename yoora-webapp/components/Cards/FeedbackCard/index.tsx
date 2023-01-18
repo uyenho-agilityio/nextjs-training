@@ -38,7 +38,9 @@ export const FeedbackCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
           text={name}
           subText={position}
           boxProps={{ ml: '12px' }}
-          chakraTagProps={{ mt: { base: '24px', lg: '48px' } }}
+          chakraTagProps={{
+            mt: id == 3 ? { base: '24px', lg: '80px' } : { base: '24px', lg: '50px' },
+          }}
         />
       }
       chakraCardProps={{ maxW: '360px' }}

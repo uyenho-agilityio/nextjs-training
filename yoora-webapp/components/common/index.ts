@@ -1,10 +1,11 @@
 export { Button } from './Button';
 export { Card } from './Card';
+export { Flex } from './Flex';
 export { Input } from './Input';
 export { InputGroup } from './InputGroup';
 export { Select } from './Select';
 export { Spinner } from './Spinner';
 export { Tag } from './Tag';
 export { Text } from './Text';
-export { TextArea } from './TextArea';
+export { Textarea } from './Textarea';
 export { Title } from './Title';

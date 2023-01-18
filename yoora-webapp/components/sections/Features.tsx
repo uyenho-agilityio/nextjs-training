@@ -1,6 +1,6 @@
 'use client';
 
-// LibS
+// Libs
 import { Container, Flex, Divider } from '@chakra-ui/react';
 import Image from 'next/image';
 
