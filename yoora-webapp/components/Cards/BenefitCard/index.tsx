@@ -22,7 +22,7 @@ export const BenefitCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
 
   return (
     <Card
-      size="h6"
+      size="h7"
       {...detailsCard}
       leftChildren={
         <>

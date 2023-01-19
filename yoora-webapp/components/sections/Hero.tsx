@@ -42,7 +42,7 @@ const HeroSection = (): JSX.Element => {
           placeholder={HERO_CONTENT.INPUT}
           rightElement={
             <Button
-              size="md"
+              size="lg"
               variant="success"
               pos="absolute"
               right={{ lg: '3%' }}

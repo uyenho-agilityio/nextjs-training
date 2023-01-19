@@ -15,6 +15,6 @@ describe('Text renders', () => {
 
   test('should render text component with valid props', () => {
     render(<Text>{TEXT.LOGIN}</Text>);
-    expect(screen.getByText(/log/i)).toHaveTextContent('Log In');
+    expect(screen.getByText(/log/i)).toHaveTextContent('Log in');
   });
 });

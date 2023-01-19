@@ -25,6 +25,12 @@ export const Text = {
       lineHeight: 'text.xs',
       letterSpacing: 'heading.widest',
     },
+
+    xl: {
+      fontSize: { base: 'text.lg', lg: 'text.lg' },
+      lineHeight: { base: 'text.2xl', lg: 'text.3xl' },
+      letterSpacing: 'wider',
+    },
   },
 
   variants: {

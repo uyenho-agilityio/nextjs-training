@@ -9,7 +9,7 @@ import { MESSAGE } from '@webapp/constants';
 
 describe('Textarea renders', () => {
   test('should render Textarea component with default props', () => {
-    const { container } = render(<Textarea value={MESSAGE.SEND_MESSAGE} />);
+    const { container } = render(<Textarea placeholder="Message" />);
     expect(container).toMatchSnapshot();
   });
 

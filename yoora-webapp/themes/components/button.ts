@@ -9,7 +9,7 @@ export const Button = {
 
   sizes: {
     default: {
-      height: '42px',
+      width: '64px',
     },
 
     sm: {

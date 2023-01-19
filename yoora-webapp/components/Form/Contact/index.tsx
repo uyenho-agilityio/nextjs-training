@@ -17,7 +17,7 @@ const ContactForm = (): JSX.Element => {
       <Textarea variant="contact-form" placeholder="Message" />
       <Button
         variant="success"
-        size="lg"
+        size="md"
         rightIcon={<ChevronRightIcon ml={{ base: '45px', lg: '31px' }} />}
       >
         {TEXT.SEND}

@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { ImageProps } from '@webapp/types';
 
 // Components
-import { Card, Tag } from '@webapp/components';
+import { Card, Tag, Title } from '@webapp/components';
 
 export type CardProps = {
   id: number;
@@ -20,12 +20,10 @@ export type CardProps = {
 };
 
 export const WhatsNewCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
-  const { tag, image, date, author } = detailsCard;
+  const { tag, image, title, date, author } = detailsCard;
 
   return (
     <Card
-      size="h7"
-      variant="card"
       text={tag}
       leftChildren={
         <>
@@ -38,8 +36,14 @@ export const WhatsNewCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
           />
         </>
       }
-      {...detailsCard}
-      rightChildren={<Tag text={date} extraText={author} boxProps={{ ml: '-10px' }} />}
+      rightChildren={
+        <>
+          <Title size="h7" variant="card" h={{ lg: '48px' }}>
+            {title}
+          </Title>
+          <Tag text={date} extraText={author} />
+        </>
+      }
       chakraCardProps={{ maxW: '555px' }}
     />
   );

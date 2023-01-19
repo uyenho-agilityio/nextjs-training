@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { ImageProps } from '@webapp/types';
 
 // Components
-import { Card, Tag } from '@webapp/components';
+import { Card, Tag, Text } from '@webapp/components';
 
 export type CardProps = {
   id: number;
@@ -20,7 +20,7 @@ export type CardProps = {
 };
 
 export const MoreTopicsCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
-  const { id, tag, image, date, author } = detailsCard;
+  const { tag, image, subTitle, date, author } = detailsCard;
 
   return (
     <Card
@@ -34,16 +34,20 @@ export const MoreTopicsCard: React.FC<CardProps> = (detailsCard): JSX.Element =>
           />
         </>
       }
-      {...detailsCard}
       boxProps={{ mt: { base: '15px', lg: '20px' } }}
       chakraCardProps={{ maxW: '361px' }}
       rightChildren={
-        <Tag
-          text={date}
-          extraText={author}
-          chakraTagProps={{ p: 0 }}
-          boxProps={{ mt: id == 1 ? { base: '16px', lg: '50px' } : { base: '16px', lg: '24px' } }}
-        />
+        <>
+          <Text size="xl" variant="subTitle">
+            {subTitle}
+          </Text>
+          <Tag
+            text={date}
+            extraText={author}
+            chakraTagProps={{ p: 0 }}
+            boxProps={{ mt: { base: '16px', lg: '24px' } }}
+          />
+        </>
       }
     />
   );

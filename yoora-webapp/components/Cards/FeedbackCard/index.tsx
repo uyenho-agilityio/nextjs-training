@@ -9,6 +9,7 @@ import { ImageProps } from '@webapp/types';
 
 // Components
 import { Card, Tag } from '@webapp/components';
+import { Text } from '../../common/Text/index';
 
 export type CardProps = {
   id: number;
@@ -31,17 +32,19 @@ export const FeedbackCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
           <Divider my={{ base: '16px', lg: '24px' }} borderColor="border-cl" />
         </>
       }
-      subTitle={message}
       rightChildren={
-        <Tag
-          {...image}
-          text={name}
-          subText={position}
-          boxProps={{ ml: '12px' }}
-          chakraTagProps={{
-            mt: id == 3 ? { base: '24px', lg: '80px' } : { base: '24px', lg: '50px' },
-          }}
-        />
+        <>
+          <Text variant="subTitle" h={{ lg: '170px' }}>
+            {message}
+          </Text>
+          <Tag
+            {...image}
+            text={name}
+            subText={position}
+            boxProps={{ ml: '12px' }}
+            chakraTagProps={{ mt: '24px' }}
+          />
+        </>
       }
       chakraCardProps={{ maxW: '360px' }}
     />

@@ -33,7 +33,7 @@ export const Tag: React.FC<TagProps> = ({
   imageProps,
 }): JSX.Element => {
   return (
-    <ChakraTag bg="none" {...chakraTagProps}>
+    <ChakraTag bg="none" px={0} {...chakraTagProps}>
       {!!src && (
         <Image width={width} height={height} alt={alt} src={src} {...imageProps} priority />
       )}
@@ -41,7 +41,7 @@ export const Tag: React.FC<TagProps> = ({
         <Text size="xs" variant="subTitle">
           {text}{' '}
           {extraText && (
-            <Text as="span" variant="subText">
+            <Text as="span" size="xs" variant="subText">
               {extraText}
             </Text>
           )}
