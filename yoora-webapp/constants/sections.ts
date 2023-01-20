@@ -7,8 +7,8 @@ export const HERO_CONTENT = {
   BUTTON: 'Try for Free',
   TEXT: 'Full access. No credit card required.',
   IMAGE: {
-    src: '/images/hero-section/hero.png ',
-    srcSet: 'images/hero-section/hero.png 1x, images/hero-section/hero-2x.png 2x',
+    src: '/images/hero-section/hero.webp ',
+    srcSet: 'images/hero-section/hero.webp 1x, images/hero-section/hero-2x.webp 2x',
     alt: 'hero',
     width: 675,
     height: 482,
@@ -21,35 +21,35 @@ export const BRANDS_CONTENT = {
   IMAGES: [
     {
       id: 1,
-      src: 'images/brands-section/google.svg',
+      src: '/images/brands-section/google.webp',
       alt: 'google',
       width: 97,
       height: 32,
     },
     {
       id: 2,
-      src: 'images/brands-section/atlassian.svg',
+      src: '/images/brands-section/atlassian.webp',
       alt: 'atlassian',
       width: 135,
       height: 17,
     },
     {
       id: 3,
-      src: 'images/brands-section/canon.svg',
+      src: '/images/brands-section/canon.webp',
       alt: 'canon',
       width: 95,
       height: 20,
     },
     {
       id: 4,
-      src: 'images/brands-section/walmart.svg',
+      src: '/images/brands-section/walmart.webp',
       alt: 'walmart',
       width: 130,
       height: 30,
     },
     {
       id: 5,
-      src: 'images/brands-section/amazon.svg',
+      src: '/images/brands-section/amazon.webp',
       alt: 'amazon',
       width: 95,
       height: 29,
@@ -66,7 +66,7 @@ export const BENEFIT_CONTENT = {
     {
       id: 1,
       image: {
-        src: 'images/benefit-section/face.svg',
+        src: '/images/benefit-section/face.webp',
         alt: 'face',
         width: 63,
         height: 72,
@@ -78,7 +78,7 @@ export const BENEFIT_CONTENT = {
     {
       id: 2,
       image: {
-        src: 'images/benefit-section/laptop.svg',
+        src: '/images/benefit-section/laptop.webp',
         alt: 'laptop',
         width: 72,
         height: 56,
@@ -90,7 +90,7 @@ export const BENEFIT_CONTENT = {
     {
       id: 3,
       image: {
-        src: 'images/benefit-section/match.svg',
+        src: '/images/benefit-section/match.webp',
         alt: 'match',
         width: 72,
         height: 72,
@@ -107,8 +107,8 @@ export const FEATURES_CONTENT = [
   {
     id: 1,
     image: {
-      src: '/images/features-section/sales.png',
-      srcSet: 'images/features-section/sales.png 1x, images/features-section/sales-2x.png 2x',
+      src: '/images/features-section/sales.webp',
+      srcSet: 'images/features-section/sales.webp 1x, images/features-section/sales-2x.webp 2x',
       alt: 'sales',
       width: 555,
       height: 555,
@@ -121,7 +121,7 @@ export const FEATURES_CONTENT = [
       {
         id: 1,
         icon: {
-          src: 'images/features-section/tick.svg',
+          src: '/images/features-section/tick.webp',
           alt: 'tick',
           width: 17,
           height: 13,
@@ -131,7 +131,7 @@ export const FEATURES_CONTENT = [
       {
         id: 2,
         icon: {
-          src: 'images/features-section/tick.svg',
+          src: '/images/features-section/tick.webp',
           alt: 'tick',
           width: 17,
           height: 13,
@@ -141,7 +141,7 @@ export const FEATURES_CONTENT = [
       {
         id: 3,
         icon: {
-          src: 'images/features-section/tick.svg',
+          src: '/images/features-section/tick.webp',
           alt: 'tick',
           width: 17,
           height: 13,
@@ -153,9 +153,9 @@ export const FEATURES_CONTENT = [
   {
     id: 2,
     image: {
-      src: '/images/features-section/marketing.png',
+      src: '/images/features-section/marketing.webp',
       srcSet:
-        'images/features-section/marketing.png 1x, images/features-section/marketing-2x.png 2x',
+        'images/features-section/marketing.webp 1x, images/features-section/marketing-2x.webp 2x',
       alt: 'marketing',
       width: 555,
       height: 555,
@@ -168,7 +168,7 @@ export const FEATURES_CONTENT = [
       {
         id: 1,
         icon: {
-          src: 'images/features-section/tick.svg',
+          src: '/images/features-section/tick.webp',
           alt: 'tick',
           width: 17,
           height: 13,
@@ -178,7 +178,7 @@ export const FEATURES_CONTENT = [
       {
         id: 2,
         icon: {
-          src: 'images/features-section/tick.svg',
+          src: '/images/features-section/tick.webp',
           alt: 'tick',
           width: 17,
           height: 13,
@@ -188,7 +188,7 @@ export const FEATURES_CONTENT = [
       {
         id: 3,
         icon: {
-          src: 'images/features-section/tick.svg',
+          src: '/images/features-section/tick.webp',
           alt: 'tick',
           width: 17,
           height: 13,
@@ -200,8 +200,8 @@ export const FEATURES_CONTENT = [
   {
     id: 3,
     image: {
-      src: '/images/features-section/service.png',
-      srcSet: 'images/features-section/service.png 1x, images/features-section/service-2x.png 2x',
+      src: '/images/features-section/service.webp',
+      srcSet: 'images/features-section/service.webp 1x, images/features-section/service-2x.webp 2x',
       alt: 'face',
       width: 555,
       height: 555,
@@ -214,7 +214,7 @@ export const FEATURES_CONTENT = [
       {
         id: 1,
         icon: {
-          src: 'images/features-section/tick.svg',
+          src: '/images/features-section/tick.webp',
           alt: 'tick',
           width: 17,
           height: 13,
@@ -224,7 +224,7 @@ export const FEATURES_CONTENT = [
       {
         id: 2,
         icon: {
-          src: 'images/features-section/tick.svg',
+          src: '/images/features-section/tick.webp',
           alt: 'tick',
           width: 17,
           height: 13,
@@ -234,7 +234,7 @@ export const FEATURES_CONTENT = [
       {
         id: 3,
         icon: {
-          src: 'images/features-section/tick.svg',
+          src: '/images/features-section/tick.webp',
           alt: 'tick',
           width: 17,
           height: 13,
@@ -252,70 +252,70 @@ export const INTEGRATIONS_CONTENT = {
   IMAGES_DESKTOP: [
     {
       id: 1,
-      src: 'images/integrations-section/desktop/icon-1.svg',
+      src: '/images/integrations-section/desktop/icon-1.webp',
       alt: 'icon-1',
       width: 120,
       height: 120,
     },
     {
       id: 2,
-      src: 'images/integrations-section/desktop/icon-2.svg',
+      src: '/images/integrations-section/desktop/icon-2.webp',
       alt: 'icon-2',
       width: 288,
       height: 120,
     },
     {
       id: 3,
-      src: 'images/integrations-section/desktop/icon-3.svg',
+      src: '/images/integrations-section/desktop/icon-3.webp',
       alt: 'icon-3',
       width: 288,
       height: 120,
     },
     {
       id: 4,
-      src: 'images/integrations-section/desktop/icon-4.svg',
+      src: '/images/integrations-section/desktop/icon-4.webp',
       alt: 'icon-4',
       width: 120,
       height: 120,
     },
     {
       id: 5,
-      src: 'images/integrations-section/desktop/icon-5.svg',
+      src: '/images/integrations-section/desktop/icon-5.webp',
       alt: 'icon-5',
       width: 288,
       height: 120,
     },
     {
       id: 6,
-      src: 'images/integrations-section/desktop/icon-6.svg',
+      src: '/images/integrations-section/desktop/icon-6.webp',
       alt: 'icon-6',
       width: 372,
       height: 120,
     },
     {
       id: 7,
-      src: 'images/integrations-section/desktop/icon-7.svg',
+      src: '/images/integrations-section/desktop/icon-7.webp',
       alt: 'icon-7',
       width: 120,
       height: 120,
     },
     {
       id: 8,
-      src: 'images/integrations-section/desktop/icon-8.svg',
+      src: '/images/integrations-section/desktop/icon-8.webp',
       alt: 'icon-8',
       width: 120,
       height: 120,
     },
     {
       id: 9,
-      src: 'images/integrations-section/desktop/icon-9.svg',
+      src: '/images/integrations-section/desktop/icon-9.webp',
       alt: 'icon-9',
       width: 372,
       height: 120,
     },
     {
       id: 10,
-      src: 'images/integrations-section/desktop/icon-10.svg',
+      src: '/images/integrations-section/desktop/icon-10.webp',
       alt: 'icon-10',
       width: 120,
       height: 120,
@@ -324,70 +324,70 @@ export const INTEGRATIONS_CONTENT = {
   IMAGES_MOBILE: [
     {
       id: 1,
-      src: 'images/integrations-section/mobile/icon-1.svg',
+      src: '/images/integrations-section/mobile/icon-1.webp',
       alt: 'icon-1',
       width: 78,
       height: 78,
     },
     {
       id: 2,
-      src: 'images/integrations-section/mobile/icon-2.svg',
+      src: '/images/integrations-section/mobile/icon-2.webp',
       alt: 'icon-2',
       width: 186,
       height: 78,
     },
     {
       id: 3,
-      src: 'images/integrations-section/mobile/icon-3.svg',
+      src: '/images/integrations-section/mobile/icon-3.webp',
       alt: 'icon-3',
       width: 186,
       height: 78,
     },
     {
       id: 4,
-      src: 'images/integrations-section/mobile/icon-4.svg',
+      src: '/images/integrations-section/mobile/icon-4.webp',
       alt: 'icon-4',
       width: 78,
       height: 78,
     },
     {
       id: 5,
-      src: 'images/integrations-section/mobile/icon-5.svg',
+      src: '/images/integrations-section/mobile/icon-5.webp',
       alt: 'icon-5',
       width: 186,
       height: 78,
     },
     {
       id: 6,
-      src: 'images/integrations-section/mobile/icon-6.svg',
+      src: '/images/integrations-section/mobile/icon-6.webp',
       alt: 'icon-6',
       width: 78,
       height: 78,
     },
     {
       id: 7,
-      src: 'images/integrations-section/mobile/icon-7.svg',
+      src: '/images/integrations-section/mobile/icon-7.webp',
       alt: 'icon-7',
       width: 186,
       height: 78,
     },
     {
       id: 8,
-      src: 'images/integrations-section/mobile/icon-8.svg',
+      src: '/images/integrations-section/mobile/icon-8.webp',
       alt: 'icon-8',
       width: 78,
       height: 78,
     },
     {
       id: 9,
-      src: 'images/integrations-section/mobile/icon-9.svg',
+      src: '/images/integrations-section/mobile/icon-9.webp',
       alt: 'icon-9',
       width: 78,
       height: 78,
     },
     {
       id: 10,
-      src: 'images/integrations-section/mobile/icon-10.svg',
+      src: '/images/integrations-section/mobile/icon-10.webp',
       alt: 'icon-10',
       width: 186,
       height: 78,
@@ -395,7 +395,7 @@ export const INTEGRATIONS_CONTENT = {
   ],
   TEXT: 'See all apps and extensions',
   ICON: {
-    src: 'images/integrations-section/right-arrow.svg',
+    src: '/images/integrations-section/right-arrow.webp',
     alt: 'right-arrow',
     width: 7.5,
     height: 12.5,
@@ -407,7 +407,7 @@ export const WHATS_NEW_CONTENT = {
   TITLE: "What's new at Yoora?",
   TEXT: 'See all',
   ICON: {
-    src: 'images/integrations-section/right-arrow.svg',
+    src: '/images/integrations-section/right-arrow.webp',
     alt: 'right-arrow',
     width: 7.5,
     height: 12.5,
@@ -417,9 +417,9 @@ export const WHATS_NEW_CONTENT = {
       id: 1,
       tag: 'SERVICE',
       image: {
-        src: '/images/whats-new-section/service-1.png',
+        src: '/images/whats-new-section/service-1.webp',
         srcSet:
-          'images/whats-new-section/service-1.png 1x, images/whats-new-section/service-1-2x.png 2x',
+          'images/whats-new-section/service-1.webp 1x, images/whats-new-section/service-1-2x.webp 2x',
         alt: 'service-1',
         width: 555,
         height: 370,
@@ -432,9 +432,9 @@ export const WHATS_NEW_CONTENT = {
       id: 2,
       tag: 'SERVICE',
       image: {
-        src: '/images/whats-new-section/service-2.png',
+        src: '/images/whats-new-section/service-2.webp',
         srcSet:
-          'images/whats-new-section/service-2.png 1x, images/whats-new-section/service-2-2x.png 2x',
+          'images/whats-new-section/service-2.webp 1x, images/whats-new-section/service-2-2x.webp 2x',
         alt: 'service-2',
         width: 555,
         height: 370,
@@ -458,7 +458,7 @@ export const REVENUE_CONTENT = {
       title:
         'Using Yoora CRM is one of the best decisions we’ve ever made. We’ve seen our annual revenue explode, and the outlook just keeps getting sunnier.',
       image: {
-        src: 'images/revenue-section/avatar-1.svg',
+        src: '/images/revenue-section/avatar-1.webp',
         alt: 'avatar-1',
         width: 48,
         height: 48,
@@ -473,7 +473,7 @@ export const REVENUE_CONTENT = {
       title:
         'Yoora is created for sales people. It’s the kind of software that just works. I don’t have to try to make it work. It already does. It’s just perfect.',
       image: {
-        src: 'images/revenue-section/avatar-2.svg',
+        src: '/images/revenue-section/avatar-2.webp',
         alt: 'avatar-2',
         width: 48,
         height: 48,
@@ -489,7 +489,7 @@ export const FEEDBACK_CONTENT = {
   TITLE: 'We love our Customers and They love us too',
   TEXT: 'See all',
   ICON: {
-    src: 'images/integrations-section/right-arrow.svg',
+    src: '/images/integrations-section/right-arrow.webp',
     alt: 'right-arrow',
     width: 7.5,
     height: 12.5,
@@ -525,7 +525,7 @@ export const FEEDBACK_CONTENT = {
       message:
         'It has made our sales department more effective and efficient. It’s easy to use and it’s constantly updated. It’s easy to use and it’s constantly updated.',
       image: {
-        src: 'images/feedback-section/avatar-2.svg',
+        src: '/images/feedback-section/avatar-2.svg',
         alt: 'avatar-2',
         width: 48,
         height: 48,
@@ -564,15 +564,15 @@ export const CTA_CONTENT = {
   TEXT: 'Full access. No credit card required.',
   BG_IMAGE: {
     MOBILE: {
-      src: '/images/cta-section/background-320.png',
+      src: '/images/cta-section/background-320.webp',
       srcSet:
-        'images/cta-section/background-320.png 1x, images/cta-section/background-320-2x.png 2x',
+        'images/cta-section/background-320.webp 1x, images/cta-section/background-320-2x.webp 2x',
       alt: 'background',
     },
     DESKTOP: {
-      src: '/images/cta-section/background-1440-2x.png',
+      src: '/images/cta-section/background-1440-2x.webp',
       srcSet:
-        'images/cta-section/background-1440.png 1x, images/cta-section/background-1440-2x.png 2x',
+        'images/cta-section/background-1440.webp 1x, images/cta-section/background-1440-2x.webp 2x',
       alt: 'background',
     },
   },
@@ -584,8 +584,8 @@ export const GET_IN_TOUCH_CONTENT = {
   SUB_TITLE: 'Yoora Technologies',
   DESCRIPTION: '22023 Teuku Umar, Kartini, NG 95006, Indonesia',
   IMAGE: {
-    src: '/images/map.png',
-    srcSet: 'images/map.png 1x, images/map-2x.png 2x',
+    src: '/images/map.webp',
+    srcSet: 'images/map.webp 1x, images/map-2x.webp 2x',
     alt: 'map',
     width: 458,
     height: 288,
@@ -612,9 +612,9 @@ export const MORE_TOPICS_CONTENT = {
       id: 1,
       tag: 'SALES',
       image: {
-        src: '/images/more-topics-section/topic-11.png ',
+        src: '/images/more-topics-section/topic-11.webp',
         srcSet:
-          'images/more-topics-section/topic-11.png 1x, images/more-topics-section/topic-12.png 2x',
+          'images/more-topics-section/topic-11.webp 1x, images/more-topics-section/topic-12.webp 2x',
         alt: 'topic-1',
         width: 361,
         height: 241,
@@ -627,9 +627,9 @@ export const MORE_TOPICS_CONTENT = {
       id: 2,
       tag: 'SALES',
       image: {
-        src: '/images/more-topics-section/topic-21.png',
+        src: '/images/more-topics-section/topic-21.webp',
         srcSet:
-          'images/more-topics-section/topic-21.png 1x, images/more-topics-section/topic-22.png 2x',
+          'images/more-topics-section/topic-21.webp 1x, images/more-topics-section/topic-22.webp 2x',
         alt: 'topic-2',
         width: 361,
         height: 241,
@@ -642,9 +642,9 @@ export const MORE_TOPICS_CONTENT = {
       id: 3,
       tag: 'SERVICE',
       image: {
-        src: '/images/more-topics-section/topic-31.png',
+        src: '/images/more-topics-section/topic-31.webp',
         srcSet:
-          'images/more-topics-section/topic-31.png 1x, images/more-topics-section/topic-32.png 2x',
+          'images/more-topics-section/topic-31.webp 1x, images/more-topics-section/topic-32.webp 2x',
         alt: 'topic-3',
         width: 361,
         height: 241,
@@ -663,8 +663,8 @@ export const DETAILS_CONTENT = {
   date: '05 Sep 2022, ',
   author: 'by Joshua Nash',
   image: {
-    src: '/images/blog-details/details-11.png ',
-    srcSet: 'images/blog-details/details-11.png 1x, images/blog-details/details-12.png 2x',
+    src: '/images/blog-details/details-11.webp ',
+    srcSet: 'images/blog-details/details-11.webp 1x, images/blog-details/details-12.webp 2x',
     alt: 'details-1',
     width: 945,
     height: 511,
@@ -682,8 +682,8 @@ export const DETAILS_CONTENT = {
     AUTHOR: 'Matthew Barker',
     SUB_CONTENT: {
       IMAGE: {
-        src: '/images/blog-details/details-21.png ',
-        srcSet: 'images/blog-details/details-21.png 1x, images/blog-details/details-22.png 2x',
+        src: '/images/blog-details/details-21.webp ',
+        srcSet: 'images/blog-details/details-21.webp 1x, images/blog-details/details-22.webp 2x',
         alt: 'details-2',
         width: 748,
         height: 405,
@@ -697,7 +697,7 @@ export const DETAILS_CONTENT = {
       SUB_PARAGRAPH:
         'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"',
       AVATAR: {
-        src: 'images/blog-details/avatar.svg',
+        src: '/images/blog-details/avatar.webp',
         alt: 'avatar',
         width: 48,
         height: 48,
@@ -708,28 +708,28 @@ export const DETAILS_CONTENT = {
         {
           url: 'https://twitter.com/',
           alt: 'twitter-icon',
-          src: 'images/twitter.svg',
+          src: '/images/twitter.webp',
           width: 24,
           height: 24,
         },
         {
           url: 'https://www.facebook.com/',
           alt: 'facebook-icon',
-          src: 'images/facebook.svg',
+          src: '/images/facebook.webp',
           width: 24,
           height: 24,
         },
         {
           url: 'https://www.linkedin.com/',
           alt: 'linkedin-icon',
-          src: 'images/linkedin.svg',
+          src: '/images/linkedin.webp',
           width: 24,
           height: 24,
         },
         {
           url: 'https://www.youtube.com/',
           alt: 'insertlink-icon',
-          src: 'images/insert-link.svg',
+          src: '/images/insert-link.webp',
           width: 24,
           height: 24,
         },

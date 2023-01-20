@@ -2,21 +2,21 @@ export const SOCIAL_ICONS = [
   {
     url: 'https://twitter.com/',
     alt: 'twitter-icon',
-    src: 'images/twitter.svg',
+    src: '/images/twitter.webp',
     width: 24,
     height: 24,
   },
   {
     url: 'https://www.facebook.com/',
     alt: 'facebook-icon',
-    src: 'images/facebook.svg',
+    src: '/images/facebook.webp',
     width: 24,
     height: 24,
   },
   {
     url: 'https://www.linkedin.com/',
     alt: 'linkedin-icon',
-    src: 'images/linkedin.svg',
+    src: '/images/linkedin.webp',
     width: 24,
     height: 24,
   },
@@ -147,7 +147,7 @@ export const POLICY_DATA = [
 
 export const GLOBE = {
   alt: 'globe',
-  src: '/images/globe.svg',
+  src: '/images/globe.webp',
   width: 24,
   height: 24,
 };
