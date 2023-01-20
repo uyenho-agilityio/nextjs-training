@@ -7,7 +7,7 @@ export const HERO_CONTENT = {
   BUTTON: 'Try for Free',
   TEXT: 'Full access. No credit card required.',
   IMAGE: {
-    src: '/images/hero-section/hero.webp ',
+    src: '/images/hero-section/hero.webp',
     srcSet: 'images/hero-section/hero.webp 1x, images/hero-section/hero-2x.webp 2x',
     alt: 'hero',
     width: 675,
@@ -21,35 +21,35 @@ export const BRANDS_CONTENT = {
   IMAGES: [
     {
       id: 1,
-      src: '/images/brands-section/google.webp',
+      src: 'images/brands-section/google.svg',
       alt: 'google',
       width: 97,
       height: 32,
     },
     {
       id: 2,
-      src: '/images/brands-section/atlassian.webp',
+      src: 'images/brands-section/atlassian.svg',
       alt: 'atlassian',
       width: 135,
       height: 17,
     },
     {
       id: 3,
-      src: '/images/brands-section/canon.webp',
+      src: 'images/brands-section/canon.svg',
       alt: 'canon',
       width: 95,
       height: 20,
     },
     {
       id: 4,
-      src: '/images/brands-section/walmart.webp',
+      src: 'images/brands-section/walmart.svg',
       alt: 'walmart',
       width: 130,
       height: 30,
     },
     {
       id: 5,
-      src: '/images/brands-section/amazon.webp',
+      src: 'images/brands-section/amazon.svg',
       alt: 'amazon',
       width: 95,
       height: 29,
@@ -663,7 +663,7 @@ export const DETAILS_CONTENT = {
   date: '05 Sep 2022, ',
   author: 'by Joshua Nash',
   image: {
-    src: '/images/blog-details/details-11.webp ',
+    src: '/images/blog-details/details-11.webp',
     srcSet: 'images/blog-details/details-11.webp 1x, images/blog-details/details-12.webp 2x',
     alt: 'details-1',
     width: 945,
@@ -682,7 +682,7 @@ export const DETAILS_CONTENT = {
     AUTHOR: 'Matthew Barker',
     SUB_CONTENT: {
       IMAGE: {
-        src: '/images/blog-details/details-21.webp ',
+        src: '/images/blog-details/details-21.webp',
         srcSet: 'images/blog-details/details-21.webp 1x, images/blog-details/details-22.webp 2x',
         alt: 'details-2',
         width: 748,
