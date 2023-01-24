@@ -8,7 +8,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
 // Constants
-import { LOGO, ROUTE_LIST, TEXT } from '@webapp/constants';
+import { LOGO, PAGE_ROUTES, ROUTE_LIST, TEXT } from '@webapp/constants';
 
 // Components
 import { Button } from '@webapp/components';
@@ -23,7 +23,7 @@ const Header = (): JSX.Element => {
     <Container as="header" className="header">
       <Flex minWidth="max-content">
         <Box cursor="pointer" mr={{ base: 'auto', lg: '90px' }}>
-          <ChakraLink as={Link} href="/">
+          <ChakraLink as={Link} href={PAGE_ROUTES.HOME}>
             <Image {...LOGO} priority />
           </ChakraLink>
         </Box>
