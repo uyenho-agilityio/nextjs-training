@@ -21,35 +21,35 @@ export const BRANDS_CONTENT = {
   IMAGES: [
     {
       id: 1,
-      src: 'images/brands-section/google.svg',
+      src: '/images/brands-section/google.webp',
       alt: 'google',
       width: 97,
       height: 32,
     },
     {
       id: 2,
-      src: 'images/brands-section/atlassian.svg',
+      src: '/images/brands-section/atlassian.webp',
       alt: 'atlassian',
       width: 135,
       height: 17,
     },
     {
       id: 3,
-      src: 'images/brands-section/canon.svg',
+      src: '/images/brands-section/canon.webp',
       alt: 'canon',
       width: 95,
       height: 20,
     },
     {
       id: 4,
-      src: 'images/brands-section/walmart.svg',
+      src: '/images/brands-section/walmart.webp',
       alt: 'walmart',
       width: 130,
       height: 30,
     },
     {
       id: 5,
-      src: 'images/brands-section/amazon.svg',
+      src: '/images/brands-section/amazon.webp',
       alt: 'amazon',
       width: 95,
       height: 29,
@@ -498,7 +498,7 @@ export const FEEDBACK_CONTENT = {
     {
       id: 1,
       icon: {
-        src: 'images/feedback-section/double-quote.svg',
+        src: '/images/feedback-section/double-quote.webp',
         alt: 'double-quote',
         width: 58,
         height: 120,
@@ -506,7 +506,7 @@ export const FEEDBACK_CONTENT = {
       message:
         'The best thing we love about Yoora is it does two-way sync with Google Apps. It has helped us to better organize and keep everything on track.',
       image: {
-        src: 'images/feedback-section/avatar-1.svg',
+        src: '/images/feedback-section/avatar-1.svg',
         alt: 'avatar-1',
         width: 48,
         height: 48,
@@ -517,7 +517,7 @@ export const FEEDBACK_CONTENT = {
     {
       id: 2,
       icon: {
-        src: 'images/feedback-section/double-quote.svg',
+        src: '/images/feedback-section/double-quote.webp',
         alt: 'double-quote',
         width: 58,
         height: 120,
@@ -536,7 +536,7 @@ export const FEEDBACK_CONTENT = {
     {
       id: 3,
       icon: {
-        src: 'images/feedback-section/double-quote.svg',
+        src: '/images/feedback-section/double-quote.webp',
         alt: 'double-quote',
         width: 58,
         height: 120,
@@ -544,7 +544,7 @@ export const FEEDBACK_CONTENT = {
       message:
         'Easy to use, reasonably priced, and ensures I don’t drop the ball on following up with my leads!',
       image: {
-        src: 'images/feedback-section/avatar-3.svg',
+        src: '/images/feedback-section/avatar-3.svg',
         alt: 'avatar-3',
         width: 48,
         height: 48,
