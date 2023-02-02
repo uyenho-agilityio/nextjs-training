@@ -7,7 +7,7 @@ export const styles = {
       lineHeight: 'text.sm',
       fontWeight: 'normal',
       color: 'primary-cl',
-      background: 'primary-bg',
+      background: 'secondary-cl',
       minH: '100%',
     },
 

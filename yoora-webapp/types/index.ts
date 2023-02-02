@@ -1,18 +1,18 @@
-export type imageProps = {
-  url: string;
+export type ImageProps = {
+  url?: string;
   alt: string;
   src: string;
   width: number;
   height: number;
 };
 
-export type subMenuList = {
+export type SubMenuList = {
   id: number;
   subTitle: string;
 };
 
-export type menuList = {
+export type MenuList = {
   id: number;
   title: string;
-  subMenu: subMenuList[];
+  subMenu: SubMenuList[];
 };

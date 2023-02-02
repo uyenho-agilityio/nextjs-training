@@ -1,50 +1,65 @@
 export const Text = {
   sizes: {
     default: {
-      fontSize: 'text.xs',
-      lineHeight: 'text.md',
+      fontSize: { base: 'text.sm', lg: 'text.md' },
+      lineHeight: { base: 'text.lg', lg: 'text.xl' },
     },
 
     xs: {
-      fontSize: 'text.xs',
-      lineHeight: 'text.lg',
+      fontSize: { base: 'text.xs', lg: 'text.sm' },
+      lineHeight: { base: 'text.xs', lg: 'text.sm' },
     },
 
     sm: {
-      fontSize: 'text.sm',
-      lineHeight: 'text.sm',
+      fontSize: { base: 'text.sm', lg: 'text.xl' },
+      lineHeight: { base: 'text.sm', lg: 'text.xl' },
     },
 
     md: {
-      // fontSize: 'text.sm',
-      // lineHeight: 'text.sm',
+      fontSize: { base: 'text.md', lg: 'text.lg' },
+      lineHeight: { base: 'text.md', lg: 'text.lg' },
+    },
+
+    lg: {
+      fontSize: 'text.lg',
+      lineHeight: 'text.xs',
+      letterSpacing: 'heading.widest',
+    },
+
+    xl: {
+      fontSize: { base: 'text.lg', lg: 'text.lg' },
+      lineHeight: { base: 'text.2xl', lg: 'text.3xl' },
+      letterSpacing: 'wider',
     },
   },
 
   variants: {
-    center: {
-      maxW: 'width.extraHuge',
-      mx: 'auto',
+    subTitle: {
+      fontWeight: 'bold',
     },
 
-    filter: {
+    description: {
+      mt: { base: '8px', lg: '16px' },
+      mb: { base: '16px', lg: '24px' },
+    },
+
+    subText: {
+      fontWeight: 'light',
+      color: 'third-cl',
+    },
+
+    highlight: {
       pos: 'absolute',
       top: '-10px',
       ml: '10px',
       px: '5px',
       w: 'fit-content',
-      bgColor: 'primary-bg',
+      bgColor: 'secondary-cl',
       zIndex: '1',
-    },
-
-    uppercase: {
-      color: 'primary-bg',
-      textTransform: 'uppercase',
     },
   },
 
   defaultProps: {
     size: 'default',
-    // variant: 'default',
   },
 };

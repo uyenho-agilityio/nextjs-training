@@ -9,12 +9,25 @@ export const Container = {
         lg: '1140px',
       },
     },
+
+    sm: {
+      maxW: {
+        sm: '272px',
+        lg: '400px',
+      },
+    },
+
+    md: {
+      maxW: {
+        sm: '272px',
+        lg: '750px',
+      },
+    },
   },
 
   variants: {
     default: {
       display: 'flex',
-      alignItems: 'center',
       justifyContent: 'center',
       height: '100vh',
     },

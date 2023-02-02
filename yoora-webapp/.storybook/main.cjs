@@ -1,3 +1,4 @@
+const path = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
@@ -14,17 +15,24 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
   ],
-  framework: '@storybook/react',
+  framework: {
+    name: '@storybook/nextjs',
+    options: {
+      nextConfigPath: path.resolve(__dirname, '../next.config.js'),
+    },
+  },
   core: {
     builder: '@storybook/builder-webpack5',
   },
   features: {
     storyStoreV7: true,
   },
-
   async webpackFinal(config) {
-    config.resolve.plugins = [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })];
-
+    config.resolve.plugins = [
+      new TsconfigPathsPlugin({
+        configFile: './tsconfig.json',
+      }),
+    ];
     return config;
   },
 };

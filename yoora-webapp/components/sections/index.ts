@@ -1,0 +1,13 @@
+export { default as GetInTouch } from './GetInTouch';
+export { default as BrandsSection } from './Brands';
+export { default as HeroSection } from './Hero';
+export { default as BenefitSection } from './Benefit';
+export { default as FeaturesSection } from './Features';
+export { default as IntegrationsSection } from './Integrations';
+export { default as WhatsNewSection } from './WhatsNew';
+export { default as RevenueSection } from './Revenue';
+export { default as FeedbackSection } from './Feedback';
+export { default as CTASection } from './CTA';
+export { default as MoreTopicsSection } from './MoreTopics';
+export { default as BannerSection } from './BlogDetails/Banner';
+export { default as DetailsSection } from './BlogDetails/Details';

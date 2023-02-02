@@ -2,7 +2,7 @@
 import Storybook from '@storybook/react';
 
 // Component
-import { Spinner } from './Spinner';
+import { Spinner } from '.';
 
 export default {
   title: 'Components/Spinner',
@@ -10,8 +10,8 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Storybook.ComponentMeta<typeof Spinner>;
+} as Storybook.Meta<typeof Spinner>;
 
-const Template: Storybook.ComponentStory<typeof Spinner> = args => <Spinner {...args} />;
+const Template: Storybook.StoryFn<typeof Spinner> = args => <Spinner {...args} />;
 
 export const Default = Template.bind({});

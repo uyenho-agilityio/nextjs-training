@@ -2,7 +2,7 @@
 import { render } from '@testing-library/react';
 
 // Component
-import { Spinner } from './Spinner';
+import { Spinner } from '.';
 
 describe('Spinner renders', () => {
   test('should render loading component', () => {

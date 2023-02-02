@@ -1,13 +1,13 @@
 export const LOGO = {
   alt: 'Logo',
-  src: '/images/logo.svg',
+  src: '/images/logo.webp',
   width: 106,
   height: 22,
 };
 
 export const MENU = {
   alt: 'Menu',
-  src: '/images/menu.svg',
+  src: '/images/menu.webp',
   width: 24,
   height: 24,
 };
