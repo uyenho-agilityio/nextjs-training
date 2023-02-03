@@ -1,22 +1,13 @@
-'use client';
+// Lib
+import dynamic from 'next/dynamic';
 
-// Libs
-import { Box } from '@chakra-ui/react';
-import { NextPage } from 'next';
+// Component
+const DetailsPage = dynamic(() => import('./DetailsPage'), {
+  ssr: false,
+});
 
-// Components
-import { BannerSection, DetailsSection, MoreTopicsSection } from '@webapp/components';
-
-const Page: NextPage = (): JSX.Element => {
-  return (
-    <>
-      <BannerSection />
-      <DetailsSection />
-      <Box bg="primary-bg">
-        <MoreTopicsSection />
-      </Box>
-    </>
-  );
+const Details = (): JSX.Element => {
+  return <DetailsPage />;
 };
 
-export default Page;
+export default Details;

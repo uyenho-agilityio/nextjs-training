@@ -1,50 +1,25 @@
-'use client';
-
 // Libs
-import { Box } from '@chakra-ui/react';
-import { NextPage } from 'next';
+import { notFound } from 'next/navigation';
+import dynamic from 'next/dynamic';
 
-// Components
-import {
-  HeroSection,
-  BrandsSection,
-  BenefitSection,
-  FeaturesSection,
-  IntegrationsSection,
-  WhatsNewSection,
-  RevenueSection,
-  FeedbackSection,
-  CTASection,
-} from '@webapp/components';
+// Type
+import { Message } from '@webapp/models';
 
-const Home: NextPage = (): JSX.Element => {
-  return (
-    <>
-      <Box bg="primary-bg">
-        <HeroSection />
-        <BrandsSection />
-      </Box>
+// Service
+import { fetchMessages } from '@webapp/services';
 
-      <Box bg="secondary-bg">
-        <BenefitSection />
-      </Box>
+// Component
+const HomePage = dynamic(() => import('./HomePage'));
 
-      <FeaturesSection />
+const Home = async (): Promise<JSX.Element> => {
+  const dataRes = await fetchMessages('SSR');
+  const data: Message[] = dataRes.data;
 
-      <Box bg="primary-bg">
-        <IntegrationsSection />
-      </Box>
+  if (!data) {
+    notFound();
+  }
 
-      <WhatsNewSection />
-      <RevenueSection />
-
-      <Box bg="primary-bg">
-        <FeedbackSection />
-      </Box>
-
-      <CTASection />
-    </>
-  );
+  return <HomePage data={data} />;
 };
 
 export default Home;

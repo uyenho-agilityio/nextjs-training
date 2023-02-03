@@ -7,7 +7,10 @@ import { ChakraProvider, Box } from '@chakra-ui/react';
 import { CHAKRA_THEME } from '@webapp/themes/chakra';
 
 // Components
-import { Header, Footer } from '@webapp/components';
+import { AuthGuard, Header, Footer } from '@webapp/components';
+
+// Provider
+import { AppProvider } from '@webapp/contexts/AppContext';
 
 const RootLayout = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return (
@@ -15,11 +18,15 @@ const RootLayout = ({ children }: { children: React.ReactNode }): JSX.Element =>
       <head />
       <body>
         <ChakraProvider theme={CHAKRA_THEME}>
-          <Box bg="primary-bg" pt={6}>
-            <Header />
-          </Box>
-          <Box as="main">{children}</Box>
-          <Footer />
+          <AppProvider>
+            <AuthGuard>
+              <Box bg="primary-bg" pt={6}>
+                <Header />
+              </Box>
+              <Box as="main">{children}</Box>
+              <Footer />
+            </AuthGuard>
+          </AppProvider>
         </ChakraProvider>
       </body>
     </html>
