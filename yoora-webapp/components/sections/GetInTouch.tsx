@@ -1,7 +1,7 @@
 'use client';
 
 // Libs
-import { Box, Divider, Link as ChakraLink } from '@chakra-ui/react';
+import { Box, Link as ChakraLink } from '@chakra-ui/react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -33,12 +33,13 @@ const GetInTouch = (): JSX.Element => {
         <Flex variant="responsive" mt={8}>
           {GET_IN_TOUCH_CONTENT.ITEMS.map(
             (item: { id: number; text: string; email: string }): JSX.Element => (
-              <Flex key={item.id} mr="auto">
-                <Divider orientation="vertical" mr={4} borderColor="border-cl" />
-                <Box>
-                  <Text variant="subTitle">{item.text}</Text>
-                  <ChakraLink as={Link} href={`${PAGE_ROUTES.CONTACT}/#`}>
-                    <Text>{item.email}</Text>
+              <Flex key={item.id} mr="auto" mb="30px">
+                <Box borderLeft="1px" borderLeftColor="border-cl">
+                  <Text variant="subTitle" pl={4}>
+                    {item.text}
+                  </Text>
+                  <ChakraLink as={Link} href={`mailto:${PAGE_ROUTES.CONTACT}/#`}>
+                    <Text ml={4}>{item.email}</Text>
                   </ChakraLink>
                 </Box>
               </Flex>
