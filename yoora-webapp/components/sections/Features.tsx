@@ -1,7 +1,7 @@
 'use client';
 
 // Libs
-import { Container, Flex, Divider } from '@chakra-ui/react';
+import { Container, Flex, Divider, Box } from '@chakra-ui/react';
 import Image from 'next/image';
 
 // Constant
@@ -17,7 +17,7 @@ const FeaturesSection = (): JSX.Element => {
     <Container as="section" className="features-section" my={{ base: '72px', lg: '120px' }}>
       {FEATURES_CONTENT.map(
         (item: ItemProps): JSX.Element => (
-          <>
+          <Box key={item.id}>
             <Divider mb={{ base: '40px', lg: '92px' }} />
             <Flex
               key={item.id}
@@ -33,7 +33,7 @@ const FeaturesSection = (): JSX.Element => {
                 sizes="(min-width: 320px) 100vw, 272px, (min-width: 768px) 100vw, 413px, (min-width: 1440px) 100vw, 555px"
               />
             </Flex>
-          </>
+          </Box>
         ),
       )}
     </Container>

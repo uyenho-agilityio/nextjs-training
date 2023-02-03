@@ -6,7 +6,7 @@ const nextConfig = {
   },
 
   images: {
-    domains: ['/public/images'],
+    domains: ['localhost'],
     deviceSizes: [320, 768, 1440],
   },
 };

@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "user@api.com",
+      "password": "User@123",
+      "avatar": {
+        "src": "/images/feedback-section/default-avatar-1.svg",
+        "alt": "avatar",
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "id": "2",
+      "email": "guest@api.com",
+      "password": "Guest@123",
+      "avatar": {
+        "src": "/images/feedback-section/default-avatar-2.svg",
+        "alt": "avatar",
+        "width": 48,
+        "height": 48
+      }
+    }
+  ],
+  "messages": [
+    {
+      "id": "1675077820074",
+      "name": "Lola Ross",
+      "email": "Digital Marketing Director",
+      "message": "The best thing we love about Yoora is it does two-way sync with Google Apps. It has helped us to better organize and keep everything on track.",
+      "avatar": {
+        "src": "/images/feedback-section/avatar-1.svg",
+        "alt": "avatar",
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "id": "1675137802940",
+      "name": "Daisy Phelps",
+      "email": "Speaker and Author, Lifeiseasy",
+      "message": "It has made our sales department more effective and efficient. It’s easy to use and it’s constantly updated. It’s easy to use and it’s constantly updated.",
+      "avatar": {
+        "src": "/images/feedback-section/avatar-2.svg",
+        "alt": "avatar",
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "id": "1675138045180",
+      "name": "Andrew Wilkins",
+      "email": "Managing Director, Nirma Studio",
+      "message": "Easy to use, reasonably priced, and ensures I don’t drop the ball on following up with my leads!",
+      "avatar": {
+        "src": "/images/feedback-section/avatar-3.svg",
+        "alt": "avatar",
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "id": "1675149108480",
+      "name": "Samantha Dior",
+      "email": "sam@nextjs.com",
+      "message": "Officia doloribus facilis magnam ut cum unde, pariatur minima delectus quae nostrum suscipit animi repellat accusantium tenetur, velit error quod officiis minus!",
+      "avatar": {
+        "src": "/images/feedback-section/default-avatar-1.svg",
+        "alt": "avatar",
+        "width": 48,
+        "height": 48
+      }
+    }
+  ]
+}

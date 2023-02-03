@@ -8,7 +8,7 @@ import {
   Input as ChakraInput,
   InputProps as ChakraInputProps,
 } from '@chakra-ui/react';
-import { ChangeEvent, FocusEvent } from 'react';
+import { ChangeEvent, FocusEvent, RefObject } from 'react';
 
 // Component
 import { Text } from '@webapp/components';
@@ -16,6 +16,7 @@ import { Text } from '@webapp/components';
 type InputType = 'text' | 'email' | 'password';
 
 type InputProps = {
+  ref?: RefObject<HTMLInputElement>;
   type: InputType;
   text?: string;
   defaultValue?: string;
@@ -29,6 +30,7 @@ type InputProps = {
 };
 
 export const Input: React.FC<InputProps> = ({
+  ref,
   type = 'text',
   text,
   defaultValue,
@@ -48,6 +50,7 @@ export const Input: React.FC<InputProps> = ({
         </Text>
       )}
       <ChakraInput
+        ref={ref}
         type={type}
         defaultValue={defaultValue}
         placeholder={placeholder}
@@ -57,7 +60,7 @@ export const Input: React.FC<InputProps> = ({
         {...chakraInputProps}
       />
       {error && (
-        <FormErrorMessage mt={-4} mb={10}>
+        <FormErrorMessage mt={-4} mb={5}>
           {error}
         </FormErrorMessage>
       )}
