@@ -1,17 +1,19 @@
-export const EMAIL_PATTERN =
+const EMAIL_PATTERN =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-export const PWD_PATTERN = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+const PWD_PATTERN = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,}$/;
+
+const MESSAGE_PATTERN = /^.{40,180}$/;
 
 /**
  * Capitalize the first letter of the word
- * @param {string} word
- * @returns {string}
+ * @param word
+ * @returns
  */
 export const capitalizeWord = (word: string): string =>
   word.charAt(0).toUpperCase() + word.slice(1);
 
 /**
- * Validate form value
+ * Validate form's value
  * @param value
  * @param type
  * @returns
@@ -26,6 +28,14 @@ export const validateForm = (value: string, type: string): string => {
       return EMAIL_PATTERN.test(value) ? '' : `${capitalizeWord(type)} is invalid`;
     case 'password':
       return PWD_PATTERN.test(value) ? '' : `${capitalizeWord(type)} is invalid`;
+    case 'name':
+      return value.length > 4
+        ? ''
+        : `${capitalizeWord(type)} should be a minimum of five characters in length`;
+    case 'message':
+      return MESSAGE_PATTERN.test(value)
+        ? ''
+        : `${capitalizeWord(type)} should be between 40 and 180 characters in length`;
     default:
       return '';
   }
