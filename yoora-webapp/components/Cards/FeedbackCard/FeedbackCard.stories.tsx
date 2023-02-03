@@ -18,8 +18,11 @@ export default {
 
 const Template: Storybook.StoryFn<typeof FeedbackCard> = args => (
   <Box maxW="360px">
-    <FeedbackCard {...FEEDBACK_CONTENT.CARDS[0]} {...args} />
+    <FeedbackCard {...args} />
   </Box>
 );
 
 export const Feedback_Card = Template.bind({});
+Feedback_Card.args = {
+  feedback: FEEDBACK_CONTENT.CARDS[0],
+};
