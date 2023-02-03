@@ -7,9 +7,10 @@ import {
   FormErrorMessage,
   FormControl,
 } from '@chakra-ui/react';
-import { ChangeEvent, FocusEvent } from 'react';
+import { ChangeEvent, FocusEvent, RefObject } from 'react';
 
 type TextareaProps = {
+  ref?: RefObject<HTMLTextAreaElement>;
   defaultValue?: string;
   placeholder?: string;
   value?: string;
@@ -19,6 +20,7 @@ type TextareaProps = {
 } & ChakraTextareaProps;
 
 export const Textarea: React.FC<TextareaProps> = ({
+  ref,
   defaultValue,
   placeholder,
   value,
@@ -30,6 +32,7 @@ export const Textarea: React.FC<TextareaProps> = ({
   return error ? (
     <FormControl isInvalid={!!error}>
       <ChakraTextarea
+        ref={ref}
         defaultValue={defaultValue}
         placeholder={placeholder}
         value={value}
@@ -38,10 +41,15 @@ export const Textarea: React.FC<TextareaProps> = ({
         {...props}
         resize="none"
       />
-      {error && <FormErrorMessage>{error}</FormErrorMessage>}
+      {error && (
+        <FormErrorMessage mt={-4} mb={5}>
+          {error}
+        </FormErrorMessage>
+      )}
     </FormControl>
   ) : (
     <ChakraTextarea
+      ref={ref}
       defaultValue={defaultValue}
       placeholder={placeholder}
       value={value}
