@@ -496,61 +496,61 @@ export const FEEDBACK_CONTENT = {
   },
   CARDS: [
     {
-      id: 1,
-      icon: {
-        src: '/images/feedback-section/double-quote.webp',
-        alt: 'double-quote',
-        width: 58,
-        height: 120,
-      },
+      id: '1',
+      name: 'Lola Ross',
+      email: 'Digital Marketing Director',
       message:
         'The best thing we love about Yoora is it does two-way sync with Google Apps. It has helped us to better organize and keep everything on track.',
-      image: {
-        src: '/images/feedback-section/avatar-1.svg',
-        alt: 'avatar-1',
-        width: 48,
-        height: 48,
-      },
-      name: 'Lola Ross',
-      position: 'Digital Marketing Director',
-    },
-    {
-      id: 2,
       icon: {
         src: '/images/feedback-section/double-quote.webp',
         alt: 'double-quote',
         width: 58,
         height: 120,
       },
+      avatar: {
+        src: '/images/feedback-section/avatar-1.svg',
+        alt: 'avatar',
+        width: 48,
+        height: 48,
+      },
+    },
+    {
+      id: '2',
+      name: 'Daisy Phelps',
+      email: 'Speaker and Author, Lifeiseasy',
       message:
         'It has made our sales department more effective and efficient. It’s easy to use and it’s constantly updated. It’s easy to use and it’s constantly updated.',
-      image: {
-        src: '/images/feedback-section/avatar-2.svg',
-        alt: 'avatar-2',
-        width: 48,
-        height: 48,
-      },
-      name: 'Daisy Phelps',
-      position: 'Speaker and Author, Lifeiseasy',
-    },
-    {
-      id: 3,
       icon: {
         src: '/images/feedback-section/double-quote.webp',
         alt: 'double-quote',
         width: 58,
         height: 120,
       },
-      message:
-        'Easy to use, reasonably priced, and ensures I don’t drop the ball on following up with my leads!',
-      image: {
-        src: '/images/feedback-section/avatar-3.svg',
-        alt: 'avatar-3',
+      avatar: {
+        src: '/images/feedback-section/avatar-2.svg',
+        alt: 'avatar',
         width: 48,
         height: 48,
       },
+    },
+    {
+      id: '3',
       name: 'Andrew Wilkins',
-      position: 'Managing Director, Nirma Studio',
+      email: 'Managing Director, Nirma Studio',
+      message:
+        'Easy to use, reasonably priced, and ensures I don’t drop the ball on following up with my leads!',
+      icon: {
+        src: '/images/feedback-section/double-quote.webp',
+        alt: 'double-quote',
+        width: 58,
+        height: 120,
+      },
+      avatar: {
+        src: '/images/feedback-section/avatar-3.svg',
+        alt: 'avatar',
+        width: 48,
+        height: 48,
+      },
     },
   ],
 };
