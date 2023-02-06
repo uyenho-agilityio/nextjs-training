@@ -16,8 +16,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       return res.status(404).json({ message: 'Method not supported' });
     }
 
-    // const { email, password } = req.body;
-
     const response = await import('@webapp/database/db.json');
     const data: User[] = response.users;
 
