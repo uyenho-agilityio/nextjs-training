@@ -8,7 +8,7 @@ import {
   Input as ChakraInput,
   InputProps as ChakraInputProps,
 } from '@chakra-ui/react';
-import { ChangeEvent, FocusEvent, RefObject } from 'react';
+import { ChangeEvent, FocusEvent, KeyboardEvent, forwardRef, RefObject } from 'react';
 
 // Component
 import { Text } from '@webapp/components';
@@ -23,25 +23,28 @@ type InputProps = {
   placeholder?: string;
   value?: string;
   error?: string;
+  onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void;
   formControlProps?: FormControlProps;
   chakraInputProps?: ChakraInputProps;
 };
 
-export const Input: React.FC<InputProps> = ({
-  ref,
-  type = 'text',
-  text,
-  defaultValue,
-  placeholder,
-  value,
-  error,
-  onChange,
-  onBlur,
-  formControlProps,
-  chakraInputProps,
-}): JSX.Element => {
+export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref): JSX.Element => {
+  const {
+    type = 'text',
+    text,
+    defaultValue,
+    placeholder,
+    value,
+    error,
+    onKeyDown,
+    onChange,
+    onBlur,
+    formControlProps,
+    chakraInputProps,
+  } = props;
+
   return (
     <FormControl isInvalid={!!error} {...formControlProps}>
       {text && (
@@ -55,6 +58,7 @@ export const Input: React.FC<InputProps> = ({
         defaultValue={defaultValue}
         placeholder={placeholder}
         value={value}
+        onKeyDown={onKeyDown}
         onChange={onChange}
         onBlur={onBlur}
         {...chakraInputProps}
@@ -66,4 +70,6 @@ export const Input: React.FC<InputProps> = ({
       )}
     </FormControl>
   );
-};
+});
+
+Input.displayName = 'Input';

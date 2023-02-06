@@ -2,6 +2,7 @@
 
 // Libs
 import { Container, Box } from '@chakra-ui/react';
+import { KeyboardEventHandler, RefObject } from 'react';
 import Image from 'next/image';
 
 // Constants
@@ -14,8 +15,9 @@ import { useAuth } from '@webapp/hooks';
 import { Title, Input, InputGroup, Button } from '@webapp/components';
 
 const LoginForm = (): JSX.Element => {
-  const { state, handleChangeInput, handleValidateInput, handleSubmit } = useAuth();
-  const { email, password, error, loading } = state;
+  const { state, emailRef, passwordRef, handleValidateInput, handleSubmitByKeyDown, handleSubmit } =
+    useAuth();
+  const { error, loading } = state;
 
   return (
     <Container
@@ -33,15 +35,16 @@ const LoginForm = (): JSX.Element => {
       </Title>
 
       <Input
-        chakraInputProps={{ variant: 'login-form' }}
+        chakraInputProps={{ variant: 'login-form', autoFocus: true }}
         formControlProps={{
           pos: 'relative',
           _focusWithin: { color: 'primary-btn-cl' },
         }}
         type="text"
         text="Email *"
-        onChange={e => handleChangeInput(e, 'email')}
         onBlur={e => handleValidateInput(e, 'email')}
+        onKeyDown={handleSubmitByKeyDown as unknown as KeyboardEventHandler<HTMLInputElement>}
+        ref={emailRef as RefObject<HTMLInputElement>}
         error={error.email}
       />
       <InputGroup
@@ -53,8 +56,9 @@ const LoginForm = (): JSX.Element => {
         }}
         type="password"
         text="Password *"
-        onChange={e => handleChangeInput(e, 'password')}
         onBlur={e => handleValidateInput(e, 'password')}
+        onKeyDown={handleSubmitByKeyDown as unknown as KeyboardEventHandler<HTMLInputElement>}
+        ref={passwordRef as RefObject<HTMLInputElement>}
         error={error.password}
       />
       <Button
@@ -62,7 +66,7 @@ const LoginForm = (): JSX.Element => {
         type="submit"
         onClick={handleSubmit}
         isLoading={loading}
-        isDisabled={!email || !password || !!error.email || !!error.password}
+        isDisabled={!!error.email || !!error.password}
       >
         {TEXT.LOGIN}
       </Button>
