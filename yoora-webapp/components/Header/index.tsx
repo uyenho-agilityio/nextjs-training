@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 // Constants
 import { LOGO, PAGE_ROUTES, ROUTE_LIST, STORAGE_KEYS, TEXT } from '@webapp/constants';
@@ -31,11 +31,12 @@ const Header = (): JSX.Element => {
   const pathname = usePathname();
   const router = useRouter();
   const { isAuthenticated, handleLogOut } = useAuth();
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
 
-  const currentUser =
-    typeof window !== 'undefined'
-      ? (getStorage(STORAGE_KEYS.CURRENT_USER) as unknown as User)
-      : null;
+  useEffect(() => {
+    const user = getStorage(STORAGE_KEYS.CURRENT_USER) as unknown as User;
+    setCurrentUser(user);
+  }, []);
 
   const handleLogIn = useCallback(() => {
     router.push(PAGE_ROUTES.LOGIN);
