@@ -83,6 +83,7 @@ Build Yoora web app with pages:
 
 ```
  NEXT_BASE_URL=...
+ SECURE_TOKEN=...
 ```
 
 - All commands are run from the root folder, from a terminal:
