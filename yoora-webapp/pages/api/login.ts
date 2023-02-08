@@ -1,4 +1,6 @@
-// Lib
+// Libs
+import { sign } from 'jsonwebtoken';
+import { serialize } from 'cookie';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 // Type
@@ -24,6 +26,26 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     );
 
     if (user) {
+      // Create token
+      const token = sign(
+        {
+          email: body.email,
+        },
+        process.env.SECURE_TOKEN || 'abcdefg',
+        { expiresIn: '1h' },
+      );
+
+      // Set token
+      const serialized: string = serialize('accessToken', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'strict',
+        maxAge: 60 * 60 * 1, // expires in 1 hour
+        path: '/',
+      });
+
+      res.setHeader('Set-Cookie', serialized);
+
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { password, ...userWithoutPassword } = user;
 
@@ -32,7 +54,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
         .json({ message: 'Logged in successfully.', data: userWithoutPassword });
     }
 
-    return res.status(400).json({ message: 'Email or password is wrong.' });
+    return res.status(401).json({ message: 'Invalid credentials.' });
   } catch (error) {
     return res.status(500).json({ message: 'Something went wrong!' });
   }
