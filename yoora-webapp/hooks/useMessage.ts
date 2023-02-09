@@ -21,7 +21,7 @@ const useMessageContext = () => useContext(MessageContext);
 
 export const useMessage = () => {
   const router = useRouter();
-  const { createMessage } = useMessageContext();
+  const { createMessage, data } = useMessageContext();
   const { user } = useAuth();
 
   const [state, setState] = useState({
@@ -132,5 +132,5 @@ export const useMessage = () => {
     }
   };
 
-  return { state, handleChangeInput, handleValidateInput, handleSubmit };
+  return { data, state, handleChangeInput, handleValidateInput, handleSubmit };
 };

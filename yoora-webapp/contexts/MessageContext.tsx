@@ -1,18 +1,20 @@
-// Lib
+// Libs
+import useSWR from 'swr';
 import { Context, createContext, ReactNode, useCallback } from 'react';
 
 // Type
 import { Message } from '@webapp/models';
 
 // Service
-import { addNewMessage } from '@webapp/services';
+import { addNewMessage, URL } from '@webapp/services';
 
 type MessageContextValue = {
   createMessage: (
-    data: Message,
+    message: Message,
     onSuccess: () => void,
     onError: (value: string) => void,
   ) => Promise<void>;
+  data: Message[] | undefined;
 };
 
 type MessageProviderProps = {
@@ -24,6 +26,18 @@ export const MessageContext: Context<MessageContextValue> = createContext(
 );
 
 export const MessageProvider: React.FC<MessageProviderProps> = ({ children }) => {
+  const { data, mutate } = useSWR<Message[]>(URL);
+
+  const addMessageOptions = (message: Message) => {
+    return {
+      // optimistic data displays until populating cache
+      optimisticData: (data: Message[] | undefined) => [...(data ?? []), message],
+      rollbackOnError: true,
+      populateCache: true,
+      revalidate: false,
+    };
+  };
+
   const createMessage = useCallback(
     async (
       message: Message,
@@ -31,15 +45,19 @@ export const MessageProvider: React.FC<MessageProviderProps> = ({ children }) =>
       onError: (error: string) => void,
     ): Promise<void> => {
       try {
-        const result: Message = await addNewMessage({ message });
-        if (result) onSuccess();
-        return;
+        const newMessage = await addNewMessage({ message });
+
+        await mutate([...(data || []), newMessage], addMessageOptions(message));
+        onSuccess();
       } catch (error) {
         onError(error as string);
       }
     },
-    [],
+
+    [data],
   );
 
-  return <MessageContext.Provider value={{ createMessage }}>{children}</MessageContext.Provider>;
+  return (
+    <MessageContext.Provider value={{ createMessage, data }}>{children}</MessageContext.Provider>
+  );
 };

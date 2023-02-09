@@ -31,7 +31,7 @@ export const fetching = async ({ endpoint, method }: FetchingOptions) => {
 
 export const fetcher = async <T>(url: string): Promise<T> => {
   const res = await fetch(url);
-  const data: Promise<T> = res.json();
+  const { data } = await res.json();
 
-  return data;
+  return data as Promise<T>;
 };

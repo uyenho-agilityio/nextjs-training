@@ -3,8 +3,8 @@
 // Lib
 import { Box } from '@chakra-ui/react';
 
-// Type
-import { Message } from '@webapp/models';
+// Hook
+import { useMessage } from '@webapp/hooks';
 
 // Components
 import {
@@ -19,7 +19,9 @@ import {
   CTASection,
 } from '@webapp/components';
 
-const HomePage = ({ data }: { data: Message[] }): JSX.Element => {
+const HomePage = (): JSX.Element => {
+  const { data } = useMessage();
+
   return (
     <>
       <Box bg="primary-bg">
@@ -41,7 +43,7 @@ const HomePage = ({ data }: { data: Message[] }): JSX.Element => {
       <RevenueSection />
 
       <Box bg="primary-bg">
-        <FeedbackSection data={data} />
+        <FeedbackSection data={data || []} />
       </Box>
 
       <CTASection />

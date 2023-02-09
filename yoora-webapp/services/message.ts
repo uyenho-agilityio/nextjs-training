@@ -8,7 +8,7 @@ import { ApiPath, Methods } from '@webapp/types';
 // Fetch
 import { fetching } from './fetch';
 
-const URL = `${BASE_URL}${ApiPath.Messages}`;
+export const URL = `${BASE_URL}${ApiPath.Messages}`;
 
 /**
  * Get all messages
@@ -38,7 +38,7 @@ export const addNewMessage = async ({
   };
 
   const res = await fetch(endpoint, requestOptions);
-  const data: Promise<Message> = res.json();
+  const { data } = await res.json();
 
-  return data;
+  return data as Promise<Message>;
 };
