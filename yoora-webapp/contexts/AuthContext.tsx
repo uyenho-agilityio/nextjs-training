@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }: MessageProviderProps) => {
       try {
         const result = await login({ payload });
 
-        if (result.data.email) {
+        if (result?.data?.email) {
           setUser(result.data);
           setStorage<User>(STORAGE_KEYS.CURRENT_USER, result.data);
           onSuccess();
