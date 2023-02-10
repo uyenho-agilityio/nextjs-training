@@ -56,7 +56,7 @@ const MainNavigationBase: React.FC<MainNavigationProps> = ({
 
   const handleLogIn = useCallback(() => {
     router.push(PAGE_ROUTES.LOGIN);
-  }, [router]);
+  }, []);
 
   return (
     <Box {...props}>

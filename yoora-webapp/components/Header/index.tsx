@@ -40,7 +40,7 @@ const Header = (): JSX.Element => {
 
   const handleLogIn = useCallback(() => {
     router.push(PAGE_ROUTES.LOGIN);
-  }, [router]);
+  }, []);
 
   return (
     <Container as="header" className="header">
