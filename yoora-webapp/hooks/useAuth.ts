@@ -1,5 +1,13 @@
 // Libs
-import { FocusEvent, MutableRefObject, useCallback, useContext, useRef, useState } from 'react';
+import {
+  FocusEvent,
+  KeyboardEventHandler,
+  MutableRefObject,
+  useCallback,
+  useContext,
+  useRef,
+  useState,
+} from 'react';
 import { useRouter } from 'next/navigation';
 
 // Constants
@@ -109,7 +117,7 @@ export const useAuth = () => {
 
   const handleSubmitByKeyDown = useCallback((e: KeyboardEvent): void => {
     if (e.key === 'Enter') handleSubmit();
-  }, []);
+  }, []) as unknown as KeyboardEventHandler<HTMLInputElement>;
 
   const handleLogOut = (): void => {
     setState({

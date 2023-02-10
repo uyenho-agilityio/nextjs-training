@@ -43,7 +43,7 @@ const LoginForm = (): JSX.Element => {
         type="text"
         text="Email *"
         onBlur={e => handleValidateInput(e, 'email')}
-        onKeyDown={handleSubmitByKeyDown as unknown as KeyboardEventHandler<HTMLInputElement>}
+        onKeyDown={handleSubmitByKeyDown}
         ref={emailRef as RefObject<HTMLInputElement>}
         error={error.email}
       />
