@@ -11,34 +11,48 @@ import { useMessage } from '@webapp/hooks';
 
 // Components
 import { Flex, Input, Textarea, Button } from '@webapp/components';
+import { ChangeEvent, FocusEvent } from 'react';
 
 const ContactForm = (): JSX.Element => {
   const { state, handleChangeInput, handleValidateInput, handleSubmit } = useMessage();
   const { name, email, message, error, loading } = state;
 
+  type InputType = 'name' | 'email' | 'message';
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name } = e.target;
+    handleChangeInput(e, name as InputType);
+  };
+
+  const handleInputValidate = (e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name } = e.target;
+    handleValidateInput(e, name as InputType);
+  };
+
   return (
     <Flex variant="column" alignItems="flex-start">
       <Input
-        chakraInputProps={{ variant: 'contact-form' }}
+        chakraInputProps={{ variant: 'contact-form', name: 'name' }}
         type="text"
         placeholder="Your Name"
-        onChange={e => handleChangeInput(e, 'name')}
-        onBlur={e => handleValidateInput(e, 'name')}
+        onChange={handleInputChange}
+        onBlur={handleInputValidate}
         error={error.name}
       />
       <Input
-        chakraInputProps={{ variant: 'contact-form' }}
+        chakraInputProps={{ variant: 'contact-form', name: 'email' }}
         type="email"
         placeholder="Your Email"
-        onChange={e => handleChangeInput(e, 'email')}
-        onBlur={e => handleValidateInput(e, 'email')}
+        onChange={handleInputChange}
+        onBlur={handleInputValidate}
         error={error.email}
       />
       <Textarea
         variant="contact-form"
         placeholder="Message"
-        onChange={e => handleChangeInput(e, 'message')}
-        onBlur={e => handleValidateInput(e, 'message')}
+        name="message"
+        onChange={handleInputChange}
+        onBlur={handleInputValidate}
         error={error.message}
       />
 
