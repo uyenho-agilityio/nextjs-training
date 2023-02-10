@@ -2,7 +2,6 @@
 
 // Libs
 import { Container, Box } from '@chakra-ui/react';
-import { KeyboardEventHandler, RefObject } from 'react';
 import Image from 'next/image';
 
 // Constants
@@ -44,7 +43,7 @@ const LoginForm = (): JSX.Element => {
         text="Email *"
         onBlur={e => handleValidateInput(e, 'email')}
         onKeyDown={handleSubmitByKeyDown}
-        ref={emailRef as RefObject<HTMLInputElement>}
+        ref={emailRef}
         error={error.email}
       />
       <InputGroup
@@ -58,7 +57,7 @@ const LoginForm = (): JSX.Element => {
         text="Password *"
         onBlur={e => handleValidateInput(e, 'password')}
         onKeyDown={handleSubmitByKeyDown}
-        ref={passwordRef as RefObject<HTMLInputElement>}
+        ref={passwordRef}
         error={error.password}
       />
       <Button

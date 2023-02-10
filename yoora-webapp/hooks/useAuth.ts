@@ -3,6 +3,7 @@ import {
   FocusEvent,
   KeyboardEventHandler,
   MutableRefObject,
+  RefObject,
   useCallback,
   useContext,
   useRef,
@@ -28,8 +29,8 @@ export const useAuth = () => {
   const router = useRouter();
   const { logIn, logOut, user, isAuthenticated } = useAuthContext();
 
-  const emailRef = useRef<{ value: string }>({ value: '' });
-  const passwordRef = useRef<{ value: string }>({ value: '' });
+  const emailRef = useRef<{ value: string }>({ value: '' }) as RefObject<HTMLInputElement>;
+  const passwordRef = useRef<{ value: string }>({ value: '' }) as RefObject<HTMLInputElement>;
 
   const [state, setState] = useState({
     error: {
