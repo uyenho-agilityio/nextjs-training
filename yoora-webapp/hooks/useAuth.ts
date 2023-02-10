@@ -54,7 +54,6 @@ export const useAuth = () => {
         },
       });
     },
-
     [state],
   );
 

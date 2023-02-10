@@ -62,7 +62,6 @@ export const AuthProvider: React.FC<MessageProviderProps> = ({ children }) => {
         onError(error as string);
       }
     },
-
     [],
   );
 
@@ -77,7 +76,6 @@ export const AuthProvider: React.FC<MessageProviderProps> = ({ children }) => {
         onError(error as string);
       }
     },
-
     [],
   );
 
