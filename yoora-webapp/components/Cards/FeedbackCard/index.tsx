@@ -2,33 +2,27 @@
 
 // Libs
 import { Divider } from '@chakra-ui/react';
+import { memo } from 'react';
 import Image from 'next/image';
 
 // Type
-import { ImageProps } from '@webapp/types';
+import { Message } from '@webapp/models';
+
+// Constant
+import { DOUBLE_QUOTE_ICON } from '@webapp/constants';
 
 // Components
-import { Card, Tag } from '@webapp/components';
-import { Text } from '../../common/Text/index';
+import { Card, Tag, Text } from '@webapp/components';
 
-export type CardProps = {
-  id: number;
-  icon: ImageProps;
-  message: string;
-  image: ImageProps;
-  name: string;
-  position: string;
-};
-
-export const FeedbackCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
-  const { id, icon, message, image, name, position } = detailsCard;
+const FeedbackCardBase = ({ feedback }: { feedback: Message }): JSX.Element => {
+  const { id, name, email, message, avatar } = feedback;
 
   return (
     <Card
       key={id}
       leftChildren={
         <>
-          <Image {...icon} priority />
+          <Image {...DOUBLE_QUOTE_ICON} priority />
           <Divider my={{ base: '16px', lg: '24px' }} borderColor="border-cl" />
         </>
       }
@@ -38,9 +32,9 @@ export const FeedbackCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
             {message}
           </Text>
           <Tag
-            {...image}
+            {...avatar}
             text={name}
-            subText={position}
+            subText={email}
             boxProps={{ ml: '12px' }}
             chakraTagProps={{ mt: '24px' }}
           />
@@ -50,3 +44,5 @@ export const FeedbackCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
     />
   );
 };
+
+export const FeedbackCard = memo(FeedbackCardBase);

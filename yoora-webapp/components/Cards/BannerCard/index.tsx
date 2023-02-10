@@ -2,6 +2,7 @@
 
 // Libs
 import { Divider } from '@chakra-ui/react';
+import { memo } from 'react';
 
 // Components
 import { Card, Tag } from '@webapp/components';
@@ -13,7 +14,7 @@ type CardProps = {
   author: string;
 };
 
-export const BannerCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
+const BannerCardBase = (detailsCard: CardProps): JSX.Element => {
   const { tag, date, author } = detailsCard;
 
   return (
@@ -28,3 +29,5 @@ export const BannerCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
     />
   );
 };
+
+export const BannerCard = memo(BannerCardBase);

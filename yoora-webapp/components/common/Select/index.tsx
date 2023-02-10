@@ -17,13 +17,13 @@ type SelectProps = {
   onChange?: (e: ChangeEvent<HTMLSelectElement>) => void;
 } & ChakraSelectProps;
 
-const SelectBase: React.FC<SelectProps> = ({
+const SelectBase = ({
   defaultValue,
   placeholder,
   options = [],
   onChange,
   ...props
-}): JSX.Element => (
+}: SelectProps): JSX.Element => (
   <ChakraSelect
     defaultValue={defaultValue}
     placeholder={placeholder}

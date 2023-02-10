@@ -9,9 +9,6 @@ type ButtonProps = {
   onClick?: () => void;
 } & ChakraButtonProps;
 
-export const Button: React.FC<ButtonProps> = ({
-  size,
-  variant,
-  onClick,
-  ...props
-}): JSX.Element => <ChakraButton size={size} variant={variant} onClick={onClick} {...props} />;
+export const Button = ({ size, variant, onClick, ...props }: ButtonProps): JSX.Element => (
+  <ChakraButton size={size} variant={variant} onClick={onClick} {...props} />
+);

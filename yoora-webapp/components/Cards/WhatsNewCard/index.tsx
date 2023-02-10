@@ -2,6 +2,7 @@
 
 // Libs
 import { Divider } from '@chakra-ui/react';
+import { memo } from 'react';
 import Image from 'next/image';
 
 // Type
@@ -19,7 +20,7 @@ export type CardProps = {
   author: string;
 };
 
-export const WhatsNewCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
+const WhatsNewCardBase = (detailsCard: CardProps): JSX.Element => {
   const { tag, image, title, date, author } = detailsCard;
 
   return (
@@ -48,3 +49,5 @@ export const WhatsNewCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
     />
   );
 };
+
+export const WhatsNewCard = memo(WhatsNewCardBase);

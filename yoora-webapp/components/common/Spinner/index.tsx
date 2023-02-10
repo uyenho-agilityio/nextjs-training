@@ -15,13 +15,13 @@ type SpinnerProps = {
   thickness?: string;
 } & ChakraSpinnerProps;
 
-export const Spinner: React.FC<SpinnerProps> = ({
+export const Spinner = ({
   variant = 'default',
   size = 'lg',
   color = 'primary-btn-cl',
   thickness = '3px',
   ...props
-}): JSX.Element => {
+}: SpinnerProps): JSX.Element => {
   return (
     <Container variant={variant}>
       <ChakraSpinner size={size} color={color} thickness={thickness} {...props} />

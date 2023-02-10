@@ -14,7 +14,7 @@ type ErrorProps = {
 
 const Error = ({ error, reset }: ErrorProps): JSX.Element => {
   const { name, message } = error || {};
-  const handleReset = useCallback(() => reset(), [message]);
+  const handleReset = useCallback(() => reset(), [reset]);
 
   return (
     <Container size="sm" variant="default">

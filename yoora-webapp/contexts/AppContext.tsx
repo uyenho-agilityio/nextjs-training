@@ -9,7 +9,7 @@ type AppProviderProps = {
   children: ReactNode;
 };
 
-export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
+export const AppProvider = ({ children }: AppProviderProps) => {
   return (
     <AuthProvider>
       <MessageProvider>{children}</MessageProvider>

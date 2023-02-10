@@ -9,7 +9,7 @@ import { FeedbackCard } from '.';
 
 describe('WhatsNewCard renders', () => {
   test('should render WhatsNewCard component with default props', () => {
-    const { container } = render(<FeedbackCard {...FEEDBACK_CONTENT.CARDS[0]} />);
+    const { container } = render(<FeedbackCard feedback={FEEDBACK_CONTENT.CARDS[0]} />);
     expect(container).toMatchSnapshot();
   });
 });

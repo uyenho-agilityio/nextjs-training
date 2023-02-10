@@ -8,6 +8,6 @@ type TextProps = {
   variant?: string;
 } & ChakraTextProps;
 
-export const Text: React.FC<TextProps> = ({ size, variant, ...props }): JSX.Element => (
+export const Text = ({ size, variant, ...props }: TextProps): JSX.Element => (
   <ChakraText size={size} variant={variant} {...props} />
 );
