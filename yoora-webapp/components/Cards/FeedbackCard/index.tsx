@@ -2,6 +2,7 @@
 
 // Libs
 import { Divider } from '@chakra-ui/react';
+import { memo } from 'react';
 import Image from 'next/image';
 
 // Type
@@ -13,7 +14,7 @@ import { DOUBLE_QUOTE_ICON } from '@webapp/constants';
 // Components
 import { Card, Tag, Text } from '@webapp/components';
 
-export const FeedbackCard = ({ feedback }: { feedback: Message }): JSX.Element => {
+const FeedbackCardBase = ({ feedback }: { feedback: Message }): JSX.Element => {
   const { id, name, email, message, avatar } = feedback;
 
   return (
@@ -43,3 +44,5 @@ export const FeedbackCard = ({ feedback }: { feedback: Message }): JSX.Element =
     />
   );
 };
+
+export const FeedbackCard = memo(FeedbackCardBase);

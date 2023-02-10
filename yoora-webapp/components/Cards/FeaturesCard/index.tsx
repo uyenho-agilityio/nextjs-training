@@ -2,6 +2,7 @@
 
 // Libs
 import { List, ListItem } from '@chakra-ui/react';
+import { memo } from 'react';
 import Image from 'next/image';
 
 // Type
@@ -25,7 +26,7 @@ export type CardProps = {
   list: ListProps[];
 };
 
-export const FeaturesCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
+const FeaturesCardBase = (detailsCard: CardProps): JSX.Element => {
   const { tag, list } = detailsCard;
 
   return (
@@ -53,3 +54,5 @@ export const FeaturesCard: React.FC<CardProps> = (detailsCard): JSX.Element => {
     />
   );
 };
+
+export const FeaturesCard = memo(FeaturesCardBase);
