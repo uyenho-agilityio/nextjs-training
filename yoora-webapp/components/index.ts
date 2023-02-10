@@ -5,7 +5,6 @@ export { default as Footer } from './Footer';
 export { default as ContactForm } from './Form/Contact';
 export { default as LoginForm } from './Form/Login';
 export { default as MainNavigation } from './MainNavigation';
-export { default as AuthGuard } from './AuthGuard';
 
 export type { CardProps as FeaturesCardProps } from './Cards/FeaturesCard';
 export type { CardProps as WhatsNewCardProps } from './Cards/WhatsNewCard';

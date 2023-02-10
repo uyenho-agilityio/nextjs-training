@@ -27,22 +27,22 @@ export type FetchingOptions = {
   method: Methods;
 };
 
-export enum ToastPosition {
-  Top = 'top',
-  TopRight = 'top-right',
-  TopLeft = 'top-left',
-  Bottom = 'bottom',
-  BottomRight = 'bottom-right',
-  BottomLeft = 'bottom-left',
-}
+export const ToastPosition = {
+  Top: 'top',
+  TopRight: 'top-right',
+  TopLeft: 'top-left',
+  Bottom: 'bottom',
+  BottomRight: 'bottom-right',
+  BottomLeft: 'bottom-left',
+};
 
-export enum ToastStatus {
-  Success = 'success',
-  Error = 'error',
-}
+export const ToastStatus = {
+  Success: 'success',
+  Error: 'error',
+};
 
-export enum ApiPath {
-  Messages = 'messages',
-  Login = 'login',
-  Logout = 'logout',
-}
+export const ApiPath = {
+  Messages: 'messages',
+  Login: 'login',
+  Logout: 'logout',
+};

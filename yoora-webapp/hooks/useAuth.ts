@@ -1,5 +1,14 @@
 // Libs
-import { ChangeEvent, FocusEvent, useCallback, useContext, useState } from 'react';
+import {
+  FocusEvent,
+  KeyboardEventHandler,
+  MutableRefObject,
+  RefObject,
+  useCallback,
+  useContext,
+  useRef,
+  useState,
+} from 'react';
 import { useRouter } from 'next/navigation';
 
 // Constants
@@ -20,9 +29,10 @@ export const useAuth = () => {
   const router = useRouter();
   const { logIn, logOut, user, isAuthenticated } = useAuthContext();
 
+  const emailRef = useRef<{ value: string }>({ value: '' }) as RefObject<HTMLInputElement>;
+  const passwordRef = useRef<{ value: string }>({ value: '' }) as RefObject<HTMLInputElement>;
+
   const [state, setState] = useState({
-    email: '',
-    password: '',
     error: {
       email: '',
       password: '',
@@ -32,23 +42,8 @@ export const useAuth = () => {
     apiError: '',
   });
 
-  const handleChangeInput = useCallback(
-    (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, type: 'email' | 'password') => {
-      setState({
-        ...state,
-        [type]: e.target.value,
-        error: {
-          ...state.error,
-          [type]: '',
-        },
-      });
-    },
-
-    [state],
-  );
-
   const handleValidateInput = useCallback(
-    (e: FocusEvent<HTMLInputElement>, type: 'email' | 'password') => {
+    (e: FocusEvent<HTMLInputElement>, type: 'email' | 'password'): void => {
       const value = e.target.value;
 
       setState({
@@ -59,63 +54,70 @@ export const useAuth = () => {
         },
       });
     },
-
     [state],
   );
 
   const handleSubmit = (): void => {
-    const { email, password, error } = state;
+    const { error } = state;
+    const email = (emailRef as MutableRefObject<{ value: string }>).current.value;
+    const password = (passwordRef as MutableRefObject<{ value: string }>).current.value;
 
-    setState({
-      ...state,
-      loading: true,
-    });
-
-    try {
-      void logIn(
-        {
-          email: email,
-          password: password,
-        },
-
-        // Succeed
-        () => {
-          setState({
-            ...state,
-            loading: false,
-          });
-
-          showToast(MESSAGE.LOGGED_IN, ToastStatus.Success);
-          router.push(PAGE_ROUTES.HOME);
-        },
-
-        // Fail
-        err => {
-          setState({
-            ...state,
-            loading: false,
-            error: {
-              ...error,
-              api: err,
-            },
-          });
-
-          showToast(error.api || MESSAGE.INVALID_EMAIL_PASSWORD, ToastStatus.Error);
-        },
-      );
-    } catch (err) {
+    if (email !== '' && password !== '') {
       setState({
         ...state,
-        loading: false,
-        error: {
-          ...error,
-          api: err as string,
-        },
+        loading: true,
       });
 
-      showToast(error.api || MESSAGE.ERROR, ToastStatus.Error);
+      try {
+        void logIn(
+          {
+            email,
+            password,
+          },
+
+          // Succeed
+          () => {
+            setState({
+              ...state,
+              loading: false,
+            });
+
+            showToast(MESSAGE.LOGGED_IN, ToastStatus.Success);
+            router.push(PAGE_ROUTES.HOME);
+          },
+
+          // Fail
+          err => {
+            setState({
+              ...state,
+              loading: false,
+              error: {
+                ...error,
+                api: err,
+              },
+            });
+
+            showToast(error.api || MESSAGE.INVALID_EMAIL_PASSWORD, ToastStatus.Error);
+          },
+        );
+      } catch (err) {
+        setState({
+          ...state,
+          loading: false,
+          error: {
+            ...error,
+            api: err as string,
+          },
+        });
+
+        showToast(error.api || MESSAGE.ERROR, ToastStatus.Error);
+      }
     }
   };
+
+  const handleSubmitByKeyDown = useCallback((e: KeyboardEvent): void => {
+    if (e.key === 'Enter') handleSubmit();
+  }, []) as unknown as KeyboardEventHandler<HTMLInputElement>;
 
   const handleLogOut = (): void => {
     setState({
@@ -160,10 +162,12 @@ export const useAuth = () => {
 
   return {
     state,
+    emailRef,
+    passwordRef,
     user,
     isAuthenticated,
-    handleChangeInput,
     handleValidateInput,
+    handleSubmitByKeyDown,
     handleSubmit,
     handleLogOut,
   };
