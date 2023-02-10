@@ -30,7 +30,7 @@ type MessageProviderProps = {
 
 export const AuthContext: Context<AuthContextValue> = createContext({} as AuthContextValue);
 
-export const AuthProvider: React.FC<MessageProviderProps> = ({ children }) => {
+export const AuthProvider = ({ children }: MessageProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
   const isAuthenticated = !!user;
 

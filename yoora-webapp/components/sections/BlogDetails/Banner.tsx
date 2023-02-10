@@ -10,7 +10,7 @@ import { DETAILS_CONTENT } from '@webapp/constants';
 // Components
 import { BannerCard } from '@webapp/components';
 
-const BannerSection: React.FC = (): JSX.Element => {
+const BannerSection = (): JSX.Element => {
   return (
     <Box bg="primary-bg">
       <Container size="md">

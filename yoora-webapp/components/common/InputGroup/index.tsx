@@ -33,7 +33,7 @@ type InputProps = {
   rightElement?: ReactNode;
 };
 
-export const InputGroup: React.FC<InputProps> = ({
+export const InputGroup = ({
   type,
   text,
   placeholder,
@@ -46,7 +46,7 @@ export const InputGroup: React.FC<InputProps> = ({
   chakraInputProps,
   chakraInputElementProps,
   rightElement,
-}): JSX.Element => {
+}: InputProps): JSX.Element => {
   const [show, setShow] = useState<boolean>(false);
   const handleToggle = (): void => setShow(!show);
 

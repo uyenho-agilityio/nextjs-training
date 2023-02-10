@@ -29,10 +29,7 @@ type MainNavigationProps = {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
 } & BoxProps;
 
-const MainNavigationBase: React.FC<MainNavigationProps> = ({
-  size = 'xs',
-  ...props
-}): JSX.Element => {
+const MainNavigationBase = ({ size = 'xs', ...props }: MainNavigationProps): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const pathname = usePathname();
 

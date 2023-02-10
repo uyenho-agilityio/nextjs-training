@@ -20,7 +20,7 @@ type TagProps = {
   imageProps?: ImageProps;
 };
 
-export const Tag: React.FC<TagProps> = ({
+export const Tag = ({
   width,
   height,
   alt = '',
@@ -31,7 +31,7 @@ export const Tag: React.FC<TagProps> = ({
   chakraTagProps,
   boxProps,
   imageProps,
-}): JSX.Element => {
+}: TagProps): JSX.Element => {
   return (
     <ChakraTag bg="none" px={0} {...chakraTagProps}>
       {!!src && (

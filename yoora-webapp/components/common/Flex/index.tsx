@@ -10,7 +10,7 @@ type FlexProps = {
   children: ReactNode;
 } & ChakraFlexProps;
 
-export const Flex: React.FC<FlexProps> = ({ size, variant, children, ...props }): JSX.Element => {
+export const Flex = ({ size, variant, children, ...props }: FlexProps): JSX.Element => {
   const styles = useStyleConfig('Flex', { size, variant });
 
   return (

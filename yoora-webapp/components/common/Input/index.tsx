@@ -29,7 +29,7 @@ type InputProps = {
   chakraInputProps?: ChakraInputProps;
 };
 
-export const Input: React.FC<InputProps> = ({
+export const Input = ({
   ref,
   type = 'text',
   text,
@@ -41,7 +41,7 @@ export const Input: React.FC<InputProps> = ({
   onBlur,
   formControlProps,
   chakraInputProps,
-}): JSX.Element => {
+}: InputProps): JSX.Element => {
   return (
     <FormControl isInvalid={!!error} {...formControlProps}>
       {text && (

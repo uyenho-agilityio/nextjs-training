@@ -19,7 +19,7 @@ type TextareaProps = {
   onBlur?: (e: FocusEvent<HTMLTextAreaElement>) => void;
 } & ChakraTextareaProps;
 
-export const Textarea: React.FC<TextareaProps> = ({
+export const Textarea = ({
   ref,
   defaultValue,
   placeholder,
