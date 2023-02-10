@@ -1,14 +1,14 @@
-// Constant
-import { BASE_URL } from '@webapp/constants';
+// Constants
+import { API_PATH, BASE_URL } from '@webapp/constants';
 
 // Types
 import { Message } from '@webapp/models';
-import { ApiPath, Methods } from '@webapp/types';
+import { Methods } from '@webapp/types';
 
 // Fetch
 import { fetching } from './fetch';
 
-export const URL = `${BASE_URL}${ApiPath.Messages}`;
+export const URL = `${BASE_URL}${API_PATH.Messages}`;
 
 /**
  * Get all messages

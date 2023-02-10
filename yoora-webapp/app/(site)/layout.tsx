@@ -13,9 +13,6 @@ import { Header, Footer } from '@webapp/components';
 // Provider
 import { AppProvider } from '@webapp/contexts/AppContext';
 
-// Type
-import { ToastStatus } from '@webapp/types';
-
 // Service
 import { fetcher, URL } from '@webapp/services';
 
@@ -36,7 +33,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }): JSX.Element =>
             shouldRetryOnError: false,
             fetcher,
             onError: error => {
-              showToast(error.message as string, ToastStatus.Error);
+              showToast(error.message as string, 'error');
             },
           }}
         >

@@ -28,3 +28,9 @@ export const SEO_DATA = {
 };
 
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? '';
+
+export const API_PATH = {
+  Messages: 'messages',
+  Login: 'login',
+  Logout: 'logout',
+};

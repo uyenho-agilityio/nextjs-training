@@ -1,13 +1,12 @@
-// Constant
-import { BASE_URL } from '@webapp/constants';
+// Constants
+import { API_PATH, BASE_URL } from '@webapp/constants';
 
 // Types
 import { LoginPayload, User } from '@webapp/models';
-import { ApiPath } from '@webapp/types';
 
 export const login = async ({
   payload,
-  endpoint = `${BASE_URL}${ApiPath.Login}`,
+  endpoint = `${BASE_URL}${API_PATH.Login}`,
 }: {
   payload: LoginPayload;
   endpoint?: RequestInfo | URL;
@@ -36,7 +35,7 @@ export const logout = async (
     },
   };
 
-  const response = await fetch(endpoint || `${BASE_URL}${ApiPath.Logout}`, requestOptions);
+  const response = await fetch(endpoint || `${BASE_URL}${API_PATH.Logout}`, requestOptions);
   const result: Promise<{ message: string; data: null }> = response.json();
 
   return result;

@@ -27,22 +27,12 @@ export type FetchingOptions = {
   method: Methods;
 };
 
-export const ToastPosition = {
-  Top: 'top',
-  TopRight: 'top-right',
-  TopLeft: 'top-left',
-  Bottom: 'bottom',
-  BottomRight: 'bottom-right',
-  BottomLeft: 'bottom-left',
-};
+export type ToastPosition =
+  | 'top'
+  | 'top-right'
+  | 'top-left'
+  | 'bottom'
+  | 'bottom-right'
+  | 'bottom-left';
 
-export const ToastStatus = {
-  Success: 'success',
-  Error: 'error',
-};
-
-export const ApiPath = {
-  Messages: 'messages',
-  Login: 'login',
-  Logout: 'logout',
-};
+export type ToastStatus = 'success' | 'error';

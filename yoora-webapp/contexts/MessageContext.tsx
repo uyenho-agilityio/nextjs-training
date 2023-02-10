@@ -53,7 +53,6 @@ export const MessageProvider = ({ children }: MessageProviderProps) => {
         onError(error as string);
       }
     },
-
     [data],
   );
 

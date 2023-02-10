@@ -8,9 +8,9 @@ import { ToastPosition, ToastStatus } from '@webapp/types';
 
 export const showToast = (
   message: string,
-  status: ToastStatus,
+  status: ToastStatus = 'success',
   duration = 2000,
-  position: ToastPosition = ToastPosition.Top,
+  position: ToastPosition = 'top',
 ): void => {
   const { toast } = createStandaloneToast();
 

@@ -5,9 +5,6 @@ import { useRouter } from 'next/navigation';
 // Constants
 import { MESSAGE, PAGE_ROUTES } from '@webapp/constants';
 
-// Type
-import { ToastStatus } from '@webapp/types';
-
 // Utils
 import { showToast, validateForm } from '@webapp/utils';
 
@@ -51,7 +48,6 @@ export const useMessage = () => {
         },
       });
     },
-
     [state],
   );
 
@@ -67,7 +63,6 @@ export const useMessage = () => {
         },
       });
     },
-
     [state],
   );
 
@@ -99,7 +94,7 @@ export const useMessage = () => {
               loading: false,
             });
 
-            showToast(MESSAGE.SUCCESS, ToastStatus.Success);
+            showToast(MESSAGE.SUCCESS);
             router.push(PAGE_ROUTES.HOME);
           },
 
@@ -114,7 +109,7 @@ export const useMessage = () => {
               },
             });
 
-            showToast(MESSAGE.FAILURE, ToastStatus.Error);
+            showToast(MESSAGE.FAILURE, 'error');
           },
         );
       } catch (err) {
@@ -127,7 +122,7 @@ export const useMessage = () => {
           },
         });
 
-        showToast(error.api, ToastStatus.Error);
+        showToast(error.api, 'error');
       }
     }
   };

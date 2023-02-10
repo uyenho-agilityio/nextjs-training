@@ -1,6 +1,5 @@
-// Libs
-import { Partytown } from '@builder.io/partytown/react';
-import Script from 'next/script';
+// Lib
+// import Script from 'next/script';
 
 // Constant
 import { SEO_DATA as metaData } from '@webapp/constants';

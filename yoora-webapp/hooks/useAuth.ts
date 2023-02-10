@@ -14,9 +14,6 @@ import { useRouter } from 'next/navigation';
 // Constants
 import { MESSAGE, PAGE_ROUTES } from '@webapp/constants';
 
-// Type
-import { ToastStatus } from '@webapp/types';
-
 // Utils
 import { showToast, validateForm } from '@webapp/utils';
 
@@ -62,7 +59,7 @@ export const useAuth = () => {
     const email = (emailRef as MutableRefObject<{ value: string }>).current.value;
     const password = (passwordRef as MutableRefObject<{ value: string }>).current.value;
 
-    if (email !== '' && password !== '') {
+    if (!!email && !!password) {
       setState({
         ...state,
         loading: true,
@@ -82,7 +79,7 @@ export const useAuth = () => {
               loading: false,
             });
 
-            showToast(MESSAGE.LOGGED_IN, ToastStatus.Success);
+            showToast(MESSAGE.LOGGED_IN);
             router.push(PAGE_ROUTES.HOME);
           },
 
@@ -97,7 +94,7 @@ export const useAuth = () => {
               },
             });
 
-            showToast(error.api || MESSAGE.INVALID_EMAIL_PASSWORD, ToastStatus.Error);
+            showToast(error.api || MESSAGE.INVALID_EMAIL_PASSWORD, 'error');
           },
         );
       } catch (err) {
@@ -110,7 +107,7 @@ export const useAuth = () => {
           },
         });
 
-        showToast(error.api || MESSAGE.ERROR, ToastStatus.Error);
+        showToast(error.api || MESSAGE.ERROR, 'error');
       }
     }
   };
@@ -134,8 +131,7 @@ export const useAuth = () => {
             loading: false,
           });
 
-          showToast(MESSAGE.LOGGED_OUT, ToastStatus.Success);
-          router.refresh();
+          showToast(MESSAGE.LOGGED_OUT);
         },
 
         // Fail
@@ -146,7 +142,7 @@ export const useAuth = () => {
             apiError: error,
           });
 
-          showToast(state.apiError || MESSAGE.ERROR, ToastStatus.Error);
+          showToast(state.apiError || MESSAGE.ERROR, 'error');
         },
       );
     } catch (error) {
@@ -156,7 +152,7 @@ export const useAuth = () => {
         apiError: error as string,
       });
 
-      showToast(state.apiError, ToastStatus.Error);
+      showToast(state.apiError, 'error');
     }
   };
 
