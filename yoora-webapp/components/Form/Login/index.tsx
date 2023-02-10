@@ -7,10 +7,17 @@ import Image from 'next/image';
 // Constants
 import { LOGO, TEXT } from '@webapp/constants';
 
+// Hook
+import { useAuth } from '@webapp/hooks';
+
 // Components
 import { Title, Input, InputGroup, Button } from '@webapp/components';
 
 const LoginForm = (): JSX.Element => {
+  const { state, emailRef, passwordRef, handleValidateInput, handleSubmitByKeyDown, handleSubmit } =
+    useAuth();
+  const { error, loading } = state;
+
   return (
     <Container
       className="login-form"
@@ -27,27 +34,39 @@ const LoginForm = (): JSX.Element => {
       </Title>
 
       <Input
-        type="text"
-        text="Email *"
-        placeholder="Email"
-        chakraInputProps={{ variant: 'login-form' }}
+        chakraInputProps={{ variant: 'login-form', autoFocus: true }}
         formControlProps={{
           pos: 'relative',
           _focusWithin: { color: 'primary-btn-cl' },
         }}
+        type="text"
+        text="Email *"
+        onBlur={e => handleValidateInput(e, 'email')}
+        onKeyDown={handleSubmitByKeyDown}
+        ref={emailRef}
+        error={error.email}
       />
       <InputGroup
-        type="password"
-        text="Password *"
-        placeholder="Password"
         chakraInputProps={{ variant: 'login-form' }}
         chakraInputElementProps={{ mr: 2, pb: 3 }}
         formControlProps={{
           pos: 'relative',
           _focusWithin: { color: 'primary-btn-cl' },
         }}
+        type="password"
+        text="Password *"
+        onBlur={e => handleValidateInput(e, 'password')}
+        onKeyDown={handleSubmitByKeyDown}
+        ref={passwordRef}
+        error={error.password}
       />
-      <Button type="submit" variant="submit">
+      <Button
+        variant="submit"
+        type="submit"
+        onClick={handleSubmit}
+        isLoading={loading}
+        isDisabled={!!error.email || !!error.password}
+      >
         {TEXT.LOGIN}
       </Button>
     </Container>

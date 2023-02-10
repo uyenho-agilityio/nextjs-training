@@ -14,16 +14,25 @@ import {
   Link as ChakraLink,
   Divider,
 } from '@chakra-ui/react';
-import { memo } from 'react';
-import { usePathname } from 'next/navigation';
+import { memo, useCallback, useEffect, useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
 // Constants
-import { MENU, ROUTE_LIST, TEXT } from '@webapp/constants';
+import { MENU, PAGE_ROUTES, ROUTE_LIST, STORAGE_KEYS, TEXT } from '@webapp/constants';
+
+// Type
+import { User } from '@webapp/models';
 
 // Component
 import { Button } from '@webapp/components';
+
+// Util
+import { getStorage } from '@webapp/utils';
+
+// Hook
+import { useAuth } from '@webapp/hooks';
 
 type MainNavigationProps = {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
@@ -35,6 +44,19 @@ const MainNavigationBase: React.FC<MainNavigationProps> = ({
 }): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const pathname = usePathname();
+  const router = useRouter();
+
+  const { isAuthenticated, handleLogOut } = useAuth();
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const user = getStorage(STORAGE_KEYS.CURRENT_USER) as unknown as User;
+    setCurrentUser(user);
+  }, []);
+
+  const handleLogIn = useCallback(() => {
+    router.push(PAGE_ROUTES.LOGIN);
+  }, []);
 
   return (
     <Box {...props}>
@@ -59,9 +81,13 @@ const MainNavigationBase: React.FC<MainNavigationProps> = ({
               ))}
 
               <Divider />
-              <Button size="sm" variant="solid">
-                {TEXT.LOGIN}
-              </Button>
+              {isAuthenticated || currentUser?.email ? (
+                <Button size="sm" variant="solid" onClick={handleLogOut}>
+                  {TEXT.LOGOUT}
+                </Button>
+              ) : (
+                <Button onClick={handleLogIn}>{TEXT.LOGIN}</Button>
+              )}
               <Button size="sm" variant="info">
                 {TEXT.TRY_FOR_FREE}
               </Button>

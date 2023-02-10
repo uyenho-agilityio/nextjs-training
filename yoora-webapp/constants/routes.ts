@@ -2,6 +2,7 @@ export const PAGE_ROUTES = {
   HOME: '/',
   DETAILS: '/blog-details',
   CONTACT: '/contact',
+  LOGIN: '/login',
 };
 
 export const ROUTE_LIST = [
@@ -26,3 +27,5 @@ export const ROUTE_LIST = [
     path: '/contact',
   },
 ];
+
+export const PROTECTED_ROUTES = [PAGE_ROUTES.CONTACT];

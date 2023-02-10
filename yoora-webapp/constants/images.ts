@@ -18,3 +18,10 @@ export const PAGE_404 = {
   width: 400,
   height: 350,
 };
+
+export const DOUBLE_QUOTE_ICON = {
+  src: '/images/feedback-section/double-quote.webp',
+  alt: 'double-quote',
+  width: 58,
+  height: 120,
+};
