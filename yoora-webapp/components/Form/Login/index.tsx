@@ -57,7 +57,7 @@ const LoginForm = (): JSX.Element => {
         type="password"
         text="Password *"
         onBlur={e => handleValidateInput(e, 'password')}
-        onKeyDown={handleSubmitByKeyDown as unknown as KeyboardEventHandler<HTMLInputElement>}
+        onKeyDown={handleSubmitByKeyDown}
         ref={passwordRef as RefObject<HTMLInputElement>}
         error={error.password}
       />
