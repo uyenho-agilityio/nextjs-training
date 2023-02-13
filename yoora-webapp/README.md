@@ -4,6 +4,13 @@
 
 - This document provides a detailed estimation of the NextJS Practice 1
 
+## LIVE DEMO
+
+- [https://yoora-webapp.vercel.app/](https://yoora-webapp.vercel.app/)
+- Login information:
+  - Email: guest@api.com
+  - Pass: Guest@123
+
 ## TARGETS
 
 - Apply new features of NextJS 13:
@@ -82,7 +89,7 @@ Build Yoora web app with pages:
 - Before running below commands, please add .env file with this value:
 
 ```
- NEXT_BASE_URL=...
+ NEXT_PUBLIC_BASE_URL=...
  SECURE_TOKEN=...
 ```
 
