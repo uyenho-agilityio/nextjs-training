@@ -17,12 +17,14 @@ const Error = ({ error, reset }: ErrorProps): JSX.Element => {
   const handleReset = useCallback(() => reset(), [reset]);
 
   return (
-    <Container size="sm" variant="default">
+    <Container size="sm" variant="default" flexDirection="column">
       <Title>
         `${name} : ${message}
       </Title>
 
-      <Button onClick={handleReset}>Reset</Button>
+      <Button onClick={handleReset} mt={5}>
+        Reset
+      </Button>
     </Container>
   );
 };
