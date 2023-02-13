@@ -8,7 +8,7 @@ const nextConfig = {
   },
 
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'yoora-webapp.vercel.app'],
     deviceSizes: [320, 768, 1440],
   },
 };
