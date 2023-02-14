@@ -18,30 +18,32 @@ const FeedbackCardBase = ({ feedback }: { feedback: Message }): JSX.Element => {
   const { id, name, email, message, avatar } = feedback;
 
   return (
-    <Card
-      key={id}
-      leftChildren={
-        <>
-          <Image {...DOUBLE_QUOTE_ICON} priority />
-          <Divider my={{ base: '16px', lg: '24px' }} borderColor="border-cl" />
-        </>
-      }
-      rightChildren={
-        <>
-          <Text variant="subTitle" h={{ lg: '170px' }}>
-            {message}
-          </Text>
-          <Tag
-            {...avatar}
-            text={name}
-            subText={email}
-            boxProps={{ ml: '12px' }}
-            chakraTagProps={{ mt: '24px' }}
-          />
-        </>
-      }
-      chakraCardProps={{ maxW: '360px' }}
-    />
+    feedback && (
+      <Card
+        key={id}
+        leftChildren={
+          <>
+            <Image {...DOUBLE_QUOTE_ICON} priority />
+            <Divider my={{ base: '16px', lg: '24px' }} borderColor="border-cl" />
+          </>
+        }
+        rightChildren={
+          <>
+            <Text variant="subTitle" h={{ lg: '170px' }}>
+              {message}
+            </Text>
+            <Tag
+              {...avatar}
+              text={name}
+              subText={email}
+              boxProps={{ ml: '12px' }}
+              chakraTagProps={{ mt: '24px' }}
+            />
+          </>
+        }
+        chakraCardProps={{ maxW: '360px' }}
+      />
+    )
   );
 };
 
