@@ -29,6 +29,7 @@ const GetInTouch = (): JSX.Element => {
           placeholder="blur"
           blurDataURL={GET_IN_TOUCH_CONTENT.IMAGE.src}
           sizes="(min-width: 320px) 100vw, 171px, (min-width: 768px) 100vw, 229px, (min-width: 1440px) 100vw, 288px"
+          loading="eager"
         />
         <Flex variant="responsive" mt={8}>
           {GET_IN_TOUCH_CONTENT.ITEMS.map(
