@@ -10,6 +10,7 @@ const nextConfig = {
   images: {
     domains: ['localhost', 'yoora-webapp.vercel.app'],
     deviceSizes: [320, 768, 1440],
+    unoptimized: true,
   },
 };
 

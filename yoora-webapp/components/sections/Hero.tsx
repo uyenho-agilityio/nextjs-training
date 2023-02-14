@@ -64,6 +64,7 @@ const HeroSection = (): JSX.Element => {
           placeholder="blur"
           blurDataURL={HERO_CONTENT.IMAGE.src}
           sizes="(min-width: 320px) 100vw, 156px, (min-width: 768px) 100vw, 415px, (min-width: 1440px) 100vw, 675px"
+          loading="eager"
         />
       </Box>
     </Container>
