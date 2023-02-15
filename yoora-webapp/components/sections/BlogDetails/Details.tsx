@@ -1,7 +1,7 @@
 'use client';
 
 // Libs
-import { Container, Box, List, Link as ChakraLink } from '@chakra-ui/react';
+import { Container, Box, List, Link as ChakraLink, ListItem } from '@chakra-ui/react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -50,9 +50,11 @@ const DetailsSection = (): JSX.Element => {
         <List display="flex" alignItems="center" ml={2} mb={{ base: '24px', lg: 0 }}>
           {DETAILS_CONTENT.CONTENT.SUB_CONTENT.SOCIAL_ICONS.map(
             (item: ImageProps): JSX.Element => (
-              <ChakraLink as={Link} href={item.url} key={item.url} mr={4}>
-                <Image {...item} />
-              </ChakraLink>
+              <ListItem key={item.src}>
+                <ChakraLink as={Link} href={item.url} key={item.url} mr={4}>
+                  <Image {...item} />
+                </ChakraLink>
+              </ListItem>
             ),
           )}
         </List>

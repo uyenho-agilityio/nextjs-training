@@ -664,7 +664,7 @@ export const DETAILS_CONTENT = {
   author: 'by Joshua Nash',
   image: {
     src: '/images/blog-details/details-11.webp',
-    srcSet: 'images/blog-details/details-11.webp 1x, images/blog-details/details-12.webp 2x',
+    srcset: 'images/blog-details/details-11.webp 1x, images/blog-details/details-12.webp 2x',
     alt: 'details-1',
     width: 945,
     height: 511,
