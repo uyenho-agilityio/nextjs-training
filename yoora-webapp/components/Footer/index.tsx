@@ -1,7 +1,7 @@
 'use client';
 
 // Libs
-import { Container, Grid, GridItem, Link as ChakraLink, List } from '@chakra-ui/react';
+import { Container, Grid, GridItem, Link as ChakraLink, List, ListItem } from '@chakra-ui/react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -33,12 +33,14 @@ const Footer = (): JSX.Element => {
             We built an elegant solution.
           </Text>
           <Text>Our team created a fully integrated sales and marketing solution for SMBs</Text>
-          <List display="flex" alignItems="center" my={{ base: '6', lg: '8' }}>
+          <List display="flex" gap={2} my={{ base: '6', lg: '8' }}>
             {SOCIAL_ICONS.map(
               (item: ImageProps): JSX.Element => (
-                <ChakraLink as={Link} href={item.url} key={item.url} mr={4}>
-                  <Image {...item} />
-                </ChakraLink>
+                <ListItem key={item.src}>
+                  <ChakraLink as={Link} href={item.url}>
+                    <Image {...item} />
+                  </ChakraLink>
+                </ListItem>
               ),
             )}
           </List>
@@ -55,11 +57,13 @@ const Footer = (): JSX.Element => {
             <List>
               {menu.subMenu.map(
                 (item: SubMenuList): JSX.Element => (
-                  <ChakraLink as={Link} href="#" key={item.id}>
-                    <Text size="xs" mb={3}>
-                      {item.subTitle}
-                    </Text>
-                  </ChakraLink>
+                  <ListItem key={item.id}>
+                    <ChakraLink as={Link} href="#">
+                      <Text size="xs" mb={3}>
+                        {item.subTitle}
+                      </Text>
+                    </ChakraLink>
+                  </ListItem>
                 ),
               )}
             </List>
@@ -74,18 +78,22 @@ const Footer = (): JSX.Element => {
           </Text>
         </GridItem>
 
-        <GridItem display="flex" alignItems="center" colSpan={{ base: 6, lg: 3 }}>
-          <List display="flex" flexDirection={{ base: 'column', lg: 'row' }}>
-            {POLICY_DATA.map(
-              (item: { text: string }): JSX.Element => (
-                <ChakraLink as={Link} href="#" key={item.text}>
-                  <Text mb={3} mr={12}>
-                    {item.text}
-                  </Text>
-                </ChakraLink>
-              ),
-            )}
-          </List>
+        <GridItem
+          display="flex"
+          alignItems={{ base: 'flex-start', lg: 'center' }}
+          colSpan={{ base: 6, lg: 3 }}
+          flexDirection={{ base: 'column', lg: 'row' }}
+        >
+          {POLICY_DATA.map(
+            (item: { text: string }): JSX.Element => (
+              <ChakraLink as={Link} href="#" key={item.text}>
+                <Text mb={3} mr={12}>
+                  {item.text}
+                </Text>
+              </ChakraLink>
+            ),
+          )}
+          {/* </List> */}
         </GridItem>
 
         <GridItem display="flex" alignItems="center" colSpan={{ base: 6, lg: 1 }}>
