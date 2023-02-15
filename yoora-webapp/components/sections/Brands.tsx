@@ -1,7 +1,7 @@
 'use client';
 
 // Libs
-import { Container, Wrap } from '@chakra-ui/react';
+import { Container, Wrap, List, ListItem } from '@chakra-ui/react';
 import Image from 'next/image';
 
 // Constants
@@ -27,17 +27,21 @@ const BrandsSection = (): JSX.Element => {
         {BRANDS_CONTENT.TEXT}
       </Text>
       <Wrap align="center" spacing={{ base: '30px', lg: '60px' }}>
-        {BRANDS_CONTENT.IMAGES.map(
-          (item: ImageProps): JSX.Element => (
-            <Image
-              key={item.src}
-              {...item}
-              placeholder="blur"
-              blurDataURL={item.src}
-              sizes="(min-width: 320px) 100vw, 26px, (min-width: 768px) 100vw, 26px, (min-width: 1440px) 100vw, 32px"
-            />
-          ),
-        )}
+        <List>
+          {BRANDS_CONTENT.IMAGES.map(
+            (item: ImageProps): JSX.Element => (
+              <ListItem key={item.src}>
+                <Image
+                  key={item.src}
+                  {...item}
+                  placeholder="blur"
+                  blurDataURL={item.src}
+                  sizes="(min-width: 320px) 100vw, 26px, (min-width: 768px) 100vw, 26px, (min-width: 1440px) 100vw, 32px"
+                />
+              </ListItem>
+            ),
+          )}
+        </List>
       </Wrap>
     </Container>
   );

@@ -585,7 +585,7 @@ export const GET_IN_TOUCH_CONTENT = {
   DESCRIPTION: '22023 Teuku Umar, Kartini, NG 95006, Indonesia',
   IMAGE: {
     src: '/images/map.webp',
-    srcSet: 'images/map.webp 1x, images/map-2x.webp 2x',
+    srcset: 'images/map.webp 1x, images/map-2x.webp 2x',
     alt: 'map',
     width: 458,
     height: 288,
