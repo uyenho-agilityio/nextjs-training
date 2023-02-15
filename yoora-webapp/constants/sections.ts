@@ -585,7 +585,7 @@ export const GET_IN_TOUCH_CONTENT = {
   DESCRIPTION: '22023 Teuku Umar, Kartini, NG 95006, Indonesia',
   IMAGE: {
     src: '/images/map.webp',
-    srcset: 'images/map.webp 1x, images/map-2x.webp 2x',
+    srcSet: 'images/map.webp 1x, images/map-2x.webp 2x',
     alt: 'map',
     width: 458,
     height: 288,
@@ -664,7 +664,7 @@ export const DETAILS_CONTENT = {
   author: 'by Joshua Nash',
   image: {
     src: '/images/blog-details/details-11.webp',
-    srcset: 'images/blog-details/details-11.webp 1x, images/blog-details/details-12.webp 2x',
+    srcSet: 'images/blog-details/details-11.webp 1x, images/blog-details/details-12.webp 2x',
     alt: 'details-1',
     width: 945,
     height: 511,

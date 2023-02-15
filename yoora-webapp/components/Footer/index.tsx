@@ -33,11 +33,11 @@ const Footer = (): JSX.Element => {
             We built an elegant solution.
           </Text>
           <Text>Our team created a fully integrated sales and marketing solution for SMBs</Text>
-          <List display="flex" alignItems="center" my={{ base: '6', lg: '8' }}>
+          <List display="flex" gap={2} my={{ base: '6', lg: '8' }}>
             {SOCIAL_ICONS.map(
               (item: ImageProps): JSX.Element => (
                 <ListItem key={item.src}>
-                  <ChakraLink as={Link} href={item.url} key={item.url} mr={4}>
+                  <ChakraLink as={Link} href={item.url}>
                     <Image {...item} />
                   </ChakraLink>
                 </ListItem>
@@ -58,7 +58,7 @@ const Footer = (): JSX.Element => {
               {menu.subMenu.map(
                 (item: SubMenuList): JSX.Element => (
                   <ListItem key={item.id}>
-                    <ChakraLink as={Link} href="#" key={item.id}>
+                    <ChakraLink as={Link} href="#">
                       <Text size="xs" mb={3}>
                         {item.subTitle}
                       </Text>
@@ -78,20 +78,25 @@ const Footer = (): JSX.Element => {
           </Text>
         </GridItem>
 
-        <GridItem display="flex" alignItems="center" colSpan={{ base: 6, lg: 3 }}>
-          <List display="flex" flexDirection={{ base: 'column', lg: 'row' }}>
-            {POLICY_DATA.map(
-              (item: { text: string }): JSX.Element => (
-                <ListItem key={item.text}>
-                  <ChakraLink as={Link} href="#" key={item.text}>
-                    <Text mb={3} mr={12}>
-                      {item.text}
-                    </Text>
-                  </ChakraLink>
-                </ListItem>
-              ),
-            )}
-          </List>
+        <GridItem
+          display="flex"
+          alignItems={{ base: 'flex-start', lg: 'center' }}
+          colSpan={{ base: 6, lg: 3 }}
+          flexDirection={{ base: 'column', lg: 'row' }}
+        >
+          {/* <List display="flex" flexDirection={{ base: 'column', lg: 'row' }}> */}
+          {POLICY_DATA.map(
+            (item: { text: string }): JSX.Element => (
+              // <ListItem key={item.text}>
+              <ChakraLink as={Link} href="#" key={item.text}>
+                <Text mb={3} mr={12}>
+                  {item.text}
+                </Text>
+              </ChakraLink>
+              // </ListItem>
+            ),
+          )}
+          {/* </List> */}
         </GridItem>
 
         <GridItem display="flex" alignItems="center" colSpan={{ base: 6, lg: 1 }}>

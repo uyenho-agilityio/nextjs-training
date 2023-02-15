@@ -1,7 +1,7 @@
 'use client';
 
 // Lib
-import { Wrap } from '@chakra-ui/react';
+import { Wrap, WrapItem } from '@chakra-ui/react';
 
 // Type
 import { Message } from '@webapp/models';
@@ -14,7 +14,11 @@ export const FeedbackList = ({ data }: { data: Message[] }): JSX.Element => {
     <Wrap align="center">
       {(data || []).map(
         (message: Message): JSX.Element => (
-          <FeedbackCard key={message.id} feedback={message} />
+          <>
+            <WrapItem key={message.id}>
+              <FeedbackCard feedback={message} />
+            </WrapItem>
+          </>
         ),
       )}
     </Wrap>

@@ -47,11 +47,11 @@ const DetailsSection = (): JSX.Element => {
           subText={DETAILS_CONTENT.CONTENT.SUB_CONTENT.POSITION}
           boxProps={{ ml: '16px', my: '24px' }}
         />
-        <List display="flex" alignItems="center" ml={2} mb={{ base: '24px', lg: 0 }}>
+        <List display="flex" gap={2} mb={{ base: '24px', lg: 0 }}>
           {DETAILS_CONTENT.CONTENT.SUB_CONTENT.SOCIAL_ICONS.map(
             (item: ImageProps): JSX.Element => (
               <ListItem key={item.src}>
-                <ChakraLink as={Link} href={item.url} key={item.url} mr={4}>
+                <ChakraLink as={Link} href={item.url}>
                   <Image {...item} />
                 </ChakraLink>
               </ListItem>

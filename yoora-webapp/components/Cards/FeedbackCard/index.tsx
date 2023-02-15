@@ -15,11 +15,10 @@ import { DOUBLE_QUOTE_ICON } from '@webapp/constants';
 import { Card, Tag, Text } from '@webapp/components';
 
 const FeedbackCardBase = ({ feedback }: { feedback: Message }): JSX.Element => {
-  const { id, name, email, message, avatar } = feedback;
+  const { name, email, message, avatar } = feedback;
 
   return (
     <Card
-      key={id}
       leftChildren={
         <>
           <Image {...DOUBLE_QUOTE_ICON} priority />
