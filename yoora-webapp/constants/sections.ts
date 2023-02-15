@@ -584,7 +584,7 @@ export const GET_IN_TOUCH_CONTENT = {
   SUB_TITLE: 'Yoora Technologies',
   DESCRIPTION: '22023 Teuku Umar, Kartini, NG 95006, Indonesia',
   IMAGE: {
-    src: '/images/map-2x.webp',
+    src: '/images/map.webp',
     srcSet: 'images/map.webp 1x, images/map-2x.webp 2x',
     alt: 'map',
     width: 458,
@@ -663,8 +663,8 @@ export const DETAILS_CONTENT = {
   date: '05 Sep 2022, ',
   author: 'by Joshua Nash',
   image: {
-    src: '/images/blog-details/details-12.webp',
-    srcSet: 'images/blog-details/details-12.webp 1x, images/blog-details/details-12.webp 2x',
+    src: '/images/blog-details/details-11.webp',
+    srcSet: 'images/blog-details/details-11.webp 1x, images/blog-details/details-12.webp 2x',
     alt: 'details-1',
     width: 945,
     height: 511,
