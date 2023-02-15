@@ -23,6 +23,7 @@ const Head = (): JSX.Element => {
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={thumbnailUrl} />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       {/* Fail to apply Partytown */}
       {/* <Partytown debug forward={['dataLayer.push']} />
