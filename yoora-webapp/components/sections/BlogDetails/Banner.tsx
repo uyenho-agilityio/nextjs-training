@@ -24,6 +24,7 @@ const BannerSection = (): JSX.Element => {
           blurDataURL={DETAILS_CONTENT.image.src}
           sizes="(min-width: 320px) 100vw, 173px, (min-width: 768px) 100vw, 342px, (min-width: 1440px) 100vw, 511px"
           loading="eager"
+          data-sizes="100vw"
         />
       </Box>
     </Box>
