@@ -31,7 +31,7 @@ export const MessageProvider = ({ children }: MessageProviderProps) => {
   const addMessageOptions = (message: Message) => {
     return {
       // optimistic data displays until populating cache
-      optimisticData: (data: Message[] | undefined) => [...(data ?? []), message],
+      optimisticData: (data: Message[] | undefined) => [...(data || []), message],
       rollbackOnError: true,
       populateCache: true,
       revalidate: false,
@@ -45,10 +45,9 @@ export const MessageProvider = ({ children }: MessageProviderProps) => {
       onError: (error: string) => void,
     ): Promise<void> => {
       try {
-        const newMessage = await addNewMessage({ message });
+        const newMessage: Message = await addNewMessage({ message });
 
-        if (newMessage) onSuccess();
-        // await mutate([...(data || []), newMessage], addMessageOptions(message));
+        await mutate([...(data || []), message], addMessageOptions(newMessage));
         onSuccess();
       } catch (error) {
         onError(error as string);
