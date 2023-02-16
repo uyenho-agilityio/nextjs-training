@@ -66,7 +66,7 @@ export const useMessage = () => {
     [state],
   );
 
-  const handleSubmit = (): void => {
+  const handleSubmit = async (): Promise<void> => {
     const { name, email, message, error } = state;
 
     setState({
@@ -84,7 +84,7 @@ export const useMessage = () => {
           avatar: user.avatar,
         };
 
-        void createMessage(
+        await createMessage(
           newMessage,
 
           // Succeed
