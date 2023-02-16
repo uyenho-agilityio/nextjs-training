@@ -35,7 +35,7 @@ export const Tag = ({
   return (
     <ChakraTag bg="none" px={0} {...chakraTagProps}>
       {!!src && (
-        <Image width={width} height={height} alt={alt} src={src} {...imageProps} priority />
+        <Image width={width} height={height} alt={alt} src={src} {...imageProps} loading="eager" />
       )}
       <Box {...boxProps}>
         <Text size="xs" variant="subTitle">
