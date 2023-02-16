@@ -47,7 +47,7 @@ export const MessageProvider = ({ children }: MessageProviderProps) => {
       try {
         const newMessage = await addNewMessage({ message });
 
-        await mutate([...(data || []), newMessage], addMessageOptions(message));
+        await mutate([...(data || []), message], addMessageOptions(newMessage));
         onSuccess();
       } catch (error) {
         onError(error as string);
