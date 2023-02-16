@@ -62,6 +62,7 @@ const Header = (): JSX.Element => {
               fontWeight="bold"
               color={pathname === route.path ? 'primary-btn-cl' : 'inherit'}
               pr={10}
+              prefetch={false}
             >
               {route.label}
             </ChakraLink>
