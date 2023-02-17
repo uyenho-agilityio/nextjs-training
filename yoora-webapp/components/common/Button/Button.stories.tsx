@@ -38,4 +38,5 @@ SendMessage.args = {
   children: TEXT.SEND,
   rightIcon: <ArrowForwardIcon />,
   variant: 'success',
+  size: 'md',
 };
