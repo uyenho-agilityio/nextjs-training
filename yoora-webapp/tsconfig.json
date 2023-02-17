@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "types": ["react/next"],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -31,7 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
-    "next.config.cjs",
+    "next.config.js",
     "jest.config.cjs",
     ".next/types/**/*.ts"
   ],
