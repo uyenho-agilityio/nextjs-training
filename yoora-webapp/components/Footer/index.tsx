@@ -93,7 +93,6 @@ const Footer = (): JSX.Element => {
               </ChakraLink>
             ),
           )}
-          {/* </List> */}
         </GridItem>
 
         <GridItem display="flex" alignItems="center" colSpan={{ base: 6, lg: 1 }}>

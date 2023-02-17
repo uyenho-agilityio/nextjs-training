@@ -6,22 +6,16 @@ import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback } from 'react';
 
 // Constants
-import { LOGO, PAGE_ROUTES, ROUTE_LIST, STORAGE_KEYS, TEXT } from '@webapp/constants';
-
-// Type
-import { User } from '@webapp/models';
+import { LOGO, PAGE_ROUTES, ROUTE_LIST, TEXT } from '@webapp/constants';
 
 // Component
 import { Button } from '@webapp/components';
 
 // Hook
 import { useAuth } from '@webapp/hooks';
-
-// Util
-import { getStorage } from '@webapp/utils';
 
 const MainNavigation = dynamic(() => import('@webapp/components').then(mod => mod.MainNavigation), {
   ssr: false,
@@ -31,12 +25,6 @@ const Header = (): JSX.Element => {
   const pathname = usePathname();
   const router = useRouter();
   const { isAuthenticated, handleLogOut } = useAuth();
-  const [currentUser, setCurrentUser] = useState<User | null>(null);
-
-  useEffect(() => {
-    const user = getStorage(STORAGE_KEYS.CURRENT_USER) as unknown as User;
-    setCurrentUser(user);
-  }, []);
 
   const handleLogIn = useCallback(() => {
     router.push(PAGE_ROUTES.LOGIN);
@@ -69,7 +57,7 @@ const Header = (): JSX.Element => {
         </Box>
 
         <ButtonGroup display={{ base: 'none', lg: 'block' }}>
-          {isAuthenticated || currentUser?.email ? (
+          {isAuthenticated ? (
             <Button onClick={handleLogOut}>{TEXT.LOGOUT}</Button>
           ) : (
             <Button onClick={handleLogIn}>{TEXT.LOGIN}</Button>
