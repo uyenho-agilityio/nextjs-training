@@ -34,3 +34,32 @@ export const USER_DATA = {
     height: 48,
   },
 };
+
+export const FEEDBACK_DATA = [
+  {
+    id: '1675077820074',
+    name: 'Lola Ross',
+    email: 'Digital Marketing Director',
+    message:
+      'The best thing we love about Yoora is it does two-way sync with Google Apps. It has helped us to better organize and keep everything on track.',
+    avatar: {
+      src: '/images/feedback-section/avatar-1.svg',
+      alt: 'avatar',
+      width: 48,
+      height: 48,
+    },
+  },
+  {
+    id: '1675137802940',
+    name: 'Daisy Phelps',
+    email: 'Speaker and Author, Lifeiseasy',
+    message:
+      'It has made our sales department more effective and efficient. It’s easy to use and it’s constantly updated. It’s easy to use and it’s constantly updated.',
+    avatar: {
+      src: '/images/feedback-section/avatar-2.svg',
+      alt: 'avatar',
+      width: 48,
+      height: 48,
+    },
+  },
+];
