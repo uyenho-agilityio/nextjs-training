@@ -1,6 +1,9 @@
 // Lib
 import Storybook from '@storybook/react';
 
+// Mock
+import { MESSAGE, TEXT } from '@webapp/mocks';
+
 // Component
 import { Input } from '.';
 
@@ -21,6 +24,6 @@ Name.args = {
 
 export const Error = Template.bind({});
 Error.args = {
-  value: 'user@com',
-  error: 'true',
+  value: TEXT.INVALID_EMAIL,
+  error: MESSAGE.INVALID_EMAIL,
 };

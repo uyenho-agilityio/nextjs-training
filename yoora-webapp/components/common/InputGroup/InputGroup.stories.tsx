@@ -28,7 +28,7 @@ WithTextButton.args = {
   type: 'text',
   placeholder: HERO_CONTENT.INPUT,
   rightElement: (
-    <Button variant="success" pos="absolute" right={{ lg: '3%' }}>
+    <Button size="lg" variant="success" pos="absolute" right={{ lg: '3%' }}>
       {HERO_CONTENT.BUTTON}
     </Button>
   ),
