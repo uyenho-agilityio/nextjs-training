@@ -3,7 +3,8 @@
   "env": {
     "browser": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "settings": {
     "import/resolver": {
@@ -22,7 +23,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "@next/eslint-plugin-next", "prettier"],
+  "plugins": ["@typescript-eslint", "@next/eslint-plugin-next", "prettier", "jest"],
   "overrides": [
     {
       "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
