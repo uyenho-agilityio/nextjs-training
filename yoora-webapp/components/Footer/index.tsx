@@ -2,6 +2,7 @@
 
 // Libs
 import { Container, Grid, GridItem, Link as ChakraLink, List, ListItem } from '@chakra-ui/react';
+import { useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -22,6 +23,68 @@ import { ImageProps, MenuList, SubMenuList } from '@webapp/types';
 import { Text, Select } from '@webapp/components';
 
 const Footer = (): JSX.Element => {
+  const renderSocialIcons = useMemo(
+    () =>
+      SOCIAL_ICONS.map((item: ImageProps): JSX.Element => {
+        const { src, url } = item;
+
+        return (
+          <ListItem key={src}>
+            <ChakraLink as={Link} href={url}>
+              <Image {...item} />
+            </ChakraLink>
+          </ListItem>
+        );
+      }),
+    [SOCIAL_ICONS],
+  );
+
+  const renderMenuList = useMemo(() => {
+    return MENU_LIST.map((menu: MenuList): JSX.Element => {
+      const { id, title, subMenu } = menu;
+
+      return (
+        <GridItem key={id} colSpan={{ base: 6, lg: 1 }}>
+          <ChakraLink as={Link} href="#">
+            <Text fontWeight="bold" mb={3}>
+              {title}
+            </Text>
+          </ChakraLink>
+
+          <List>
+            {subMenu.map((item: SubMenuList): JSX.Element => {
+              const { id, subTitle } = item;
+
+              return (
+                <ListItem key={id}>
+                  <ChakraLink as={Link} href="#">
+                    <Text size="xs" mb={3}>
+                      {subTitle}
+                    </Text>
+                  </ChakraLink>
+                </ListItem>
+              );
+            })}
+          </List>
+        </GridItem>
+      );
+    });
+  }, [MENU_LIST]);
+
+  const renderPolicyData = useMemo(
+    () =>
+      POLICY_DATA.map(
+        (item: { text: string }): JSX.Element => (
+          <ChakraLink as={Link} href="#" key={item.text}>
+            <Text mb={3} mr={12}>
+              {item.text}
+            </Text>
+          </ChakraLink>
+        ),
+      ),
+    [POLICY_DATA],
+  );
+
   return (
     <Container as="footer" className="footer" pt={{ base: '40px', lg: '70px' }}>
       <Grid templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(6, 1fr)' }}>
@@ -34,41 +97,11 @@ const Footer = (): JSX.Element => {
           </Text>
           <Text>Our team created a fully integrated sales and marketing solution for SMBs</Text>
           <List display="flex" gap={2} my={{ base: '6', lg: '8' }}>
-            {SOCIAL_ICONS.map(
-              (item: ImageProps): JSX.Element => (
-                <ListItem key={item.src}>
-                  <ChakraLink as={Link} href={item.url}>
-                    <Image {...item} />
-                  </ChakraLink>
-                </ListItem>
-              ),
-            )}
+            {renderSocialIcons}
           </List>
         </GridItem>
 
-        {MENU_LIST.map((menu: MenuList) => (
-          <GridItem key={menu.id} colSpan={{ base: 6, lg: 1 }}>
-            <ChakraLink as={Link} href="#">
-              <Text fontWeight="bold" mb={3}>
-                {menu.title}
-              </Text>
-            </ChakraLink>
-
-            <List>
-              {menu.subMenu.map(
-                (item: SubMenuList): JSX.Element => (
-                  <ListItem key={item.id}>
-                    <ChakraLink as={Link} href="#">
-                      <Text size="xs" mb={3}>
-                        {item.subTitle}
-                      </Text>
-                    </ChakraLink>
-                  </ListItem>
-                ),
-              )}
-            </List>
-          </GridItem>
-        ))}
+        <>{renderMenuList}</>
 
         <GridItem colSpan={6} borderTop="1px border-cl" mt={{ lg: '80px' }} />
 
@@ -84,15 +117,7 @@ const Footer = (): JSX.Element => {
           colSpan={{ base: 6, lg: 3 }}
           flexDirection={{ base: 'column', lg: 'row' }}
         >
-          {POLICY_DATA.map(
-            (item: { text: string }): JSX.Element => (
-              <ChakraLink as={Link} href="#" key={item.text}>
-                <Text mb={3} mr={12}>
-                  {item.text}
-                </Text>
-              </ChakraLink>
-            ),
-          )}
+          {renderPolicyData}
         </GridItem>
 
         <GridItem display="flex" alignItems="center" colSpan={{ base: 6, lg: 1 }}>

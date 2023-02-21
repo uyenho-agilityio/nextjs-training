@@ -2,6 +2,7 @@
 
 // Libs
 import { Container, Box, Wrap, WrapItem } from '@chakra-ui/react';
+import { useMemo } from 'react';
 import Image from 'next/image';
 
 // Constant
@@ -14,6 +15,40 @@ import { ImageProps } from '@webapp/types';
 import { Flex, Text, Title } from '@webapp/components';
 
 const IntegrationsSection = (): JSX.Element => {
+  const renderDesktopContent = useMemo(
+    () =>
+      INTEGRATIONS_CONTENT.IMAGES_DESKTOP.map(
+        (item: ImageProps): JSX.Element => (
+          <WrapItem key={item.src}>
+            <Image
+              {...item}
+              placeholder="blur"
+              blurDataURL={item.src}
+              sizes="(min-width: 320px) 100vw, 78px, (min-width: 768px) 100vw, 99px, (min-width: 1440px) 100vw, 120px"
+            />
+          </WrapItem>
+        ),
+      ),
+    [INTEGRATIONS_CONTENT.IMAGES_DESKTOP],
+  );
+
+  const renderMobileContent = useMemo(
+    () =>
+      INTEGRATIONS_CONTENT.IMAGES_MOBILE.map(
+        (item: ImageProps): JSX.Element => (
+          <WrapItem key={item.src}>
+            <Image
+              {...item}
+              placeholder="blur"
+              blurDataURL={item.src}
+              sizes="(min-width: 320px) 100vw, 78px, (min-width: 768px) 100vw, 99px, (min-width: 1440px) 100vw, 120px"
+            />
+          </WrapItem>
+        ),
+      ),
+    [INTEGRATIONS_CONTENT.IMAGES_MOBILE],
+  );
+
   return (
     <Container as="section" className="integrations-section">
       <Box textAlign="center" pt={{ base: '42px', lg: '72px' }}>
@@ -24,36 +59,10 @@ const IntegrationsSection = (): JSX.Element => {
       </Box>
 
       {/* Desktop */}
-      <Wrap display={{ base: 'none', lg: 'block' }}>
-        {INTEGRATIONS_CONTENT.IMAGES_DESKTOP.map(
-          (item: ImageProps): JSX.Element => (
-            <WrapItem key={item.src}>
-              <Image
-                {...item}
-                placeholder="blur"
-                blurDataURL={item.src}
-                sizes="(min-width: 320px) 100vw, 78px, (min-width: 768px) 100vw, 99px, (min-width: 1440px) 100vw, 120px"
-              />
-            </WrapItem>
-          ),
-        )}
-      </Wrap>
+      <Wrap display={{ base: 'none', lg: 'block' }}>{renderDesktopContent}</Wrap>
 
       {/* Mobile */}
-      <Wrap display={{ lg: 'none' }}>
-        {INTEGRATIONS_CONTENT.IMAGES_MOBILE.map(
-          (item: ImageProps): JSX.Element => (
-            <WrapItem key={item.src}>
-              <Image
-                {...item}
-                placeholder="blur"
-                blurDataURL={item.src}
-                sizes="(min-width: 320px) 100vw, 78px, (min-width: 768px) 100vw, 99px, (min-width: 1440px) 100vw, 120px"
-              />
-            </WrapItem>
-          ),
-        )}
-      </Wrap>
+      <Wrap display={{ lg: 'none' }}>{renderMobileContent}</Wrap>
       <Flex variant="pointer" py={{ base: '42px', lg: '72px' }}>
         <Text size="sm" fontWeight="medium">
           {INTEGRATIONS_CONTENT.TEXT}
