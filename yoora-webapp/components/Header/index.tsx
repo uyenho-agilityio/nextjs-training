@@ -42,18 +42,22 @@ const Header = (): JSX.Element => {
         <MainNavigation display={{ base: 'block', lg: 'none' }} />
 
         <Box display={{ base: 'none', lg: 'block' }} mr="auto">
-          {ROUTE_LIST.map((route: { [key: string]: string }) => (
-            <ChakraLink
-              as={Link}
-              key={route.path}
-              href={route.path}
-              fontWeight="bold"
-              color={pathname === route.path ? 'primary-btn-cl' : 'inherit'}
-              pr={10}
-            >
-              {route.label}
-            </ChakraLink>
-          ))}
+          {ROUTE_LIST.map((route: { [key: string]: string }) => {
+            const { path, label } = route;
+
+            return (
+              <ChakraLink
+                as={Link}
+                key={path}
+                href={path}
+                fontWeight="bold"
+                color={pathname === path ? 'primary-btn-cl' : 'inherit'}
+                pr={10}
+              >
+                {label}
+              </ChakraLink>
+            );
+          })}
         </Box>
 
         <ButtonGroup display={{ base: 'none', lg: 'block' }}>

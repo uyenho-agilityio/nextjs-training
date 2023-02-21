@@ -32,8 +32,10 @@ const SelectBase = ({
     {...props}
   >
     {options.map((option: SelectOptions) => {
+      const { value, disabled } = option;
+
       return (
-        <option key={option.value} value={option.value} disabled={option.disabled}>
+        <option key={value} value={value} disabled={disabled}>
           {option.name}
         </option>
       );

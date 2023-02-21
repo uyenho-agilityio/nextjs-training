@@ -53,16 +53,20 @@ const MainNavigationBase = ({ size = 'xs', ...props }: MainNavigationProps): JSX
           <DrawerHeader>Menu</DrawerHeader>
           <DrawerBody>
             <Box display="flex" flexDirection="column" gap={5}>
-              {ROUTE_LIST.map((route: { [key: string]: string }) => (
-                <ChakraLink
-                  as={Link}
-                  key={route.path}
-                  href={route.path}
-                  color={pathname === route.path ? 'primary-btn-cl' : 'inherit'}
-                >
-                  {route.label}
-                </ChakraLink>
-              ))}
+              {ROUTE_LIST.map((route: { [key: string]: string }) => {
+                const { path, label } = route;
+
+                return (
+                  <ChakraLink
+                    as={Link}
+                    key={path}
+                    href={path}
+                    color={pathname === path ? 'primary-btn-cl' : 'inherit'}
+                  >
+                    {label}
+                  </ChakraLink>
+                );
+              })}
 
               <Divider />
               {isAuthenticated ? (

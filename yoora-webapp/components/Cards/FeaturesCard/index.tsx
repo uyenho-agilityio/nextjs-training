@@ -39,16 +39,18 @@ const FeaturesCardBase = (detailsCard: CardProps): JSX.Element => {
       }
       rightChildren={
         <List spacing="16px">
-          {list.map(
-            (list: ListProps): JSX.Element => (
-              <ListItem key={list.id} display="flex" alignItems="flex-start">
-                <Image {...list.icon} priority />
+          {list.map((item: ListProps): JSX.Element => {
+            const { id, icon, text } = item;
+
+            return (
+              <ListItem key={id} display="flex" alignItems="flex-start">
+                <Image {...icon} priority />
                 <Text mt="-5px" ml={{ base: '19px', lg: '27px' }}>
-                  {list.text}
+                  {text}
                 </Text>
               </ListItem>
-            ),
-          )}
+            );
+          })}
         </List>
       }
     />

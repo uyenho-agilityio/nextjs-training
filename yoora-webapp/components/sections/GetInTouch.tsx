@@ -33,18 +33,22 @@ const GetInTouch = (): JSX.Element => {
         />
         <Flex variant="responsive" mt={8}>
           {GET_IN_TOUCH_CONTENT.ITEMS.map(
-            (item: { id: number; text: string; email: string }): JSX.Element => (
-              <Flex key={item.id} mr="auto" mb="30px">
-                <Box borderLeft="1px" borderLeftColor="border-cl">
-                  <Text variant="subTitle" pl={4}>
-                    {item.text}
-                  </Text>
-                  <ChakraLink as={Link} href={`mailto:${PAGE_ROUTES.CONTACT}/#`}>
-                    <Text ml={4}>{item.email}</Text>
-                  </ChakraLink>
-                </Box>
-              </Flex>
-            ),
+            (item: { id: number; text: string; email: string }): JSX.Element => {
+              const { id, text, email } = item;
+
+              return (
+                <Flex key={id} mr="auto" mb="30px">
+                  <Box borderLeft="1px" borderLeftColor="border-cl">
+                    <Text variant="subTitle" pl={4}>
+                      {text}
+                    </Text>
+                    <ChakraLink as={Link} href={`mailto:${PAGE_ROUTES.CONTACT}/#`}>
+                      <Text ml={4}>{email}</Text>
+                    </ChakraLink>
+                  </Box>
+                </Flex>
+              );
+            },
           )}
         </Flex>
       </Box>

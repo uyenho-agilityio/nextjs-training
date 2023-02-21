@@ -48,15 +48,17 @@ const DetailsSection = (): JSX.Element => {
           boxProps={{ ml: '16px', my: '24px' }}
         />
         <List display="flex" gap={2} mb={{ base: '24px', lg: 0 }}>
-          {DETAILS_CONTENT.CONTENT.SUB_CONTENT.SOCIAL_ICONS.map(
-            (item: ImageProps): JSX.Element => (
-              <ListItem key={item.src}>
-                <ChakraLink as={Link} href={item.url}>
+          {DETAILS_CONTENT.CONTENT.SUB_CONTENT.SOCIAL_ICONS.map((item: ImageProps): JSX.Element => {
+            const { src, url } = item;
+
+            return (
+              <ListItem key={src}>
+                <ChakraLink as={Link} href={url}>
                   <Image {...item} />
                 </ChakraLink>
               </ListItem>
-            ),
-          )}
+            );
+          })}
         </List>
       </Flex>
     </Container>

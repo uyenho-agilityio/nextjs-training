@@ -28,9 +28,11 @@ const RevenueSection = (): JSX.Element => {
       <Title size="h2">{REVENUE_CONTENT.TITLE}</Title>
       <Text>{REVENUE_CONTENT.TEXT}</Text>
 
-      {REVENUE_CONTENT.ITEMS.map(
-        (item: ItemProps): JSX.Element => (
-          <Flex key={item.id} variant="column">
+      {REVENUE_CONTENT.ITEMS.map((item: ItemProps): JSX.Element => {
+        const { id, growth, description, title, image, name, position } = item;
+
+        return (
+          <Flex key={id} variant="column">
             <Divider
               mt={{ base: '48px', lg: '72px' }}
               mb={{ base: '32px', lg: '48px' }}
@@ -38,25 +40,20 @@ const RevenueSection = (): JSX.Element => {
             />
             <Grid templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}>
               <GridItem colSpan={{ base: 1, lg: 1 }}>
-                <Title size="heading">{item.growth}</Title>
+                <Title size="heading">{growth}</Title>
                 <Text size="md" variant="subTitle" mt={{ base: '19px', lg: '24px' }} mb="30px">
-                  {item.description}
+                  {description}
                 </Text>
               </GridItem>
 
               <GridItem colSpan={{ base: 1, lg: 2 }}>
-                <Text mb="33px">{item.title}</Text>
-                <Tag
-                  {...item.image}
-                  text={item.name}
-                  subText={item.position}
-                  boxProps={{ ml: '12px' }}
-                />
+                <Text mb="33px">{title}</Text>
+                <Tag {...image} text={name} subText={position} boxProps={{ ml: '12px' }} />
               </GridItem>
             </Grid>
           </Flex>
-        ),
-      )}
+        );
+      })}
     </Container>
   );
 };
