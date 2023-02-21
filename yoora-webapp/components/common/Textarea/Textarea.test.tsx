@@ -1,5 +1,5 @@
 // Lib
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 // Component
 import { Textarea } from '.';
@@ -13,11 +13,18 @@ describe('Textarea renders', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('should render Textarea component with error prop', () => {
+    render(<Textarea value={MESSAGE.SEND_MESSAGE} error={MESSAGE.ERROR} />);
+
+    const text = screen.getByText(/wrong/i);
+    expect(text).toBeInTheDocument();
+  });
+
   test('should simulate textarea event & display new message after typing', () => {
     render(<Textarea placeholder="Message" />);
     const textarea = screen.getByPlaceholderText(/message/i);
 
-    textarea.innerHTML = `${MESSAGE.SEND_MESSAGE}`;
-    expect(screen.getByText(/lorem/i)).toBeTruthy();
+    fireEvent.change(textarea, { target: { value: MESSAGE.SEND_MESSAGE } });
+    expect((textarea as HTMLTextAreaElement).value).toBe(MESSAGE.SEND_MESSAGE);
   });
 });

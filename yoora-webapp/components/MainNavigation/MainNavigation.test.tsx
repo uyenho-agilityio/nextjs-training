@@ -8,11 +8,6 @@ import { API_PATH } from '@webapp/constants';
 // Component
 import MainNavigation from '.';
 
-jest.mock('next/navigation', () => ({
-  useRouter: jest.fn(),
-  usePathname: jest.fn(),
-}));
-
 describe('MainNavigation renders', () => {
   test('should render MainNavigation component with default props', () => {
     const { container } = render(<MainNavigation size="full" />);
