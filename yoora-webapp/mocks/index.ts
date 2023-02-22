@@ -35,6 +35,11 @@ export const USER_DATA = {
   },
 };
 
+export const LOGIN_DATA = {
+  email: 'user@api.com',
+  password: 'User@123',
+};
+
 export const FEEDBACK_DATA = [
   {
     id: '1675077820074',
