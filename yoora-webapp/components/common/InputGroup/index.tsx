@@ -30,6 +30,7 @@ type InputProps = {
   ref?: RefObject<HTMLInputElement>;
   type: 'text' | 'email' | 'password';
   text?: string;
+  defaultValue?: string;
   placeholder?: string;
   value?: string;
   error?: string;
@@ -50,6 +51,7 @@ export const InputGroup = forwardRef<HTMLInputElement, InputProps>((props, ref):
   const {
     type,
     text,
+    defaultValue,
     placeholder,
     value,
     error,
@@ -76,6 +78,7 @@ export const InputGroup = forwardRef<HTMLInputElement, InputProps>((props, ref):
             <ChakraInput
               ref={ref}
               type={show ? 'text' : 'password'}
+              defaultValue={defaultValue}
               placeholder={placeholder}
               value={value}
               onKeyDown={onKeyDown}
@@ -102,6 +105,7 @@ export const InputGroup = forwardRef<HTMLInputElement, InputProps>((props, ref):
           <ChakraInput
             ref={ref}
             type={type}
+            defaultValue={defaultValue}
             placeholder={placeholder}
             value={value}
             onKeyDown={onKeyDown}

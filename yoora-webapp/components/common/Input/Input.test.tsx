@@ -14,7 +14,7 @@ describe('Input renders', () => {
   });
 
   test('should render input component with error prop', () => {
-    render(<Input type="text" value={TEXT.INVALID_EMAIL} error={MESSAGE.INVALID_EMAIL} />);
+    render(<Input type="text" defaultValue={TEXT.INVALID_EMAIL} error={MESSAGE.INVALID_EMAIL} />);
 
     const text = screen.getByText(/invalid/i);
     expect(text).toBeInTheDocument();

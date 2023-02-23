@@ -1,5 +1,5 @@
 // Lib
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 // Constant
 import { HERO_CONTENT } from '@webapp/constants';
@@ -31,12 +31,20 @@ describe('InputGroup renders', () => {
       <InputGroup
         type="password"
         text="Password"
-        value={TEXT.INVALID_PWD}
+        defaultValue={TEXT.INVALID_PWD}
         error={MESSAGE.INVALID_PWD}
       />,
     );
 
     const text = screen.getByText(/invalid/i);
     expect(text).toBeInTheDocument();
+  });
+
+  test('should toggle the password visibility when the view button is clicked', () => {
+    render(<InputGroup type="password" text="Password" />);
+
+    expect(screen.getByDisplayValue('').getAttribute('type')).toBe('password');
+    fireEvent.click(screen.getByRole('button'));
+    expect(screen.getByDisplayValue('').getAttribute('type')).toBe('text');
   });
 });

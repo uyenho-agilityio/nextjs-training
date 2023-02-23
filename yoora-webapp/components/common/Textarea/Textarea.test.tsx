@@ -14,7 +14,7 @@ describe('Textarea renders', () => {
   });
 
   test('should render Textarea component with error prop', () => {
-    render(<Textarea value={MESSAGE.SEND_MESSAGE} error={MESSAGE.ERROR} />);
+    render(<Textarea defaultValue={MESSAGE.SEND_MESSAGE} error={MESSAGE.ERROR} />);
 
     const text = screen.getByText(/wrong/i);
     expect(text).toBeInTheDocument();
