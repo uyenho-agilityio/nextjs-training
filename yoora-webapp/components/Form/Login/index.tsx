@@ -2,6 +2,7 @@
 
 // Libs
 import { Container, Box } from '@chakra-ui/react';
+import { FocusEvent } from 'react';
 import Image from 'next/image';
 
 // Constants
@@ -17,6 +18,13 @@ const LoginForm = (): JSX.Element => {
   const { state, emailRef, passwordRef, handleValidateInput, handleSubmitByKeyDown, handleSubmit } =
     useAuth();
   const { error, loading } = state;
+
+  type InputType = 'email' | 'password';
+
+  const handleInputValidate = (e: FocusEvent<HTMLInputElement>) => {
+    const { name } = e.target;
+    handleValidateInput(e, name as InputType);
+  };
 
   return (
     <Container
@@ -41,7 +49,7 @@ const LoginForm = (): JSX.Element => {
         }}
         type="text"
         text="Email *"
-        onBlur={e => handleValidateInput(e, 'email')}
+        onBlur={handleInputValidate}
         onKeyDown={handleSubmitByKeyDown}
         ref={emailRef}
         error={error.email}
@@ -55,7 +63,7 @@ const LoginForm = (): JSX.Element => {
         }}
         type="password"
         text="Password *"
-        onBlur={e => handleValidateInput(e, 'password')}
+        onBlur={handleInputValidate}
         onKeyDown={handleSubmitByKeyDown}
         ref={passwordRef}
         error={error.password}
