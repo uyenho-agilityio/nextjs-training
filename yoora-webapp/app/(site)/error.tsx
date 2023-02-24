@@ -18,13 +18,9 @@ const Error = ({ error, reset }: ErrorProps): JSX.Element => {
 
   return (
     <Container size="sm" variant="default" flexDirection="column">
-      <Title>
-        `${name} : ${message}
-      </Title>
+      <Title>{`${name} : ${message}`}</Title>
 
-      <Button onClick={handleReset} mt={5}>
-        Reset
-      </Button>
+      <Button onClick={handleReset}>Reset</Button>
     </Container>
   );
 };
