@@ -14,7 +14,7 @@ import { useAuth } from '@webapp/hooks';
 // Context
 import { MessageContext } from '@webapp/contexts/MessageContext';
 
-const useMessageContext = () => useContext(MessageContext);
+export const useMessageContext = () => useContext(MessageContext);
 
 export const useMessage = () => {
   const router = useRouter();

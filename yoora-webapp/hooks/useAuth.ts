@@ -20,7 +20,7 @@ import { showToast, validateForm } from '@webapp/utils';
 // Context
 import { AuthContext } from '@webapp/contexts/AuthContext';
 
-const useAuthContext = () => useContext(AuthContext);
+export const useAuthContext = () => useContext(AuthContext);
 
 export const useAuth = () => {
   const router = useRouter();
