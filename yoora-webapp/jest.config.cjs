@@ -16,6 +16,8 @@ module.exports = {
     '!<rootDir>/.next/**',
     '!<rootDir>/coverage/**',
     '!<rootDir>/*.config.js',
+    '!<rootDir>/*.ts',
+    '!<rootDir>/pages/**',
     '!<rootDir>/models/**',
     '!<rootDir>/themes/**',
   ],
@@ -25,6 +27,7 @@ module.exports = {
   },
   modulePaths: ['<rootDir>'],
   moduleNameMapper: {
+    '@next/font/(.*)': require.resolve('next/dist/build/jest/__mocks__/nextFontMock.js'),
     '^.+\\.module\\.(css)$': 'identity-obj-proxy',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       'test-file-stub',
