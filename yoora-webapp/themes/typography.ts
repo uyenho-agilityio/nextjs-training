@@ -20,6 +20,8 @@ export const mainFont: NextFont = localFont({
       style: 'normal',
     },
   ],
+  adjustFontFallback: 'Times New Roman',
+  display: 'swap',
 });
 
 export const fontWeights = {
