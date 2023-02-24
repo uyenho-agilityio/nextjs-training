@@ -9,9 +9,12 @@ import {
   InputProps as ChakraInputProps,
 } from '@chakra-ui/react';
 import { ChangeEvent, FocusEvent, KeyboardEvent, forwardRef, RefObject } from 'react';
+import dynamic from 'next/dynamic';
 
 // Component
-import { Text } from '@webapp/components';
+const Text = dynamic(() => import('@webapp/components').then(mod => mod.Text), {
+  ssr: false,
+});
 
 type InputType = 'text' | 'email' | 'password';
 

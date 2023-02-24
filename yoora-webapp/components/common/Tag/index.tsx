@@ -3,9 +3,12 @@
 // Libs
 import { Tag as ChakraTag, TagProps as ChakraTagProps, Box, BoxProps } from '@chakra-ui/react';
 import Image, { ImageProps } from 'next/image';
+import dynamic from 'next/dynamic';
 
 // Component
-import { Text } from '@webapp/components';
+const Text = dynamic(() => import('@webapp/components').then(mod => mod.Text), {
+  ssr: false,
+});
 
 type TagProps = {
   width?: number;

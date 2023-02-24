@@ -22,9 +22,13 @@ import {
   RefObject,
   useState,
 } from 'react';
+import dynamic from 'next/dynamic';
 
 // Components
-import { Button, Flex, Text } from '@webapp/components';
+import { Button, Flex } from '@webapp/components';
+const Text = dynamic(() => import('@webapp/components').then(mod => mod.Text), {
+  ssr: false,
+});
 
 type InputProps = {
   ref?: RefObject<HTMLInputElement>;

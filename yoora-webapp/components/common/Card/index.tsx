@@ -10,9 +10,15 @@ import {
   BoxProps,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
+import dynamic from 'next/dynamic';
 
 // Components
-import { Title, Text } from '@webapp/components';
+const Title = dynamic(() => import('@webapp/components').then(mod => mod.Title), {
+  ssr: false,
+});
+const Text = dynamic(() => import('@webapp/components').then(mod => mod.Text), {
+  ssr: false,
+});
 
 type CardProps = {
   size?: string;
