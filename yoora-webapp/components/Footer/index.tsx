@@ -2,7 +2,6 @@
 
 // Libs
 import { Container, Grid, GridItem, Link as ChakraLink, List, ListItem } from '@chakra-ui/react';
-import { useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -23,66 +22,56 @@ import { ImageProps, MenuList, SubMenuList } from '@webapp/types';
 import { Text, Select } from '@webapp/components';
 
 const Footer = (): JSX.Element => {
-  const renderSocialIcons = useMemo(
-    () =>
-      SOCIAL_ICONS.map((item: ImageProps): JSX.Element => {
-        const { src, url } = item;
+  const renderSocialIcons = SOCIAL_ICONS.map((item: ImageProps): JSX.Element => {
+    const { src, url } = item;
 
-        return (
-          <ListItem key={src}>
-            <ChakraLink as={Link} href={url}>
-              <Image {...item} />
-            </ChakraLink>
-          </ListItem>
-        );
-      }),
-    [SOCIAL_ICONS],
-  );
+    return (
+      <ListItem key={src}>
+        <ChakraLink as={Link} href={url}>
+          <Image {...item} />
+        </ChakraLink>
+      </ListItem>
+    );
+  });
 
-  const renderMenuList = useMemo(() => {
-    return MENU_LIST.map((menu: MenuList): JSX.Element => {
-      const { id, title, subMenu } = menu;
+  const renderMenuList = MENU_LIST.map((menu: MenuList): JSX.Element => {
+    const { id, title, subMenu } = menu;
 
-      return (
-        <GridItem key={id} colSpan={{ base: 6, lg: 1 }}>
-          <ChakraLink as={Link} href="#">
-            <Text fontWeight="bold" mb={3}>
-              {title}
-            </Text>
-          </ChakraLink>
+    return (
+      <GridItem key={id} colSpan={{ base: 6, lg: 1 }}>
+        <ChakraLink as={Link} href="#">
+          <Text fontWeight="bold" mb={3}>
+            {title}
+          </Text>
+        </ChakraLink>
 
-          <List>
-            {subMenu.map((item: SubMenuList): JSX.Element => {
-              const { id, subTitle } = item;
+        <List>
+          {subMenu.map((item: SubMenuList): JSX.Element => {
+            const { id, subTitle } = item;
 
-              return (
-                <ListItem key={id}>
-                  <ChakraLink as={Link} href="#">
-                    <Text size="xs" mb={3}>
-                      {subTitle}
-                    </Text>
-                  </ChakraLink>
-                </ListItem>
-              );
-            })}
-          </List>
-        </GridItem>
-      );
-    });
-  }, [MENU_LIST]);
+            return (
+              <ListItem key={id}>
+                <ChakraLink as={Link} href="#">
+                  <Text size="xs" mb={3}>
+                    {subTitle}
+                  </Text>
+                </ChakraLink>
+              </ListItem>
+            );
+          })}
+        </List>
+      </GridItem>
+    );
+  });
 
-  const renderPolicyData = useMemo(
-    () =>
-      POLICY_DATA.map(
-        (item: { text: string }): JSX.Element => (
-          <ChakraLink as={Link} href="#" key={item.text}>
-            <Text mb={3} mr={12}>
-              {item.text}
-            </Text>
-          </ChakraLink>
-        ),
-      ),
-    [POLICY_DATA],
+  const renderPolicyData = POLICY_DATA.map(
+    (item: { text: string }): JSX.Element => (
+      <ChakraLink as={Link} href="#" key={item.text}>
+        <Text mb={3} mr={12}>
+          {item.text}
+        </Text>
+      </ChakraLink>
+    ),
   );
 
   return (
