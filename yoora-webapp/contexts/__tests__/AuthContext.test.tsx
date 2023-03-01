@@ -21,13 +21,13 @@ describe('AuthContext test', () => {
     return (
       <>
         {!isAuthenticated && (
-          <button onClick={() => void logIn(userDataMock, successFunctionMock, failFunctionMock)}>
+          <button onClick={void logIn(userDataMock, successFunctionMock, failFunctionMock)}>
             Login
           </button>
         )}
         {isAuthenticated && <p>{user?.email}</p>}
         {isAuthenticated && (
-          <button onClick={() => logOut(successFunctionMock, failFunctionMock)}>Logout</button>
+          <button onClick={void logOut(successFunctionMock, failFunctionMock)}>Logout</button>
         )}
       </>
     );
@@ -67,9 +67,7 @@ describe('AuthContext test', () => {
 
     // Hide Logout, show Login after a successfully logout
     // TODO: can not show Login btn after clicking
-    // await waitFor(() => {
-    //   expect(loginBtn).toBeInTheDocument();
-    // });
+    // expect(await screen.findByText(/in/i)).toBeInTheDocument();
     // expect(screen.queryByText(/out/i)).not.toBeInTheDocument();
     // expect(screen.queryByText(/user/i)).not.toBeInTheDocument();
   });
