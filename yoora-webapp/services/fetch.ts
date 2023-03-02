@@ -25,7 +25,9 @@ export const fetching = async ({ endpoint, method }: FetchingOptions) => {
       res = await fetch(endpoint, { cache: 'force-cache' });
   }
 
-  if (!res.ok) res;
+  if (!res.ok) {
+    return res;
+  }
   return res.json();
 };
 
