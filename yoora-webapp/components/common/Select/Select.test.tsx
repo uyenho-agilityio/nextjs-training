@@ -20,7 +20,7 @@ describe('Select renders', () => {
     const select = screen.getByRole('combobox');
     expect(await screen.findByRole('option', { name: 'English' })).toBeInTheDocument();
 
-    void userEvent.selectOptions(select, 'vietnamese');
+    await userEvent.selectOptions(select, 'vietnamese');
 
     await waitFor(() => {
       expect(select).toHaveValue('vietnamese');
