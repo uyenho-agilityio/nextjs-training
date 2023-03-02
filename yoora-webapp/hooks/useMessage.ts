@@ -38,7 +38,7 @@ export const useMessage = () => {
     (
       e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
       type: 'name' | 'email' | 'message',
-    ) => {
+    ): void => {
       setState({
         ...state,
         [type]: e.target.value,
@@ -52,7 +52,10 @@ export const useMessage = () => {
   );
 
   const handleValidateInput = useCallback(
-    (e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>, type: 'name' | 'email' | 'message') => {
+    (
+      e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
+      type: 'name' | 'email' | 'message',
+    ): void => {
       const value = e.target.value;
 
       setState({
@@ -66,7 +69,7 @@ export const useMessage = () => {
     [state],
   );
 
-  const handleSubmit = (): void => {
+  const handleSubmit = async (): Promise<void> => {
     const { name, email, message, error } = state;
 
     setState({
@@ -84,7 +87,7 @@ export const useMessage = () => {
           avatar: user.avatar,
         };
 
-        void createMessage(
+        await createMessage(
           newMessage,
 
           // Succeed

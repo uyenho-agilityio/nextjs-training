@@ -54,7 +54,7 @@ export const useAuth = () => {
     [state],
   );
 
-  const handleSubmit = (): void => {
+  const handleSubmit = async (): Promise<void> => {
     const { error } = state;
     const email = (emailRef as MutableRefObject<{ value: string }>).current.value;
     const password = (passwordRef as MutableRefObject<{ value: string }>).current.value;
@@ -66,7 +66,7 @@ export const useAuth = () => {
       });
 
       try {
-        void logIn(
+        await logIn(
           {
             email,
             password,
@@ -112,8 +112,8 @@ export const useAuth = () => {
     }
   };
 
-  const handleSubmitByKeyDown = useCallback((e: KeyboardEvent): void => {
-    if (e.key === 'Enter') handleSubmit();
+  const handleSubmitByKeyDown = useCallback(async (e: KeyboardEvent): Promise<void> => {
+    if (e.key === 'Enter') await handleSubmit();
   }, []) as unknown as KeyboardEventHandler<HTMLInputElement>;
 
   const handleLogOut = (): void => {
