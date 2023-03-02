@@ -26,6 +26,7 @@ const BannerCardBase = (detailsCard: CardProps): JSX.Element => {
       leftChildren={<Divider my="14px" borderColor="border-cl" />}
       rightChildren={<Tag text={date} extraText={author} />}
       chakraCardProps={{ pt: { base: '30px', lg: '60px' }, bg: 'primary-bg' }}
+      cardBodyProps={{ px: '0' }}
     />
   );
 };
