@@ -111,7 +111,7 @@ const Footer = (): JSX.Element => {
 
         <GridItem display="flex" alignItems="center" colSpan={{ base: 6, lg: 1 }}>
           <Image {...GLOBE} priority />
-          <Select options={LANGUAGE_OPTIONS} w="fit-content" />
+          <Select options={LANGUAGE_OPTIONS} w="fit-content" aria-label="languages" />
         </GridItem>
       </Grid>
     </Container>
