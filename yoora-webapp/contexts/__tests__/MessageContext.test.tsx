@@ -25,7 +25,7 @@ describe('MassageContext test', () => {
       <>
         <h1>{data?.length}</h1>
         <button
-          onClick={() => void createMessage(messageDataMock, successFunctionMock, failFunctionMock)}
+          onClick={void createMessage(messageDataMock, successFunctionMock, failFunctionMock)}
         >
           Create message
         </button>
