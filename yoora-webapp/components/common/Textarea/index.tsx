@@ -5,6 +5,7 @@ import {
   Textarea as ChakraTextarea,
   TextareaProps as ChakraTextareaProps,
   FormErrorMessage,
+  FormErrorMessageProps,
   FormControl,
 } from '@chakra-ui/react';
 import { ChangeEvent, FocusEvent, RefObject } from 'react';
@@ -17,6 +18,7 @@ type TextareaProps = {
   error?: string;
   onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void;
   onBlur?: (e: FocusEvent<HTMLTextAreaElement>) => void;
+  formErrorMessageProps?: FormErrorMessageProps;
 } & ChakraTextareaProps;
 
 export const Textarea = ({
@@ -27,9 +29,10 @@ export const Textarea = ({
   error,
   onChange,
   onBlur,
+  formErrorMessageProps,
   ...props
 }: TextareaProps) => {
-  return error ? (
+  return (
     <FormControl isInvalid={!!error}>
       <ChakraTextarea
         ref={ref}
@@ -41,22 +44,7 @@ export const Textarea = ({
         {...props}
         resize="none"
       />
-      {error && (
-        <FormErrorMessage mt={-4} mb={5}>
-          {error}
-        </FormErrorMessage>
-      )}
+      {error && <FormErrorMessage {...formErrorMessageProps}>{error}</FormErrorMessage>}
     </FormControl>
-  ) : (
-    <ChakraTextarea
-      ref={ref}
-      defaultValue={defaultValue}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      onBlur={onBlur}
-      {...props}
-      resize="none"
-    />
   );
 };

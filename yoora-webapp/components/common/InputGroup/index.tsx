@@ -5,6 +5,7 @@ import {
   FormControl,
   FormControlProps,
   FormErrorMessage,
+  FormErrorMessageProps,
   Input as ChakraInput,
   InputProps as ChakraInputProps,
   InputGroup as ChakraInputGroup,
@@ -43,10 +44,10 @@ type InputProps = {
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void;
   chakraInputGroupProps?: ChakraInputGroupProps;
   formControlProps?: FormControlProps;
-  chakraInputProps?: ChakraInputProps;
+  formErrorMessageProps?: FormErrorMessageProps;
   chakraInputElementProps?: ChakraInputElementProps;
   rightElement?: ReactNode;
-};
+} & ChakraInputProps;
 
 export const InputGroup = forwardRef<HTMLInputElement, InputProps>((props, ref): JSX.Element => {
   const [show, setShow] = useState<boolean>(false);
@@ -64,9 +65,10 @@ export const InputGroup = forwardRef<HTMLInputElement, InputProps>((props, ref):
     onBlur,
     chakraInputGroupProps,
     formControlProps,
-    chakraInputProps,
+    formErrorMessageProps,
     chakraInputElementProps,
     rightElement,
+    ...inputProps
   } = props;
 
   return (
@@ -88,13 +90,9 @@ export const InputGroup = forwardRef<HTMLInputElement, InputProps>((props, ref):
               onKeyDown={onKeyDown}
               onChange={onChange}
               onBlur={onBlur}
-              {...chakraInputProps}
+              {...inputProps}
             />
-            {error && (
-              <FormErrorMessage mt={-4} mb={10}>
-                {error}
-              </FormErrorMessage>
-            )}
+            {error && <FormErrorMessage {...formErrorMessageProps}>{error}</FormErrorMessage>}
           </FormControl>
           <InputRightElement {...chakraInputElementProps}>
             <Button
@@ -115,7 +113,7 @@ export const InputGroup = forwardRef<HTMLInputElement, InputProps>((props, ref):
             onKeyDown={onKeyDown}
             onChange={onChange}
             onBlur={onBlur}
-            {...chakraInputProps}
+            {...inputProps}
           />
           {rightElement}
         </Flex>

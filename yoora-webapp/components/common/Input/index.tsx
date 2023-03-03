@@ -5,6 +5,7 @@ import {
   FormControl,
   FormControlProps,
   FormErrorMessage,
+  FormErrorMessageProps,
   Input as ChakraInput,
   InputProps as ChakraInputProps,
 } from '@chakra-ui/react';
@@ -30,12 +31,12 @@ type InputProps = {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void;
   formControlProps?: FormControlProps;
-  chakraInputProps?: ChakraInputProps;
-};
+  formErrorMessageProps?: FormErrorMessageProps;
+} & ChakraInputProps;
 
 export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref): JSX.Element => {
   const {
-    type = 'text',
+    type,
     text,
     defaultValue,
     placeholder,
@@ -45,7 +46,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref): JSX.
     onChange,
     onBlur,
     formControlProps,
-    chakraInputProps,
+    formErrorMessageProps,
+    ...inputProps
   } = props;
 
   return (
@@ -64,13 +66,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref): JSX.
         onKeyDown={onKeyDown}
         onChange={onChange}
         onBlur={onBlur}
-        {...chakraInputProps}
+        {...inputProps}
       />
-      {error && (
-        <FormErrorMessage mt={-4} mb={5}>
-          {error}
-        </FormErrorMessage>
-      )}
+      {error && <FormErrorMessage {...formErrorMessageProps}>{error}</FormErrorMessage>}
     </FormControl>
   );
 });

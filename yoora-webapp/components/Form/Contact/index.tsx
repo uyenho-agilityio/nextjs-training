@@ -32,28 +32,33 @@ const ContactForm = (): JSX.Element => {
   return (
     <Flex variant="column" alignItems="flex-start">
       <Input
-        chakraInputProps={{ variant: 'contact-form', name: 'name' }}
+        variant="contact-form"
+        name="name"
         type="text"
         placeholder="Your Name"
         onChange={handleInputChange}
         onBlur={handleInputValidate}
         error={error.name}
+        formErrorMessageProps={{ mt: '-4', mb: '5' }}
       />
       <Input
-        chakraInputProps={{ variant: 'contact-form', name: 'email' }}
+        variant="contact-form"
+        name="email"
         type="email"
         placeholder="Your Email"
         onChange={handleInputChange}
         onBlur={handleInputValidate}
         error={error.email}
+        formErrorMessageProps={{ mt: '-4', mb: '5' }}
       />
       <Textarea
         variant="contact-form"
-        placeholder="Message"
         name="message"
+        placeholder="Message"
         onChange={handleInputChange}
         onBlur={handleInputValidate}
         error={error.message}
+        formErrorMessageProps={{ mt: '-4', mb: '5' }}
       />
 
       <Button

@@ -42,7 +42,9 @@ const LoginForm = (): JSX.Element => {
       </Title>
 
       <Input
-        chakraInputProps={{ variant: 'login-form', autoFocus: true, name: 'email' }}
+        autoFocus={true}
+        variant="login-form"
+        name="email"
         formControlProps={{
           pos: 'relative',
           _focusWithin: { color: 'primary-btn-cl' },
@@ -53,9 +55,11 @@ const LoginForm = (): JSX.Element => {
         onKeyDown={handleSubmitByKeyDown}
         ref={emailRef}
         error={error.email}
+        formErrorMessageProps={{ mt: '-4', mb: '5' }}
       />
       <InputGroup
-        chakraInputProps={{ variant: 'login-form', name: 'password' }}
+        variant="login-form"
+        name="password"
         chakraInputElementProps={{ mr: 2, pb: 3 }}
         formControlProps={{
           pos: 'relative',
@@ -67,6 +71,7 @@ const LoginForm = (): JSX.Element => {
         onKeyDown={handleSubmitByKeyDown}
         ref={passwordRef}
         error={error.password}
+        formErrorMessageProps={{ mt: '-4', mb: '10' }}
       />
       <Button
         variant="submit"

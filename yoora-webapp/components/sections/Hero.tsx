@@ -51,7 +51,7 @@ const HeroSection = (): JSX.Element => {
               {HERO_CONTENT.BUTTON}
             </Button>
           }
-          chakraInputProps={{ display: { base: 'none', lg: 'block' } }}
+          display={{ base: 'none', lg: 'block' }}
         />
         <Text size="xs" mt="12px">
           {HERO_CONTENT.TEXT}
