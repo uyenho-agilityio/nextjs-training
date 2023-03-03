@@ -13,11 +13,7 @@ import { fetching, fetcher } from '../fetch';
 const dataMock: Message[] = FEEDBACK_DATA;
 
 beforeEach(() => {
-  global.fetch = jest.fn().mockImplementationOnce(() =>
-    Promise.resolve({
-      json: () => Promise.resolve(dataMock),
-    }),
-  );
+  global.fetch = jest.fn().mockImplementationOnce(() => Promise.resolve(dataMock));
 });
 
 describe('Fetch test', () => {

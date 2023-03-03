@@ -12,11 +12,7 @@ describe('Message test', () => {
   test('fetches successfully data from an API', async () => {
     const dataMock: Message[] = FEEDBACK_DATA;
 
-    global.fetch = jest.fn().mockImplementationOnce(() =>
-      Promise.resolve({
-        json: () => Promise.resolve(dataMock),
-      }),
-    );
+    global.fetch = jest.fn().mockImplementationOnce(() => Promise.resolve(dataMock));
 
     const res = await fetchMessages('SSR');
     expect(res).toEqual(dataMock);
