@@ -12,14 +12,13 @@ export const TEXT = {
 };
 
 export const MESSAGE = {
-  INVALID_MESSAGE_INPUT:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia doloribus facilis magnam ut cum unde, pariatur minima delectus quae nostrum suscipit animi repellat accusantium tenetur, velit error quod officiis minus!',
+  INVALID_MESSAGE_INPUT: 'Lorem ipsum dolor.',
   VALID_MESSAGE_INPUT:
     'Officia doloribus facilis magnam ut cum unde, pariatur minima delectus quae nostrum suscipit animi repellat accusantium tenetur, velit error quod officiis minus!',
   INVALID_EMAIL: 'Email is invalid',
   INVALID_PWD: 'Password is invalid',
   INVALID_NAME: 'Name should be a minimum of five characters in length',
-  INVALID_MESSAGE: 'Message should be between 40 and 180 characters in length',
+  INVALID_MESSAGE: 'Message should be at least 40 characters',
   REQUIRED_PWD: 'Password is required',
 };
 
