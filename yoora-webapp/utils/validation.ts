@@ -2,7 +2,7 @@ const EMAIL_PATTERN =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const PWD_PATTERN = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,}$/;
 
-const MESSAGE_PATTERN = /^.{40,180}$/;
+const MESSAGE_PATTERN = /^.{40,}$/;
 
 /**
  * Capitalize the first letter of the word
@@ -33,9 +33,9 @@ export const validateForm = (value: string, type: string): string => {
         ? ''
         : `${capitalizeWord(type)} should be a minimum of five characters in length`;
     case 'message':
-      return MESSAGE_PATTERN.test(value)
+      return MESSAGE_PATTERN.test(value.replace(/\s/g, ' '))
         ? ''
-        : `${capitalizeWord(type)} should be between 40 and 180 characters in length`;
+        : `${capitalizeWord(type)} should be at least 40 characters`;
     default:
       return '';
   }
