@@ -17,18 +17,14 @@ describe('AuthContext test', () => {
 
   const AuthComponentMock = () => {
     const { user, isAuthenticated, logIn, logOut } = useAuthContext();
+    const handleLogin = () => void logIn(userDataMock, successFunctionMock, failFunctionMock);
+    const handleLogout = () => logOut(successFunctionMock, failFunctionMock);
 
     return (
       <>
-        {!isAuthenticated && (
-          <button onClick={void logIn(userDataMock, successFunctionMock, failFunctionMock)}>
-            Login
-          </button>
-        )}
+        {!isAuthenticated && <button onClick={handleLogin}>Login</button>}
         {isAuthenticated && <p>{user?.email}</p>}
-        {isAuthenticated && (
-          <button onClick={void logOut(successFunctionMock, failFunctionMock)}>Logout</button>
-        )}
+        {isAuthenticated && <button onClick={handleLogout}>Logout</button>}
       </>
     );
   };
