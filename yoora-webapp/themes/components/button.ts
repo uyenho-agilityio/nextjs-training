@@ -31,33 +31,51 @@ export const Button = {
 
   variants: {
     default: {
-      bg: 'secondary-cl',
-      _hover: { bg: 'none', color: 'primary-btn-cl', borderColor: 'primary-cl', border: '1px' },
+      backgroundColor: 'secondary-cl',
+      _hover: { color: 'primary-btn-cl', borderColor: 'primary-cl', border: '1px' },
       w: 'fit-content',
     },
 
     ghost: {
-      _hover: { bg: 'none' },
-      _focus: { bg: 'none' },
+      _hover: { backgroundColor: 'none' },
+      _focus: { backgroundColor: 'none' },
       w: 'fit-content',
     },
 
     success: {
-      bg: 'primary-btn-cl',
+      backgroundColor: 'primary-btn-cl',
       color: 'secondary-cl',
+      _disabled: {
+        _hover: {
+          color: 'border-cl',
+          border: '1px',
+        },
+      },
     },
 
     info: {
-      bg: 'secondary-bg',
+      backgroundColor: 'secondary-bg',
       color: 'white',
       w: 'fit-content',
     },
 
     submit: {
-      bg: 'primary-btn-cl',
+      backgroundColor: 'primary-btn-cl',
       color: 'secondary-cl',
       borderRadius: 'full',
       w: '100%',
+      _disabled: {
+        _hover: {
+          color: 'border-cl',
+          border: '1px',
+        },
+      },
+    },
+
+    showing: {
+      backgroundColor: 'inherit',
+      color: 'primary-btn-cl',
+      _hover: { color: 'primary-btn-cl', borderColor: 'primary-cl', border: '1px' },
     },
   },
 
