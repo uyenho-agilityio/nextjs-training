@@ -11,13 +11,17 @@ import { FEEDBACK_CONTENT, MESSAGE } from '@webapp/constants';
 // Type
 import { Message } from '@webapp/models';
 
+// Hook
+import { useMessage } from '@webapp/hooks';
+
 // Components
-import { Flex, Text, Title, Spinner } from '@webapp/components';
-const FeedbackList = dynamic(() => import('@webapp/components').then(mod => mod.FeedbackList), {
-  loading: () => <Spinner />,
-});
+import { Flex, Text, Title } from '@webapp/components';
+const Spinner = dynamic(() => import('@webapp/components').then(mod => mod.Spinner));
+const FeedbackList = dynamic(() => import('@webapp/components').then(mod => mod.FeedbackList));
 
 const FeedbackSection = ({ data }: { data: Message[] }): JSX.Element => {
+  const { isLoading } = useMessage();
+
   return (
     <Container as="section" className="feedback-section" pb={{ base: '42px', lg: '72px' }}>
       <Flex
@@ -35,7 +39,8 @@ const FeedbackSection = ({ data }: { data: Message[] }): JSX.Element => {
         </Flex>
       </Flex>
 
-      {data.length > 0 ? (
+      {isLoading && <Spinner variant="center" />}
+      {data ? (
         <FeedbackList data={data} />
       ) : (
         <Text textAlign="center" color="red">

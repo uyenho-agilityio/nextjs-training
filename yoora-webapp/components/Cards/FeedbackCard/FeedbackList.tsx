@@ -11,7 +11,7 @@ import { FeedbackCard } from '@webapp/components';
 
 export const FeedbackList = ({ data }: { data: Message[] }): JSX.Element => {
   return (
-    <Wrap align="center">
+    <Wrap>
       {(data || []).map(
         (message: Message): JSX.Element => (
           <WrapItem key={message.id}>

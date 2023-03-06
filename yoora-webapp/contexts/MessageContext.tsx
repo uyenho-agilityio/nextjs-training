@@ -15,6 +15,7 @@ type MessageContextValue = {
     onError: (value: string) => void,
   ) => Promise<void>;
   data: Message[] | undefined;
+  isLoading: boolean;
 };
 
 type MessageProviderProps = {
@@ -26,7 +27,7 @@ export const MessageContext: Context<MessageContextValue> = createContext(
 );
 
 export const MessageProvider = ({ children }: MessageProviderProps) => {
-  const { data, mutate } = useSWR<Message[]>(URL);
+  const { data, mutate, isLoading } = useSWR<Message[]>(URL);
 
   const addMessageOptions = (message: Message) => {
     return {
@@ -57,6 +58,8 @@ export const MessageProvider = ({ children }: MessageProviderProps) => {
   );
 
   return (
-    <MessageContext.Provider value={{ createMessage, data }}>{children}</MessageContext.Provider>
+    <MessageContext.Provider value={{ createMessage, data, isLoading }}>
+      {children}
+    </MessageContext.Provider>
   );
 };
