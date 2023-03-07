@@ -9,3 +9,4 @@ export { Tag } from './Tag';
 export { Text } from './Text';
 export { Textarea } from './Textarea';
 export { Title } from './Title';
+export { CustomWrapItem } from './WrapItem';
