@@ -7,3 +7,4 @@ export { Input } from './input';
 export { Select } from './select';
 export { Text } from './text';
 export { Textarea } from './textarea';
+export { WrapItem } from './wrap-item';
