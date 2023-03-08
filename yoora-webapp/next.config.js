@@ -4,13 +4,13 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     appDir: true,
-    enableUndici: true,
   },
 
   images: {
     domains: ['localhost', 'yoora-webapp.vercel.app'],
     deviceSizes: [320, 768, 1440],
   },
+  optimizeFonts: true,
 };
 
 module.exports = nextConfig;
