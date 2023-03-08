@@ -44,7 +44,7 @@ const FeaturesCardBase = (detailsCard: CardProps): JSX.Element => {
 
             return (
               <ListItem key={id} display="flex" alignItems="flex-start">
-                <Image {...icon} priority />
+                <Image {...icon} loading="lazy" />
                 <Text mt="-5px" ml={{ base: '19px', lg: '27px' }}>
                   {text}
                 </Text>

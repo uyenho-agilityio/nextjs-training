@@ -31,7 +31,7 @@ const WhatsNewSection = (): JSX.Element => {
           <Text size="sm" fontWeight="medium">
             {WHATS_NEW_CONTENT.TEXT}
           </Text>
-          <Image {...WHATS_NEW_CONTENT.ICON} priority />
+          <Image {...WHATS_NEW_CONTENT.ICON} loading="lazy" />
         </Flex>
       </Flex>
 

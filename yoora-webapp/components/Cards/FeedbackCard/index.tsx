@@ -33,7 +33,7 @@ const FeedbackCardBase = ({ feedback }: { feedback: Message }): JSX.Element => {
     <Card
       leftChildren={
         <>
-          <Image {...DOUBLE_QUOTE_ICON} priority />
+          <Image {...DOUBLE_QUOTE_ICON} loading="lazy" />
           <Divider my={{ base: '16px', lg: '24px' }} borderColor="border-cl" />
         </>
       }
