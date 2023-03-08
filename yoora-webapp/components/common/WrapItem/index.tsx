@@ -19,7 +19,7 @@ export const CustomWrapItem = ({
   const styles = useStyleConfig('WrapItem', { size, variant });
 
   return (
-    <Box __css={styles} {...props}>
+    <Box as="li" __css={styles} {...props}>
       {children}
     </Box>
   );
