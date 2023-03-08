@@ -4,6 +4,10 @@ export type ImageProps = {
   src: string;
   width: number;
   height: number;
+  dimensions?: {
+    width: number;
+    height: number;
+  };
 };
 
 export type SubMenuList = {
