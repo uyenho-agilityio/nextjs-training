@@ -2,7 +2,7 @@
 
 // Libs
 import { Select as ChakraSelect, SelectProps as ChakraSelectProps } from '@chakra-ui/react';
-import React, { memo, ChangeEvent } from 'react';
+import { memo, ChangeEvent } from 'react';
 
 export type SelectOptions = {
   name: string;

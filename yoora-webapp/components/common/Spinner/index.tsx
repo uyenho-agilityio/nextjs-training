@@ -6,7 +6,6 @@ import {
   Spinner as ChakraSpinner,
   SpinnerProps as ChakraSpinnerProps,
 } from '@chakra-ui/react';
-import React from 'react';
 
 type SpinnerProps = {
   variant?: 'default' | 'center';

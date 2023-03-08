@@ -1,5 +1,5 @@
 // Lib
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 // Providers
 import { AuthProvider } from './AuthContext';
