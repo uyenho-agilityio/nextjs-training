@@ -1,7 +1,7 @@
 'use client';
 
 // Libs
-import { Container, Box, Wrap, WrapItem } from '@chakra-ui/react';
+import { Container, Box, Wrap } from '@chakra-ui/react';
 import { useMemo } from 'react';
 import Image from 'next/image';
 
@@ -12,21 +12,21 @@ import { INTEGRATIONS_CONTENT } from '@webapp/constants';
 import { ImageProps } from '@webapp/types';
 
 // Components
-import { Flex, Text, Title } from '@webapp/components';
+import { Flex, Text, Title, CustomWrapItem } from '@webapp/components';
 
 const IntegrationsSection = (): JSX.Element => {
   const renderDesktopContent = useMemo(
     () =>
       INTEGRATIONS_CONTENT.IMAGES_DESKTOP.map(
         (item: ImageProps): JSX.Element => (
-          <WrapItem key={item.src}>
+          <CustomWrapItem key={item.src} w={item.dimensions?.width} h={item.dimensions?.height}>
             <Image
               {...item}
               placeholder="blur"
               blurDataURL={item.src}
               sizes="(min-width: 320px) 100vw, 78px, (min-width: 768px) 100vw, 99px, (min-width: 1440px) 100vw, 120px"
             />
-          </WrapItem>
+          </CustomWrapItem>
         ),
       ),
     [INTEGRATIONS_CONTENT.IMAGES_DESKTOP],
@@ -36,14 +36,14 @@ const IntegrationsSection = (): JSX.Element => {
     () =>
       INTEGRATIONS_CONTENT.IMAGES_MOBILE.map(
         (item: ImageProps): JSX.Element => (
-          <WrapItem key={item.src}>
+          <CustomWrapItem key={item.src} w={item.dimensions?.width} h={item.dimensions?.height}>
             <Image
               {...item}
               placeholder="blur"
               blurDataURL={item.src}
               sizes="(min-width: 320px) 100vw, 78px, (min-width: 768px) 100vw, 99px, (min-width: 1440px) 100vw, 120px"
             />
-          </WrapItem>
+          </CustomWrapItem>
         ),
       ),
     [INTEGRATIONS_CONTENT.IMAGES_MOBILE],
@@ -67,7 +67,7 @@ const IntegrationsSection = (): JSX.Element => {
         <Text size="sm" fontWeight="medium">
           {INTEGRATIONS_CONTENT.TEXT}
         </Text>
-        <Image {...INTEGRATIONS_CONTENT.ICON} priority />
+        <Image {...INTEGRATIONS_CONTENT.ICON} loading="lazy" />
       </Flex>
     </Container>
   );
