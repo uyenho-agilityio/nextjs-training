@@ -13,7 +13,10 @@
     "build-storybook": "storybook build",
     "test": "jest",
     "coverage": "jest --coverage",
-    "prepare": "cd .. && husky install yoora-webapp/.husky"
+    "prepare": "cd .. && husky install yoora-webapp/.husky",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
     "@chakra-ui/anatomy": "^2.1.1",
@@ -39,6 +42,7 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@next/bundle-analyzer": "^13.2.4",
     "@storybook/addon-docs": "^7.0.0-beta.21",
     "@storybook/addon-essentials": "^7.0.0-beta.21",
     "@storybook/addon-interactions": "^7.0.0-beta.21",
@@ -60,6 +64,7 @@
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
     "babel-jest": "^29.3.1",
+    "cross-env": "^7.0.3",
     "eslint": "^8.31.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-next": "^13.1.1",
