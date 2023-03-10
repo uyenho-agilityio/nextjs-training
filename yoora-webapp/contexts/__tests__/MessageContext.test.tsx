@@ -8,7 +8,7 @@ import { MessageProvider } from '../MessageContext';
 import { useMessageContext } from '@webapp/hooks';
 
 // Mock
-import { FEEDBACK_DATA } from '@webapp/mocks';
+import { FEEDBACK_DATA } from '@webapp/__mocks__';
 
 // Type
 import { Message } from '@webapp/models';

@@ -1,5 +1,5 @@
 // Mock
-import { USER_DATA } from '@webapp/mocks';
+import { USER_DATA } from '@webapp/__mocks__';
 
 // Constant
 import { STORAGE_KEYS } from '@webapp/constants';

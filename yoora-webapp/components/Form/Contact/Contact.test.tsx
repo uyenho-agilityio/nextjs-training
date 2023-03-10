@@ -5,7 +5,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { ContactForm } from '@webapp/components';
 
 // Mock
-import { TEXT } from '@webapp/mocks';
+import { TEXT } from '@webapp/__mocks__';
 
 describe('ContactForm renders', () => {
   test('should render ContactForm component', () => {

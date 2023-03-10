@@ -2,7 +2,7 @@
 import { Message } from '@webapp/models';
 
 // Mock
-import { FEEDBACK_DATA } from '@webapp/mocks';
+import { FEEDBACK_DATA } from '@webapp/__mocks__';
 
 // Message
 import { addNewMessage, fetchMessages } from '../message';

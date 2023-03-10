@@ -5,7 +5,7 @@ import { Message } from '@webapp/models';
 import { API_PATH } from '@webapp/constants';
 
 // Mock
-import { FEEDBACK_DATA } from 'mocks';
+import { FEEDBACK_DATA } from '@webapp/__mocks__';
 
 // Fetch
 import { fetching, fetcher } from '../fetch';

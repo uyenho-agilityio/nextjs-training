@@ -1,5 +1,5 @@
 // Constants
-import { MESSAGE, TEXT } from '@webapp/mocks';
+import { MESSAGE, TEXT } from '@webapp/__mocks__';
 
 // Utils
 import { capitalizeWord, validateForm } from '../validation';

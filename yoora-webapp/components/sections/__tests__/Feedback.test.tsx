@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 import { FeedbackSection } from '@webapp/components';
 
 // Mock
-import { FEEDBACK_DATA } from '@webapp/mocks';
+import { FEEDBACK_DATA } from '@webapp/__mocks__';
 
 describe('FeedbackSection renders', () => {
   test('should render FeedbackSection component with mock data', async () => {

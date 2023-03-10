@@ -8,7 +8,7 @@ import { AuthProvider } from '../AuthContext';
 import { useAuthContext } from '@webapp/hooks';
 
 // Mock
-import { LOGIN_DATA } from '@webapp/mocks';
+import { LOGIN_DATA } from '@webapp/__mocks__';
 
 describe('AuthContext test', () => {
   const userDataMock = LOGIN_DATA;

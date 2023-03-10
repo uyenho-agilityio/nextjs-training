@@ -17,7 +17,9 @@ import { useMessage } from '@webapp/hooks';
 // Components
 import { Flex, Text, Title } from '@webapp/components';
 const Spinner = dynamic(() => import('@webapp/components').then(mod => mod.Spinner));
-const FeedbackList = dynamic(() => import('@webapp/components').then(mod => mod.FeedbackList));
+const FeedbackList = dynamic(() => import('@webapp/components').then(mod => mod.FeedbackList), {
+  loading: () => <Spinner />,
+});
 
 const FeedbackSection = ({ data }: { data: Message[] }): JSX.Element => {
   const { isLoading } = useMessage();
@@ -35,7 +37,7 @@ const FeedbackSection = ({ data }: { data: Message[] }): JSX.Element => {
         </Title>
         <Flex variant="pointer">
           <Text size="lg">{FEEDBACK_CONTENT.TEXT}</Text>
-          <Image {...FEEDBACK_CONTENT.ICON} priority />
+          <Image {...FEEDBACK_CONTENT.ICON} loading="lazy" />
         </Flex>
       </Flex>
 

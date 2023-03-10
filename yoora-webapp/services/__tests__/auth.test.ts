@@ -2,7 +2,7 @@
 import { LoginPayload, User } from '@webapp/models';
 
 // Mock
-import { LOGIN_DATA, USER_DATA } from '@webapp/mocks';
+import { LOGIN_DATA, USER_DATA } from '@webapp/__mocks__';
 
 // Auth
 import { login, logout } from '../auth';

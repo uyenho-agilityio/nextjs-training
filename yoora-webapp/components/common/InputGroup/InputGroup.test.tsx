@@ -5,7 +5,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { HERO_CONTENT } from '@webapp/constants';
 
 // Mock
-import { MESSAGE, TEXT } from '@webapp/mocks';
+import { MESSAGE, TEXT } from '@webapp/__mocks__';
 
 // Components
 import { InputGroup, Button } from '@webapp/components';
