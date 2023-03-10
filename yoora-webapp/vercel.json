@@ -1,0 +1,16 @@
+{
+  "name": "yoora-webapp",
+  "framework": "nextjs",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "env": {
+    "NEXT_PUBLIC_BASE_URL": "https://yoora-webapp.vercel.app/api/",
+    "SECURE_TOKEN": "abcdefg"
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_BASE_URL": "https://yoora-webapp.vercel.app/api/",
+      "SECURE_TOKEN": "abcdefg"
+    }
+  }
+}
