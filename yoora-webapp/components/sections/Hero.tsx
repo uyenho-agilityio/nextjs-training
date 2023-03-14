@@ -21,7 +21,7 @@ const HeroSection = (): JSX.Element => {
       gap={{ base: '10px', lg: '50px' }}
     >
       <Box>
-        <Title size="h1" variant="primary-title">
+        <Title as="h1" size="h1" variant="primary-title">
           {HERO_CONTENT.TITLE}
         </Title>
         <Text maxW="478px" mb={{ base: '32px', lg: '64px' }}>
@@ -64,7 +64,7 @@ const HeroSection = (): JSX.Element => {
           placeholder="blur"
           blurDataURL={HERO_CONTENT.IMAGE.src}
           sizes="(min-width: 320px) 100vw, 156px, (min-width: 768px) 100vw, 415px, (min-width: 1440px) 100vw, 675px"
-          loading="eager"
+          priority
         />
       </Box>
     </Container>
