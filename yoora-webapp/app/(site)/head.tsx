@@ -25,6 +25,30 @@ const Head = (): JSX.Element => {
       <meta property="twitter:image" content={thumbnailUrl} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+      <link rel="preload" href="/images/hero-section/hero.webp" as="image" />
+      <link
+        rel="preload"
+        href="/_next/static/media/b1dca2a5d44fc7a4.p.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="/_next/static/media/22539d17f3707926.p.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="/_next/static/media/12084922609e6532.p.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
+      <link rel="preload" href="/_next/static/css/a6b765653498d7a5.css" as="style" />
+
       {/* Fail to apply Partytown */}
       {/* <Partytown debug forward={['dataLayer.push']} />
       <Script

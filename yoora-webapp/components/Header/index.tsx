@@ -34,7 +34,7 @@ const Header = (): JSX.Element => {
     <Container as="header" className="header">
       <Flex minWidth="max-content">
         <Box cursor="pointer" mr={{ base: 'auto', lg: '90px' }}>
-          <ChakraLink as={Link} href={PAGE_ROUTES.HOME}>
+          <ChakraLink as={Link} href={PAGE_ROUTES.HOME} prefetch={false}>
             <Image {...LOGO} priority />
           </ChakraLink>
         </Box>
@@ -53,6 +53,7 @@ const Header = (): JSX.Element => {
                 fontWeight="bold"
                 color={pathname === path ? 'primary-btn-cl' : 'inherit'}
                 pr={10}
+                prefetch={false}
               >
                 {label}
               </ChakraLink>
