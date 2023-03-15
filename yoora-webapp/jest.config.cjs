@@ -3,6 +3,7 @@ module.exports = {
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   testEnvironment: 'jsdom',
   preset: 'ts-jest',
+  clearMocks: true,
   collectCoverage: true,
   coverageProvider: 'v8',
   collectCoverageFrom: [
